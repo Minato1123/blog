@@ -1,0 +1,16 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "docs/**/*", "docs/**/*.vue", "auto-imports.d.ts", "components.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": [
+      "unplugin-icons/types/vue",
+    ]
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ]
+}

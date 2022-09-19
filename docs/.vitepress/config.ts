@@ -1,4 +1,9 @@
 import { defineConfig } from 'vitepress'
+import AutoImport from 'unplugin-auto-import/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Components from 'unplugin-vue-components/vite'
+
 
 export default defineConfig({
   title: "Carrie's Blog",
@@ -7,10 +12,10 @@ export default defineConfig({
   themeConfig: {
     sidebar:[
       {
-        text: '學習日誌',
+        text: '學習隨記',
         collapsible: true,
         items: [
-          // { text: '111/09/15', link: '/daily-log/111-09-15' },
+          { text: '隨記 EP1', link: '/daily-log/ep-1' },
         ]
       },
       {
@@ -46,4 +51,34 @@ export default defineConfig({
     lineNumbers: true,
   },
 
+  vite: {
+    plugins: [
+      AutoImport({
+        include: [
+          /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+          /\.vue$/,
+          /\.vue\?vue/, // .vue
+          /\.md$/, // .md
+        ],
+        dts: '../auto-imports.d.ts',
+        imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+        eslintrc: {
+          enabled: true, // disable no-undef
+        },
+      }),
+      Icons({
+        defaultClass: 'svg-icon',
+        compiler: 'vue3',
+      }),
+      Components({
+        dirs: [],
+        dts: '../components.d.ts',
+        resolvers: [
+          IconsResolver({
+            prefix: 'icon',
+          }),
+        ],
+      }),
+    ],
+  }
 })
