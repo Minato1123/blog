@@ -30,14 +30,19 @@ function handlePreviousSlide() {
   else currentSlideIndex.value -= 1
 }
 
-let slideInterval = setInterval(handleNextSlide, 5000)
+let slideInterval
+onMounted(() => {
+  slideInterval = setInterval(handleNextSlide, 5000)
+})
 onBeforeUnmount(() => clearInterval(slideInterval))
 
 watch(
   currentSlideIndex,
   () => {
     clearInterval(slideInterval)
-    slideInterval = setInterval(handleNextSlide, 5000)
+    if(typeof window !== "undefiend") {
+      slideInterval = setInterval(handleNextSlide, 5000)
+    }
   },
 )
 </script>
