@@ -47,7 +47,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Minato1123' },
       { icon: 'twitter', link: 'https://twitter.com/minato23_' },
-      { icon: 'linkedin', link: '' },
+      { icon: 'linkedin', link: 'www.linkedin.com/in/minato1123' },
     ],
   },
   markdown: {
