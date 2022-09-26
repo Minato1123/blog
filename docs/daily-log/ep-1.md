@@ -109,18 +109,84 @@ import FoldCode from '../.vitepress/components/FoldCode.vue'
 基於 vite、vue3 的靜態網站產生器
 
 #### 配置主要分為 App Configs 和 Theme Configs
-  * App Configs
-    >
-    > 配置網站的基本功能，例如：設置網站的標題、客製化 markdown 解析器的工作方式。
-  * Theme Configs
-    > 配置網站的主題，例如：添加側邊欄、添加「在 GitHub 上編輯此頁面」的連結等功能。
+* App Configs
+  >
+  > 配置網站的基本功能，例如：設置網站的標題、客製化 markdown 解析器的工作方式。
+* Theme Configs
+  > 配置網站的主題，例如：添加側邊欄、添加「在 GitHub 上編輯此頁面」的連結等功能。
 
 ## 111/09/17
 ### 套件
-  * [day.js](https://t.me/c/1319631492/1065)
-    > 用來解析、驗證、操作和顯示現代瀏覽器的日期和時間，具有很大程度上與 `Moment.js` 兼容的 API。
+* [day.js](https://t.me/c/1319631492/1065)
+  > 用來解析、驗證、操作和顯示現代瀏覽器的日期和時間，具有很大程度上與 `Moment.js` 兼容的 API。
 ### 文件
-  * 乾淨無瑕的程式碼
-    * [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
-    * [clean-code-typescript](https://github.com/labs42io/clean-code-typescript)
+* 乾淨無瑕的程式碼
+  * [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+  * [clean-code-typescript](https://github.com/labs42io/clean-code-typescript)
+
+## 111/09/19
+### 問題
+* Vitepress 在 Build 時出現錯誤
+  > 使用到 `setInterval` 時要用 `if(typeof window !== "undefiend")` 或 `onMounted`
+  >
+  > 參考來源：https://github.com/vuejs/vitepress/issues/562
+* 幻燈片在 Firefox 上面會使 Flex 的效果會將所有幻燈片圖片壓縮在容器內
+  > 將所有圖片加上 `flex-shrink: 0;` 強制讓它不要被壓縮
+
+## 111/09/20
+
+### 框架
+* [solid.js](https://github.com/solidjs/solid)
+  > 中文介紹：
+  > * [又一个前端框架 Solid ？性能直逼原生 JS ？](https://juejin.cn/post/6997297994592681991)
+  > * [性能爆表的SolidJS
+](https://juejin.cn/post/7140643826162466853)
+  > 1. 直接使用瀏覽器的 DOM，**没有虛擬 DOM**
+  > 2. 提前編譯，依需求打包（Solid 須預編譯，將 jsx 部分程式碼轉換成原生語法）
+  > 3. 響應式原理，精準更新對應的值
+
+### GUI 框架
+* [Tauri](https://tauri.app/)
+  > Tauri 的後端核心使用 Rust 構建 <br>
+  > 使用 Node.js 上的 CLI 使 Tauri 成為一種真正的多語言方法來創建和維護出色的應用程序 <br>
+  > 可以創建體積更小、運行更快、更加安全的跨平台桌面應用 
+* [Electron](https://www.electronjs.org/)
+  > 使用 JavaScript、HTML 和 CSS 構建桌面應用程式的框架 <br>
+  > 嵌入 Chromium 和 Node.js 到 Electron 允許維護 JavaScript 程式庫 <br>
+  > 可創建在 Windows、macOS 和 Linux 上運行的跨平台應用程式（不需要本地開發經驗）
+
+## 111/09/22
+  ### 問題
+  * `rem` 不會隨著視窗大小有所變化，`%` 才會
+  * 寬高可以使用 `calc(100% - ?rem)` 去做計算
+  * 寬高有剩餘的空間時 `margin: auto;` 就會有作用
+
+## 111/09/22
+### 工具
+  * [Lerna](https://lerna.js.org/)
+    > JS package 管理工具、使用 monorepo 的概念 <br>
+    > 針對使用 git 和 npm 管理多軟體包程式碼倉庫的工作流程進行優化
+    > * 自動解決 packages 之間的依賴關係
+    > * 透過 git 檢測文件更動、自動發布
+    > * 根據 git commit 紀錄，自動生成 CHANGELOG
+
+## 111/09/23
+
+### 工具
+  * [Amplication](https://amplication.com/)
+    > 助於開發高品質的 Node.js applications，不需花費時間在重複的 coding tasks <br>
+    > 定義數據模型、角色和權限，Amplication 將生成一個 TypeScript Node.js applications
+### 學習參考
+  * [FreeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp)
+    > 開源程式碼和免費課程
+
+## 111/09/26
+
+  ### 函式庫
+  * [Validator.js](https://github.com/validatorjs/validator.js)
+    > 此函式庫僅驗證和清理 Strings（請注意輸入是否為 String）
+  ### CSS Media
+  * `max-width`，表示這個數字以下（包含）的都適用。(<=)
+  * `min-width`，表示這個數字以上（包含）的都適用。(>=)
+
 
