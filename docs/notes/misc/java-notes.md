@@ -21,10 +21,10 @@ public class <Class_name> {
 數值是可以變更的。
 1. **基本資料型態**
     > byte、int、short、long、float、double、char、boolean
-1. **宣告變數**
-    `int number;`
-    `long number = 數字L;` 若沒有加 `L` / `l` 則會認成 int 型態
-    `float number = 數字f;` 若沒有加 `F` / `f` 則會認成 double 型態
+1. **宣告變數**<br>
+    > `int number;`<br>
+    > `long number = 數字L;`：若沒有加 `L` / `l` 則會認成 int 型態<br>
+    > `float number = 數字f;`：若沒有加 `F` / `f` 則會認成 double 型態
 1. **變數的命名規則**
     * 識別字必須以英文字母開頭，大小寫均可。
     * `_` 或是 `$` 開頭也可以。
@@ -51,8 +51,8 @@ public class <Class_name> {
 | -------- | -------- | -------- |
 | 常數 | 使用英文大寫字母和底線 `_` 符號 | MAX_SIZE、MIN_SIZE |
 | 變數 | 小駝峰 | size、screenSize、myAccountNumber |
-| 類別 ( class ) | 大駝峰 | LargeRoom、SmallRoom |
-| 函數 ( method ) | 小駝峰 | pressButton、scrollScreen |
+| 類別 (class) | 大駝峰 | LargeRoom、SmallRoom |
+| 函數 (method) | 小駝峰 | pressButton、scrollScreen |
 
 ### 基本資料型態範圍及初始值
 
@@ -116,10 +116,10 @@ public class <Class_name> {
     ```java
     int[] array = new int[3];
     ```
-1. **三者皆相同** 
-    `int array[]`
-    `int[] array`
-    `int []array` 
+1. **三者皆相同** <br>
+    > `int array[]`<br>
+    > `int[] array`<br>
+    > `int []array` 
 1. **取得陣列的長度**
     ```java
     array.length
@@ -304,10 +304,10 @@ switch (變數) {
 }
 ```
 * 記得視需要情況加上 `break`
-* default 可有可無
+* `default` 可有可無
 
 
-## 類別 class
+## 類別 Ｃlass
 ### 函式 Function ( method )
 ```java
 public static 型態 函式名稱 ( 參數型態 參數名稱 ){
@@ -315,12 +315,12 @@ public static 型態 函式名稱 ( 參數型態 參數名稱 ){
     return 回傳值 ( 運算式 );
 }
 ```
-### 修飾子 modifier
-* **`public` 共有的** --- 外部的 class 都可以存取該資料
-* **`private` 私有的** --- 只有 class 內的成員可以存取該資料，以達到保護的作用
-* **`protected` 被保護的** --- 同 package 中的 class 可以直接存取，不同 package 中的 class 可以在繼承後的 subclass 直接存取
-* **沒有添加修飾子** --- 只有同個 package 的成員可以存取該資料
-* **`static` 靜態的** --- 所有的 object 共享，可在沒有建立 object 的情況下直接以 class 呼叫
+### 修飾子 Ｍodifier
+* **`public` 共有的**：外部的 class 都可以存取該資料
+* **`private` 私有的**：只有 class 內的成員可以存取該資料，以達到保護的作用
+* **`protected` 被保護的**：同 package 中的 class 可以直接存取，不同 package 中的 class 可以在繼承後的 subclass 直接存取
+* **沒有添加修飾子**：只有同個 package 的成員可以存取該資料
+* **`static` 靜態的**：所有的 object 共享，可在沒有建立 object 的情況下直接以 class 呼叫
 #### 範例
 ```java
 class Circle {
@@ -607,8 +607,8 @@ combo.addActionListener(new ActionListener() {
 * 只負責呈現資料，本身並不包含任何資料。
 * 使用 JTable 必須餵給它資料來源，且必須提供此表格含有幾欄幾列等資訊，也要提供存取資料的方法。
 * JTable 用到的資料模型有三種
-    > **TableModel ( 表格模型 )** : 負責處理整個表格，主要是針對列
-    > **TableColumnModel ( 表格欄模型 )** : 負責處理欄
+    > **TableModel ( 表格模型 )** : 負責處理整個表格，主要是針對列<br>
+    > **TableColumnModel ( 表格欄模型 )** : 負責處理欄<br>
     > **SelectionModel ( 選取模型 )** : 負責處理資料選取
 * 建構子 Constructor
 ```java
@@ -623,16 +623,16 @@ JTable(Vector rowData, Vector columnNames) //可變資料
 
 
 ### 概念解析
-* **JFrame** --- 它是螢幕上視窗的對象，能夠最大化、最小化、關閉。
-* **JPanel** --- 面板容器，包含在 javax.swing 包中，可以进行嵌套，功能是對視窗中具有相同邏輯功能的組件進行組合，可以加入到 JFrame 視窗中。
-* **JLabel** --- 可以顯示文字、圖像或同時顯示，在顯示區預設為垂直置中。透過設置垂直和水平對齊方式，指定標籤內容對齊方向：文字標籤是靠左對齊、圖片標籤是水平置中。
-* **JTextField** --- 可編輯單行文字
-    > `JTextField()` 構造一個新的 TextField
-    > `JTextField(int columns)` 構造一個具有指定列數的新的空 TextField
-    > `JTextField(String text)` 構造一個用指定文字初始化的新 TextField
-    > `JTextField(String text, int columns)` 構造一個用指定文字和列初始化的新 TextField
-* **JPasswordField** --- 允許編輯單行文字，但會用隱藏星號 ( * )  或點點顯示 ( 密碼形式 )。
-* **JButton** --- 創建按鈕。
+* **JFrame**：它是螢幕上視窗的對象，能夠最大化、最小化、關閉。
+* **JPanel**：面板容器，包含在 javax.swing 包中，可以进行嵌套，功能是對視窗中具有相同邏輯功能的組件進行組合，可以加入到 JFrame 視窗中。
+* **JLabel**：可以顯示文字、圖像或同時顯示，在顯示區預設為垂直置中。透過設置垂直和水平對齊方式，指定標籤內容對齊方向：文字標籤是靠左對齊、圖片標籤是水平置中。
+* **JTextField**：可編輯單行文字<br>
+    > `JTextField()`：構造一個新的 TextField<br>
+    > `JTextField(int columns)`：構造一個具有指定列數的新的空 TextField<br>
+    > `JTextField(String text)`：構造一個用指定文字初始化的新 TextField<br>
+    > `JTextField(String text, int columns)`：構造一個用指定文字和列初始化的新 TextField
+* **JPasswordField**：允許編輯單行文字，但會用隱藏星號 ( * )  或點點顯示 ( 密碼形式 )。
+* **JButton**：創建按鈕。
 
 ### Layout
 #### BorderLayout
@@ -668,7 +668,7 @@ jframe.setLayout(layout);
 ```
 
 #### GridLayout
-![](https://i.imgur.com/KY9V4S6.png =350x)
+![](https://i.imgur.com/KY9V4S6.png)
 * GridLayout 所切割出來的版面就如同表格版整齊。
 * 加入的元件會按照順序從左到右從上到下擺放，所以無法直接指定要擺放的區域。
 * 元件放入後會變成方形，所以不適合加入 JButton 這類元件。
@@ -788,10 +788,10 @@ out.println(gson.toJson(user));
 ```
 
 #### 內建物件
-* `request` the HttpServletRequest
-* `response` the HttpServletResponse
-* `session` the HttpSession associated with the request
-* `out` the Writer used to send output to the client
+* `request`：the HttpServletRequest
+* `response`：the HttpServletResponse
+* `session`：the HttpSession associated with the request
+* `out`：the Writer used to send output to the client
     > Writer：a buffered vertion of type JspWriter
-* `application` the ServletContext
+* `application`：the ServletContext
 this is a data structure shared by all servlets and JSP pages in the web application and is good for storing shared data
