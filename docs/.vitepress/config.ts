@@ -38,6 +38,9 @@ export default defineConfig({
           { text: 'Linux Notes', link: '/notes/misc/linux-notes.md' },
           { text: 'Python Notes', link: '/notes/misc/python-notes.md' },
           { text: 'Java Notes', link: '/notes/misc/java-notes.md' },
+          { text: 'ROS Notes', link: '/notes/misc/ros-notes.md' },
+          { text: 'ROS Files', link: '/notes/misc/ros-files.md' },
+          { text: 'Launch Notes', link: '/notes/misc/launch-notes.md' },
         ]
       }
     ],
