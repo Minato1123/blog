@@ -34,7 +34,7 @@ export default defineConfig({
         collapsible: true,
         items: [
           { text: 'Git Notes', link: '/notes/misc/git-notes.md' },
-          { text: 'Sql Notes', link: '/notes/misc/sql-notes.md' },
+          { text: 'SQL Notes', link: '/notes/misc/sql-notes.md' },
           { text: 'Linux Notes', link: '/notes/misc/linux-notes.md' },
           { text: 'Python Notes', link: '/notes/misc/python-notes.md' },
           { text: 'Java Notes', link: '/notes/misc/java-notes.md' },

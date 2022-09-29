@@ -185,8 +185,22 @@ import FoldCode from '../.vitepress/components/FoldCode.vue'
   ### 函式庫
   * [Validator.js](https://github.com/validatorjs/validator.js)
     > 此函式庫僅驗證和清理 Strings（請注意輸入是否為 String）
-  ### CSS Media
-  * `max-width`，表示這個數字以下（包含）的都適用。(<=)
-  * `min-width`，表示這個數字以上（包含）的都適用。(>=)
+  ### CSS
+  * CSS Media
+    > `max-width`：表示這個數字以下（包含）的都適用。(<=)<br>
+    > `min-width`：表示這個數字以上（包含）的都適用。(>=)
 
+## 111/09/29
+  ### CSS
+  * `absolute` 垂直水平置中
+    ```CSS
+    .content {
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    ```
+    > `translate(-50%, -50%)`：讓物件的 X 軸移動 `-50%`（物件本身的寬度是 100%）<br>
+    > 大概意思是將物件的對齊點改到物件的正中間。
 
