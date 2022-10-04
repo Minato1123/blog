@@ -16,6 +16,7 @@ export default defineConfig({
         collapsible: true,
         items: [
           { text: 'Sep. 2022', link: '/daily-log/sep2022' },
+          { text: 'Oct. 2022', link: '/daily-log/oct2022' },
         ]
       },
       {
