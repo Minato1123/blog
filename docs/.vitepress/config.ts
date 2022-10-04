@@ -15,7 +15,7 @@ export default defineConfig({
         text: '學習隨記',
         collapsible: true,
         items: [
-          { text: '隨記 EP1', link: '/daily-log/ep-1' },
+          { text: 'Sep. 2022', link: '/daily-log/sep2022' },
         ]
       },
       {
