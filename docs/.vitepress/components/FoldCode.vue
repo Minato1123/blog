@@ -21,6 +21,7 @@ let isCodeFolded = ref(false)
 <style scoped lang="scss">
   .fold-container {
     position: relative;
+    margin-top: 3rem;
   }
 
   .fold-btn {
