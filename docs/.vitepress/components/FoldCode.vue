@@ -28,7 +28,7 @@ let isCodeFolded = ref(false)
     position: absolute;
     top: -3rem;
     right: 0rem;
-    z-index: 100;
+    z-index: 8;
     display: flex;
     align-items: center;
     background: transparent;
