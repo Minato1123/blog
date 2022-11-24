@@ -17,6 +17,7 @@ export default defineConfig({
         items: [
           { text: 'Sep. 2022', link: '/daily-log/sep2022' },
           { text: 'Oct. 2022', link: '/daily-log/oct2022' },
+          { text: 'Nov. 2022', link: '/daily-log/nov2022' },
         ]
       },
       {
@@ -28,6 +29,7 @@ export default defineConfig({
           { text: 'JS DOM Event', link: '/notes/front-end/js-dom-event' },
           { text: 'JS DOM API', link: '/notes/front-end/js-dom-api' },
           { text: 'CSS BEM', link: '/notes/front-end/css-bem' },
+          { text: 'Package.json', link: '/notes/front-end/package-json' },
         ]
       },
       {
