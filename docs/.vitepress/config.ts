@@ -26,9 +26,11 @@ export default defineConfig({
         items: [
           { text: 'TS Notes', link: '/notes/front-end/ts-notes' },
           { text: 'JS Promise', link: '/notes/front-end/js-promise' },
+          { text: 'JS Prototype', link: '/notes/front-end/js-prototype' },
           { text: 'JS DOM Event', link: '/notes/front-end/js-dom-event' },
           { text: 'JS DOM API', link: '/notes/front-end/js-dom-api' },
           { text: 'CSS BEM', link: '/notes/front-end/css-bem' },
+          { text: 'Axios Notes', link: '/notes/front-end/axios' },
           { text: 'Package.json', link: '/notes/front-end/package-json' },
         ]
       },
