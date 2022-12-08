@@ -7,13 +7,13 @@ type Name = string;
 ```
 ### ＃Array
 
--**Type**
+**Type**
 
 ```typescript
-type Names = string[];
-type Names = Array<string>;
+type Names = string[]
+type Names = Array<string>
 ```
--**Interface**
+**Interface**
 
 ```typescript
 interface Names {
@@ -24,19 +24,20 @@ interface Names {
 ### ＃Tuples
 
 ```typescript
-type Point = [number, number];
+type Point = [number, number]
 ```
+
 :::warning
 後續仍可以做 `push` 的動作，TS 不會出現警告。
 :::
 
 ### ＃Function 
--**Type**
+**Type**
 
 ```typescript
-type Log = (message: string) => void;
+type Log = (message: string) => void
 ```
--**Interface**
+**Interface**
 
 ```typescript
 interface Log {
@@ -47,19 +48,19 @@ interface Log {
 ### ＃Union Types
 
 ```typescript
-type Status = "pending" | "working" | "complete";
+type Status = "pending" | "working" | "complete"
 ```
 
 ### ＃Objects
-- **Type**
+**Type**
 
 ```typescript
 type Person = {
   name: string;
   score: number;
-};
+}
 ```
-- **Interface**
+**Interface**
 
 ```typescript
 interface Person {
@@ -69,24 +70,24 @@ interface Person {
 ```
 
 ### ＃Composing Objects
-- **Type**
+**Type**
 ```typescript
 type Name = {
   firstName: string;
   lastName: string;
-};
+}
 
 type PhoneNumber = {
   landline: string;
   mobile: string;
-};
+}
 
-type Contact = Name & PhoneNumber;
+type Contact = Name & PhoneNumber
 ```
 :::warning
 `interface` 也可以被組進 `type`。
 :::
-- **Interface**
+**Interface**
 
 ```typescript
 interface Name {
@@ -102,19 +103,23 @@ interface PhoneNumber {
 interface Contact extends Name, PhoneNumber {}
 ```
 
-### ＃Authoring a Library
+### Authoring a Library
+
 ```typescript
 interface ButtonProps {
   text: string;
-  onClick: () => void;
+  onClick: () => void ;
 }
 
 interface ButtonProps {
   id: string;
 }
 ```
+
 :::tip
 重複名稱會造成 ButtonProps 的結果型別組合在一起：
+
+
 ```typescript
 interface ButtonProps {
   text: string;
@@ -122,24 +127,73 @@ interface ButtonProps {
   id: string;
 }
 ```
+
 :::
+
 :::danger
 `type` 不允許相同名稱。
 :::
 
-class 包含 method implementation
+### implements
+
+Class 會用 `implements` 指定要實作的 `Interface` ，一旦指定了就得把 `Interface` 內所有的 `Method` 和 `Property` 給實作。<br>
+而 Class 還是可以寫下 `Interface` 內沒有描述到的 `Method` 和 `Property`，因為 `Interface` 只是約束了最低需要哪些行為而已。
+
+```typescript
+interface TheCar {
+  name: string;
+  move(): void;
+}
+
+class Car implements TheCar {
+  name: string
+
+  constructor(name: string) {
+    this.name = name
+  }
+
+  move(): void {
+    console.log('開始加速')
+  }
+}
+```
+
+而且，一個 Class 也能夠同時被多個 `Interface` 給約束，每個 `Interface` 間使用逗號間隔。
+
+```typescript
+class Car implements TheCarA, TheCarB {
+  ...
+}
+```
+參考資料：https://medium.com/enjoy-life-enjoy-coding/typescript-%E5%BE%9E-ts-%E9%96%8B%E5%A7%8B%E5%AD%B8%E7%BF%92%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91-interface-%E7%94%A8%E6%B3%95-77fd0959769f
+
 
 ## Type Guard
 
-`typeof`：用於 primitive type
+* `typeof`：用於 primitive type
+* `instanceof`：用於 class
+* `in`：用於 object（檢查 object 是否有此屬性）
+* `propertyName in objectVariable;`：回傳 `true` 或 `false`
+* `extends`：限制泛型可被代入的型別（generic constraints）或是作為型別的條件判斷（conditional types）
+  > 假設現在我們希望限制這個 T 只能是數值（number）的話，可以搭配 `extends` 寫成 `<T extends number>`，意思就是限制使用者帶入的泛型。<br>
+  > T 需要是 number 的子集合
+  > ```typescript
+  > function getFirstElement<T>(arr: T[]): T {
+  >   const [firstElement] = arr;
+  >   return firstElement;
+  > }
+  > ```
+  > 更精確的來說，應該是指「 T 要是 number 的子集合（subset）」。
 
-`instanceof`：用於 class
-
-`in`：用於 object（檢查 object 是否有此屬性）
-
-`propertyName in objectVariable;`：回傳 `true` 或 `false`
-
-`extends`：
+:::tip extends 擴展某一個 interfaces
+```typescript
+interface A extends B {
+  firstName: string;
+  lastName: string;
+}
+```
+:::
+參考資料：https://ithelp.ithome.com.tw/articles/10266542
 
 ## Immutable
 
