@@ -18,6 +18,7 @@ export default defineConfig({
           { text: 'Sep. 2022', link: '/daily-log/sep2022' },
           { text: 'Oct. 2022', link: '/daily-log/oct2022' },
           { text: 'Nov. 2022', link: '/daily-log/nov2022' },
+          { text: 'Dec. 2022', link: '/daily-log/dec2022' },
         ]
       },
       {
