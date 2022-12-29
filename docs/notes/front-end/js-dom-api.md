@@ -20,9 +20,20 @@ document.querySelectorAll('...')
 ```
 
 ## DOM 節點的類型
-![](https://i.imgur.com/k88Yo9o.png)
+
+| 節點類型（nodeType） | 對應數值 | 說明 | 範例 |
+| --- | :---: | --- | --- |
+| ELEMENT_NODE | 1 | HTML 元素的 Element 節點 | `<body>`、`<a>` |
+| ATTRIBUTE_NODE | 2 | HTML 元素的屬性 | `class="funEdges"` |
+| TEXT_NODE | 3 | 實際文字節點 | 換行、空格 |
+| COMMENT_NODE | 8 | 註解節點 | `<!-- something -->` |
+| DOCUMENT_NODE | 9 | 根節點 | `window.document` |
+| DOCUMENT_TYPE_NODE | 10 | 文件類型的 DocumentType 節點 | `<!DOCTYPE html>` |
+| DOCUMENT_FRAGMENT_NODE | 11 | DocumentFragment 節點 | `document.createDocumentFragment()` |
+
+
 ```javascript
-節點.nodeType === 節點類型常數
+節點.nodeType === 節點類型
 節點.nodeType === 對應數值
 ```
 
