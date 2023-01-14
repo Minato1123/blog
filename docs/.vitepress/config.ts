@@ -10,7 +10,7 @@ export default defineConfig({
   base: '/blog/',
   description: 'A blog about my learning journey',
   head: [
-    ['link', { rel: "shortcut icon", href: "/.vitepress/images/favicon.ico"}],
+    ['link', { rel: "shortcut icon", href: "/favicon.ico"}],
   ],
   themeConfig: {
     sidebar:[
