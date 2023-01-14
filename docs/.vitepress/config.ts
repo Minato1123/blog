@@ -9,6 +9,9 @@ export default defineConfig({
   title: "Carrie's Blog",
   base: '/blog/',
   description: 'A blog about my learning journey',
+  head: [
+    ['link', { rel: "shortcut icon", href: "/.vitepress/images/favicon.ico"}],
+  ],
   themeConfig: {
     sidebar:[
       {
@@ -19,6 +22,7 @@ export default defineConfig({
           { text: 'Oct. 2022', link: '/daily-log/oct2022' },
           { text: 'Nov. 2022', link: '/daily-log/nov2022' },
           { text: 'Dec. 2022', link: '/daily-log/dec2022' },
+          { text: 'Jan. 2023', link: '/daily-log/jan2023' },
         ]
       },
       {
