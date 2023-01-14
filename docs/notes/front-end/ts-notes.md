@@ -165,7 +165,7 @@ class Car implements TheCarA, TheCarB {
   ...
 }
 ```
-參考資料：https://medium.com/enjoy-life-enjoy-coding/typescript-%E5%BE%9E-ts-%E9%96%8B%E5%A7%8B%E5%AD%B8%E7%BF%92%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91-interface-%E7%94%A8%E6%B3%95-77fd0959769f
+[⋯ Reference](https://medium.com/enjoy-life-enjoy-coding/typescript-%E5%BE%9E-ts-%E9%96%8B%E5%A7%8B%E5%AD%B8%E7%BF%92%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91-interface-%E7%94%A8%E6%B3%95-77fd0959769f)
 
 
 ## Type Guard
@@ -193,7 +193,7 @@ interface A extends B {
 }
 ```
 :::
-參考資料：https://ithelp.ithome.com.tw/articles/10266542
+[⋯ Reference](https://ithelp.ithome.com.tw/articles/10266542)
 
 ## Immutable
 

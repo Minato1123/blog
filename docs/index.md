@@ -12,6 +12,7 @@
     About Me
   </div>
   <div class="content">
+    我是 Carrie，也很常使用 Minato 這個名字。<br>
     目前就讀於元智大學，接觸前端網頁後決定往這條路繼續走下去的平凡快畢業焦慮大學生。
   </div>
 </div>

@@ -1,8 +1,9 @@
 # package.json
 常見配置項：
 ![](https://www.readfog.com/assets/12/8d/a08e5b4dc9ec5eab1fa9f4fa83f3.png)
-圖片 / 參考來源：https://blog.csdn.net/qiwoo_weekly/article/details/125270150<br>
-npm `package.json`：https://docs.npmjs.com/cli/v9/configuring-npm/package-json
+[⋯ Reference](https://blog.csdn.net/qiwoo_weekly/article/details/125270150)
+<span style="margin-right: 0.5rem;"></span>
+[⋯ npm](https://docs.npmjs.com/cli/v9/configuring-npm/package-json)
 ## <b>必須屬性</b>
 如果沒有此兩項屬性，就無法正常執行 `npm install` 命令。<br>
 npm 規定 package.json 文件是由名稱和版本號作爲唯一標識符的。 

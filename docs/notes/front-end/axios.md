@@ -1,7 +1,8 @@
 # axios
 axios 是一個以 `Promise` 為基礎的 HHTP 請求工具，可以在瀏覽器與 `Node.js` 中被應用，在伺服器端也可以使用 `Node.js` 的 http module，而在用戶端中使用則可以使用 XMLHttpRequests。<br>
-* 參考來源：https://ithelp.ithome.com.tw/articles/10253259
-* Github：https://github.com/axios/axios
+[⋯ Reference](https://ithelp.ithome.com.tw/articles/10253259) 
+<span style="margin-right: 0.5rem;"></span>
+[⋯ GitHub](https://github.com/axios/axios)
 
 ## 特性
 * 從瀏覽器中發送 XMLHttpRequests

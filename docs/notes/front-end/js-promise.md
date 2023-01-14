@@ -111,7 +111,7 @@ async function getData() {
 }
 ```
 
-參考資料：https://www.casper.tw/development/2020/10/16/async-await/
+[⋯ Reference](https://www.casper.tw/development/2020/10/16/async-await/)
 
 ### 搭配 `Promise.all` 使用
 ```js
@@ -179,4 +179,4 @@ async function doubleAndAdd(a, b) {
   }
 })()
 ```
-參考資料：https://pjchender.dev/javascript/js-async-await/
+[⋯ Reference](https://pjchender.dev/javascript/js-async-await/)

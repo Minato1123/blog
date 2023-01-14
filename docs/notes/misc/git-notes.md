@@ -166,5 +166,6 @@ Commands:
 * [製作更新檔 ( Patch )](https://gitbook.tw/chapters/github/patch.html)
 
 ## 來源參考
-1. Git 基礎筆記：https://hackmd.io/@DevilTea/Sy4fZo0-S
-2. 為你自己學 Git：https://gitbook.tw/
+[⋯ Git 基礎筆記](https://hackmd.io/@DevilTea/Sy4fZo0-S)
+<span style="margin-right: 0.5rem;"></span>
+[⋯ 為你自己學 Git](https://gitbook.tw/)
