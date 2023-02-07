@@ -23,6 +23,7 @@ export default defineConfig({
           { text: 'Nov. 2022', link: '/daily-log/nov2022' },
           { text: 'Dec. 2022', link: '/daily-log/dec2022' },
           { text: 'Jan. 2023', link: '/daily-log/jan2023' },
+          { text: 'Feb. 2023', link: '/daily-log/feb2023' },
         ]
       },
       {
