@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import slide1Url from './images/slide-1.jpeg'
 import slide2Url from './images/slide-2.jpeg'
 import slide3Url from './images/slide-3.jpeg'
@@ -137,6 +138,7 @@ watch(
     position: absolute;
     bottom: 3%;
     left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,19 +1,22 @@
 <script setup lang="ts">
-let isCodeFolded = ref(false)
+import { ref } from 'vue'
+let isCodeFolded = ref(true)
 </script>
 
 
 <template>
   <div class="fold-container">
     <button class="fold-btn close-btn" v-show="!isCodeFolded" @click="isCodeFolded = true">
-      <span>折疊程式碼</span><icon-mdi-arrow-up-drop-circle-outline />
+      <span class="title">折疊程式碼</span><icon-mdi-arrow-up-drop-circle-outline />
     </button>
     <button class="fold-btn open-btn" v-show="isCodeFolded" @click="isCodeFolded = false">
-      <span>展開程式碼</span><icon-mdi-arrow-down-drop-circle-outline />
+      <span class="title">展開程式碼</span><icon-mdi-arrow-down-drop-circle-outline />
     </button>
-    <div class="fold-code" v-show="!isCodeFolded">
-      <slot />
-    </div>
+    <Transition name="code-fade">
+      <div class="fold-code"  v-if="!isCodeFolded">
+        <slot />
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -22,12 +25,13 @@ let isCodeFolded = ref(false)
   .fold-container {
     position: relative;
     margin-top: 3rem;
+
   }
 
   .fold-btn {
     position: absolute;
     top: -3rem;
-    right: 0rem;
+    left: 0rem;
     z-index: 8;
     display: flex;
     align-items: center;
@@ -37,6 +41,11 @@ let isCodeFolded = ref(false)
     cursor: pointer;
     padding: 0.5rem;
     color: #ad2f09;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.6;
+    }
 
     span {
       margin-right: 0.5rem;
@@ -45,10 +54,29 @@ let isCodeFolded = ref(false)
     }
     
     .svg-icon {
-      width: 2rem;
-      height: 2rem;
+      width: 1.6rem;
+      height: 1.6rem;
       color: #ad2f09;
     }
   }
 
+  .line {
+    height: 1px;
+    width: 50%;
+    background: #ad2f09;
+  }
+
+  .code-fade-enter-active {
+    transition: all 0.3s ease-out;
+  }
+
+  .code-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .code-fade-enter-from,
+  .code-fade-leave-to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
 </style>
