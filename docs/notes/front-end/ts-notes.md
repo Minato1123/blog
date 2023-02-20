@@ -195,10 +195,17 @@ interface A extends B {
 :::
 [⋯ Reference](https://ithelp.ithome.com.tw/articles/10266542)
 
+## Conditional Types
+* `infer`：必須使用在「條件類型的子句」，也就是 `extends` 後面、`?` 前面的位置。
+```ts
+type Item<T> = T extends (infer U)[] ? U : never;
+```
+[⋯ Reference](https://chentsulin.medium.com/typescript-infer-%E7%9A%84%E5%BC%B7%E5%A4%A7%E5%8A%9F%E7%94%A8-9b43c4eac6fb)
+
 ## Immutable
 
 
-| 方法 | 編輯階段 | 執行階段 | Column 3 |
+| 方法 | 編輯階段 | 執行階段 | 限制對象 |
 | -------- | -------- | -------- | --- |
 | `readonly` | 警告 | 仍可執行 | 寫在誰前面就限制誰 |
 | `Readonly<T>` | 警告 | 仍可執行 | 只限制最外層 |
