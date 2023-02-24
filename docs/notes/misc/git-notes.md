@@ -77,7 +77,7 @@
     > 指會在本機建立一個名為追蹤分支（tracking branch）的東西
 - `git remote add upstream <GitHub url>`：加上另一個遠端節點 ( 通常是 Fork 時原作的專案 )
 - `git push <remote> :<remote branch>`：刪除遠端分支
-:::danger
+:::danger 注意
 分支只是一個指向某個 Commit 的指標！
 :::
 
@@ -133,9 +133,35 @@ Commands:
 1. 新增需要的 commit
 1. `git rebase --continue` 繼續剛剛中斷的 Rebase 
 
-## Git Flow
-1. [Git Flow 是什麼？](https://gitbook.tw/chapters/gitflow/why-need-git-flow.html)
-1. [如何安裝以及使用 Git Flow](https://github.com/nvie/gitflow)
+## [Git Flow]((https://github.com/nvie/gitflow))
+### 長期分支
+* `master`
+  > 主要用來放穩定、隨時可上線的版本。<br>
+  > 這個分支的來源只能從別的分支合併過來，開發者不會直接 Commit 到這個分支。<br>
+  > 因為是穩定版本，所以通常會在這個分支上的 Commit 上打上版本號標籤。
+* `develop`
+  > 主要是所有開發的基礎分支。<br>
+  > 要新增功能時，所有的 `feature` 分支都是從這個分支切出去的。<br>
+  > 而 `feature` 分支的功能完成後，也都會合併回來這個分支。
+### 短期分支
+* `hotfix`
+  > 當線上產品發生緊急問題的時候，會從 `master` 分支開一個 `hotfix` 分支出來進行修復。<br>
+  > `hotfix` 分支修復完成之後，會合併回 `master` 分支，也同時會合併一份到 `develop` 分支。
+
+:::warning 為什麼要合併回 `develop` 分支？
+如果不這麼做，等到 `develop` 分支完成並且合併回 `master` 分支的時候，問題再次出現了。
+:::
+:::warning 為什麼不直接從 `develop` 分支切出來修？
+因為 `develop` 分支的功能可能尚在開發中，這時候硬是要從這裡切出去修再合併回 `master` 分支，只會造成更大的災難。
+:::
+
+* `release`
+  > 當認為 `develop` 分支足夠成熟了，就可以把 `develop` 分支合併到 `release` 分支，在這邊進行算是上線前的最後測試。<br>
+  > 測試完成後，`release` 分支將會同時合併到 `master` 以及 `develop` 這兩個分支上。<br>
+  > `master` 分支是上線版本，而合併回 `develop` 分支的目的是因為可能在 `release` 分支上還會測到並修正一些問題，所以需要跟 `develop` 分支同步，免得之後的版本又再度出現同樣的問題。
+* `feature`
+  > 需要新增功能時就是使用 `feature` 分支。<br>
+  > `feature` 分支都是從 `develop` 分支來的，完成之後會再併回 `develop` 分支。
 
 ## Commit 提交描述
 - `feat`：新功能
