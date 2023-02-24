@@ -1,4 +1,12 @@
 # TS Notes
+
+<a href="./type-challenges">
+  <div class="note-link">
+    ► Type Challenges Notes
+  </div>
+</a>
+
+
 ## Type VS Interface
 
 ### ＃Primitive Types
@@ -211,3 +219,15 @@ type Item<T> = T extends (infer U)[] ? U : never;
 | `Readonly<T>` | 警告 | 仍可執行 | 只限制最外層 |
 | `Object.freeze()` | 警告 | 不可執行 | 只限制最外層 |
 | `as const` | 警告 | 不可執行 | 從外到內每層都限制 |
+
+
+<style>
+  .note-link {
+    margin-top: 1.5rem;
+    padding: 1.2rem 0 1.2rem 1rem;
+    font-size: 1.2rem;
+    border: 0.1rem solid var(--vp-c-brand);
+    border-radius: 1rem;
+  }
+
+</style>
