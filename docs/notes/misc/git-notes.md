@@ -133,7 +133,7 @@ Commands:
 1. 新增需要的 commit
 1. `git rebase --continue` 繼續剛剛中斷的 Rebase 
 
-## [Git Flow]((https://github.com/nvie/gitflow))
+## [Git Flow](https://github.com/nvie/gitflow)
 ### 長期分支
 * `master`
   > 主要用來放穩定、隨時可上線的版本。<br>
