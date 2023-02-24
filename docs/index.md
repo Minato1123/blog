@@ -5,15 +5,15 @@
 <div class="dog-img">
 </div>
 <div class="content">
-  這是我家狗狗很可愛給你看一下。
+  ↗ 這是我家狗狗很可愛給你看一下。
 </div>
 <div class="about-me-container">
   <div class="sub-title">
     About Me
   </div>
   <div class="content">
-    我是 Carrie / Minato。<br>
-    目前就讀於元智大學，接觸前端網頁後決定往這條路繼續走下去的平凡快畢業焦慮大學生。
+    Carrie, or Minato.<br>
+    元智大學通訊四年級，想成為前端工程師。
   </div>
 </div>
 <div class="about-blog-container">
@@ -35,7 +35,7 @@
   }
 
   .dog-img {
-    margin-top: 1.2rem;
+    margin-top: 1.5rem;
     background-image: url(./.vitepress/images/dogdog.jpg);
     background-position: center;
     background-size: 200%;
