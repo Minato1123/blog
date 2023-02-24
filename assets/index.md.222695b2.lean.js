@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a,a as d}from"./app.ca342642.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md"}'),i={name:"index.md"},s=d("",5),o=[s];function _(n,c,v,r,l,b){return t(),a("div",null,o)}const m=e(i,[["render",_],["__scopeId","data-v-b54954fe"]]);export{p as __pageData,m as default};
