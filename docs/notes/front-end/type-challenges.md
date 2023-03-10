@@ -197,6 +197,216 @@ type LengthOfString<S extends string, T extends string[] = []> =
 ```
 > 當 S 只有一個字（例如：`'x'`），`R` 會取到 `x`，`Rest` 會取到 `''`，所以 `S extends ${infer R}${infer Rest}` 的結果仍會是 `true`。
 
+### 527 - Append to object
+```typescript
+type AppendToObject<T extends Object, U extends string, V extends any> = T & {
+    [K in U]: V
+  }
+```
+> 這樣寫的型別會變成 `TypeA & {...}`，和併成一整個物件型別不一定相同（若有相同 `key` 的情況下型別可能會不同）。
+> 要寫成 `K in U` 才會進行迭代。
+```typescript
+type AppendToObject<T, U extends string, V> = 
+  Omit<T & { [P in U]: V }, never>
+```
+```typescript
+type AppendToObject<T, U extends string, V> = 
+  T & { [K in U]: V } extends infer A
+    ? { [K in keyof A]: A[K] } 
+    : never
+```
+> `Omit<T, never>` 或利用 `extends infer A` 可以將 & 的物件型別們合併在一起。
+
+
+### 529 - Absolute
+```typescript
+type AAA = Absolute<9_999n> // "9999"
+
+type Absolute<T extends number | string | bigint> = `${T}`
+```
+```typescript
+type AAA = Absolute<9_999n> // 9999n
+
+type Absolute<T extends number | string | bigint> = T
+```
+> * `bigint`：`123n`（末尾有 `n`）
+> 
+> 在 TypeScript 中，透過 `${}` 將陣列轉換為字串時，編譯器會自動進行轉換，因此透過 `${T}` 可以直接取得轉換後的 `9999`。
+
+### 599 - Merge
+```typescript
+type Merge<F, S> = {
+  [K in keyof F | keyof S]: K extends keyof S
+    ? S[K]
+    : K extends keyof F
+      ? F[K]
+      : never
+}
+```
+> `[K in keyof F | keyof S]` 無法直接取 `S[K]`，需要透過 `K extends keyof S`。
+
+### 612 - KebabCase
+```typescript
+Uncapitalize<T>
+```
+> 將 `T` 字串中的第一個字元轉換為小寫字母。
+```typescript
+Capitalize<T>
+```
+> 將 `T` 字串中的第一個字元轉換為大寫字母。
+```typescript
+Lowercase<T>
+```
+> 將 `T` 字串中的每個字元轉換為小寫字母。
+
+### 645 - Diff
+```typescript
+type O = {
+  name: string
+  age: string
+}
+
+type O1 = {
+  name: string
+  age: string
+  gender: number
+}
+```
+> 型別們：
+> ```typescript
+> keyof O & keyof O1    // "name" | "age"
+> 
+> keyof O | keyof O1    // "name" | "age" | "gender"
+> 
+> keyof (O & O1)        // "name" | "age" | "gender"
+> ```
+
+```typescript
+type Diff<O, O1> = {
+  [K in (keyof O | keyof O1) as Exclude<K, keyof O & keyof O1>]: (O & O1)[K]
+}
+```
+```typescript
+type Diff<O, O1> = {
+  [K in keyof (O & O1) as K extends keyof (O | O1) ? never : K]: (O & O1)[K]
+}
+```
+> 這裡的 `as` 是可以進一步對迭代到的 `K` 進行操作。<br>
+> key 為 `never` 的話會直接去掉此項。
+
+### 949 - AnyOf
+```typescript
+type AnyOf<T extends readonly any[]> = T extends [infer R, ...infer Rest] 
+  ? R extends 0 | '' | false | [] | { [x: string]: never } | undefined | null
+    ? AnyOf<Rest>
+    : true
+  : false
+```
+> 檢查空物件不能直接寫 `{}`，要用 `{ [x: string]: never }` 或 `Record<string, never>`。
+
+### 1097 - IsUnion
+```typescript
+type IsUnion<T, K = T> = [T] extends [never] 
+  ? false 
+  : T extends K 
+    ? [K] extends [T] ? false : true 
+    : never
+```
+> 在 `T extends K` 的這行就會觸發分配性了，只是通常要再下一行才能進行其他操作。<span class="span-mb"></span>
+> `[K] extends [T]` 是將 `K` 和 `T` 包在 Tuple 裡，為了不要觸發分配性。
+
+
+### 1367 - Remove Index Signature
+> 將 `[key: any]: any`（Index Signature）去除。
+
+```typescript
+type PropertyKey = string | number | symbol
+```
+```typescript
+type RemoveIndexSignature<T, P = PropertyKey> = {
+  [
+    K in keyof T as P extends K
+    ? never 
+    : K extends P 
+      ? K 
+      : never
+  ]: T[K]
+}
+```
+> `K in keyof T as P extends K` 透過前面的 `K in keyof T` 拿到迭代的 `K`，即可列成條件 `P extends K`。<span class="span-mb"></span>
+> 留下 `P extends K` 不成立 ＆ `K extends P` 成立的情況。
+
+### 2257 - MinusOne
+```typescript
+type S = '12345' // '123'
+type N = S extends `${infer R extends number}` ? R : never // 123
+```
+> 可以將型別 `"123"` 轉換成型別 `123`。
+
+```typescript
+type NumberLiteral = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+type S = '12345' // "12345"
+type RemoveLastChar = S extends `${infer Rest}${NumberLiteral}` // "1234"
+  ? S extends `${Rest}${infer Last extends NumberLiteral}`
+    ? Rest 
+    : never
+  : never
+```
+> 透過此方式可以取得 `Rest`：去除最後一項字元的字串及 `Last`：最後一項字元。
+
+### 2757 - PartialByKeys
+```typescript
+Partial<T>
+```
+> 建構一個型別，其中 `T` 的所有屬性都被設置為 optional。
+
+### 2759 - RequiredByKeys
+```typescript
+{
+  [P in keyof T as P extends K ? P : never]-?: T[P]
+}
+```
+> 可以透過 `-?` 將 optional 改為 required。
+
+### 2793 - Mutable
+```typescript
+type Mutable<T extends Record<string, any> | readonly any[]> = {
+  -readonly [K in keyof T]: T[K]
+}
+```
+> 可以透過 `-readonly` 將 readonly 屬性去除。
+
+### 2946 - ObjectEntries
+```typescript
+type ObjectEntries<T> = {
+  [K in keyof T]-?: 
+    [K, T[K] extends (infer L | undefined) 
+      ? L 
+      : T[K]
+    ]
+}[keyof T]
+```
+> 只有 `{}` 區塊的話會拿到：
+> ```typescript
+> type AAA = {
+>   name: ["name", string]
+>   age: ["age", number]
+>   locations: ["locations", string[] | null]
+> }
+> ```
+> 再透過 `[keyof T]` 取得各項 key 的值。
+
+### 3188 - Tuple to Nested Object
+```typescript
+type TupleToNestedObject<T extends string[], U> = 
+  T extends [infer R extends string, ...infer Rest extends string[]] 
+    ? { [K in R]: TupleToNestedObject<Rest, U> }
+    : U
+```
+> 使用 `[K in R]` 而不是 `[K in keyof R]`，因為 `R` 不是物件型別。<span class="span-mb"></span>
+> 除了用 `infer R extends string` 做限制之外，在 key 的地方寫成 `[K in R & string]` 也可以。
+
 
 <style>
   .span-mb {
