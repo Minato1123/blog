@@ -24,6 +24,24 @@
     從以前就養成做筆記的習慣，喜歡把學到的東西做成筆記寫下來，幫助記憶的同時也方便以後複習，所以決定將這些有關前端或其他程式的學習過程也整理成筆記，放進這個小小的部落格。
   </div>
 </div>
+<div class="about-blog-container">
+  <div class="sub-title">
+    About Side-Project
+  </div>
+  <div class="content">
+    <div>
+      帕恰購物｜Pochacco Online Store
+    </div>
+    <div >
+      <a class="project-link" href="https://github.com/Minato1123/online-store" target="_blank">
+        • GitHub
+      </a>
+      <a class="project-link" href="https://minato1123.github.io/online-store/" target="_blank">
+        • Demo
+      </a>
+    </div>
+  </div>
+</div>
 
 <style scoped> 
   @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
@@ -58,6 +76,11 @@
   .content {
     text-indent : 1rem;
     margin-top: 1rem;
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 0.2rem;
   }
 
 
