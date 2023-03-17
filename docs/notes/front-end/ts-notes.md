@@ -220,6 +220,38 @@ type Item<T> = T extends (infer U)[] ? U : never;
 | `Object.freeze()` | 警告 | 不可執行 | 只限制最外層 |
 | `as const` | 警告 | 不可執行 | 從外到內每層都限制 |
 
+## Function Overloads 
+（函式超載）<br>
+擴充一個函式可以被執行的形式。<br>
+針對同一個 function 提供多個不同的 type definition。<br>
+可以使用相同的 function 名稱，定義不同的參數數量或型別創建多種方法。
+
+#### 包含兩個部分：
+* overload signatures
+  > type definition 的部分，通常會定義 2 種或以上。
+* function implementation
+  > 實際上執行的 function，它的型別需要滿足所有的 overload signatures。
+
+#### 範例：
+```typescript
+function padding(all: number): object
+function padding(topAndBottom: number, leftAndRight: number): object
+function padding(top: number, right: number, bottom: number, left: number): object
+
+// implementation
+function padding(a: number, b?: number, c?: number, d?: number) {
+  /* ... */
+}
+```
+
+:::warning 注意
+1. 要至少 2 個或以上的 overload signatures
+2. implementation function 帶入的參數型別要兼容 overload signatures 的型別
+:::
+
+[⋯ Reference](https://ithelp.ithome.com.tw/articles/10277785?sc=iThelpR)
+
+
 
 <style>
   .note-link {
