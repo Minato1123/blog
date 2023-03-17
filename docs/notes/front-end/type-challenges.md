@@ -408,6 +408,189 @@ type TupleToNestedObject<T extends string[], U> =
 > 除了用 `infer R extends string` 做限制之外，在 key 的地方寫成 `[K in R & string]` 也可以。
 
 
+### 3196 - Flip Arguments
+```typescript
+T extends (...args: infer A) => any
+```
+> Function 型別可以透過此方式拿到參數型別（將未知數量的參數展開後的型別參考訂為 `A`）。<span class="span-mb"></span>
+> 假設傳入的參數型別是 `(arg0: string, arg1: number, arg2: boolean) => void`。<br>
+> 則推斷完 `A` 的型別為 `[arg0: string, arg1: number, arg2: boolean]
+`
+
+```typescript
+type FlipArguments<T extends (...args: any[]) => any> = 
+  T extends (...args: infer A) => infer R ? (...args: Reverse<A>) => R : never
+```
+> 透過 `...args` 拿到參數陣列 `args` ，而 `args` 型別推斷是 `A`。<br>
+> Function 的參數名稱 `args` 需要一直寫著（實際在寫 Function 的時候本來就會寫）。
+
+### 3243 - FlattenDepth
+```typescript
+type FlattenDepth<A extends any[], N extends number = 1, R extends any[] = []> = 
+  R['length'] extends N 
+    ? A
+    : A extends [infer F, ...infer Rest] 
+      ? F extends any[]
+        ? [...FlattenDepth<F, N, [...R, undefined]>, ...FlattenDepth<Rest, N, R>] 
+        : [F, ...FlattenDepth<Rest, N, R>]
+      : A
+```
+> 利用 `R` 陣列的長度紀錄目前展開幾層，利用 `...` 展開陣列，每次展開都將 `R` 陣列多加一項。
+
+### 3326 - BEM style string
+```typescript
+type BEM<
+  B extends string,
+  E extends string[],
+  M extends string[]
+> = `${B}${
+    E extends [] ? '' : `__${E[number]}`
+  }${
+    M extends [] ? '' : `--${M[number]}`
+  }`
+```
+> 可以直接在 `${}` 裡面做判斷。
+
+### 3376 - InorderTraversal
+Inorder traversal (中序遍歷) 會先拜訪左子節點，再拜訪父節點，最後拜訪右子節點。
+```typescript
+type InorderTraversal<T extends TreeNode | null> = 
+  T extends TreeNode
+    ? [...InorderTraversal<T['left']>, T['val'], ...InorderTraversal<T['right']>]
+    : []
+
+type InorderTraversal<T extends TreeNode | null> = 
+  T extends null
+    ? []
+    : [...InorderTraversal<T['left']>, T['val'], ...InorderTraversal<T['right']>]
+```
+> `T extends TreeNode` 或是 `T extends null` 會讓 `T` 產生分配性。<br>
+> 需要判斷的話可以用 Tuple 包起來，例如： `[T] extends [TreeNode]`。
+
+```typescript
+NonNullable<T>
+```
+> 從型別 `T` 中刪除 `null` 和 `undefined`。
+
+### 4179 - Flip
+```typescript
+type Flip<T extends Record<string, any>> = {
+  [K in keyof T as `${T[K]}`]: K
+}
+```
+> 可以直接寫 `as` 後面作為 key 名稱。
+
+### 4182 - Fibonacci Sequence
+```typescript
+type Fibonacci<
+  T extends number,
+  CurrentIndex extends any[] = [undefined],
+  Prev extends any[] = [],
+  Current extends any[] = [undefined]
+> = CurrentIndex['length'] extends T
+  ? Current['length']
+  : Fibonacci<T, [...CurrentIndex, undefined], Current, [...Prev, ...Current]>
+```
+> 利用陣列 `Current` 的總長度計算 Fibonacci 數列的數字。<br>
+> （目的是拿到總長度，所以塞什麼進陣列都不影響，因此放了 `undefined`）<span class="span-mb"></span>
+> `CurrentIndex` 陣列的總長度是負責記錄是否已達到題目要求（`T`）。
+
+### 4260 - AllCombinations
+```typescript
+type AllCombinations<
+  S extends string,
+  P extends string = ''
+> = S extends `${infer F}${infer Rest}`
+  ? `${F}${AllCombinations<`${P}${Rest}`>}` | AllCombinations<Rest, `${P}${F}`>
+  : ''
+```
+> ![](https://i.imgur.com/u2ASeCW.jpg)
+> 以 `'ABC'` 作為範例的遞迴。<span class="span-mb"></span>
+> [其他解答（１）](https://github.com/type-challenges/type-challenges/issues/5339)<br>
+> [其他解答（２）](https://github.com/type-challenges/type-challenges/issues/16430)
+
+### 4425 - Greater Than
+```typescript
+type GreaterThan<T extends number, U extends number, R extends any[] = []> = 
+  T extends R['length']
+    ? false
+    : U extends R['length']
+      ? true
+      : GreaterThan<T, U, [...R, 1]>
+```
+> 讓 `R['length']` 從 `0` 開始往上加。<br>
+> 若 `T extends R['length']` 成立，則表示 `U` **不可能**大於 `T`。<br>
+> 若 `U extends R['length']` 成立，則表示 `T` **肯定**大於 `T`。
+
+### 4471 - Zip
+```typescript
+[T, U] extends [[infer L, ...infer RestT], [infer R, ...infer RestU]]
+```
+> 可以將多個判斷用 Tuple 包起來做 `extends`。
+
+### 4484 - IsTuple
+```typescript
+number extends T['length']
+```
+> 因為 Tuple 的 `length` 是確切數字（不是單純的 `number`），因此若 `number extends T['length']` 成立則代表 `T` 不是 Tuple。
+
+### 4518 - Fill
+```typescript
+type Fill<
+  T extends unknown[],
+  N,
+  Start extends number = 0,
+  End extends number = T['length'],
+  Count extends any[] = [],
+  Flag extends boolean = Count['length'] extends Start ? true : false
+> = Count['length'] extends End
+  ? T
+  : T extends [infer R, ...infer Rest]
+    ? Flag extends false
+      ? [R, ...Fill<Rest, N, Start, End, [...Count, 0]>]
+      : [N, ...Fill<Rest, N, Start, End, [...Count, 0], true>]
+    : T
+```
+> 當 `Count['length']` 和 `Start` 相同時，`Flag` 標示為 `true`，代表接下來遞迴需要將 `R` 替換成 `N`。<br>
+> 當 `Count['length']` 和 `End` 相同時，代表替換已經結束，直接回傳剩餘的陣列即可（不需要特別將 `Flag` 換回 `false` 繼續跑遞迴）。
+
+### 5117 - Without
+```typescript
+R extends TupleToUnion<U>
+  ? Without<Rest, U, A>
+  : Without<Rest, U, [...A, R]>
+```
+> 這樣的判斷可以改寫成這樣：
+> ```typescript
+> Without<Rest, U, R extends TupleToUnion<U> ? A : [...A, R]>
+> ```
+
+
+### 5317 - LastIndexOf
+```typescript
+type LastIndexOf<T extends unknown[], U> = T extends [...infer Rest, infer Last]
+  ? Equal<Last, U> extends true
+    ? Rest['length']
+    : LastIndexOf<Rest, U>
+  : -1
+```
+> 剛好 `Rest['length']` 取到的值會比 `T['length']` 少 1，所以可以直接拿來當作 `index` 參考。
+
+### 5821 - MapTypes
+```typescript
+type MapTypes<T extends Record<string, any>, R extends {
+  mapFrom: any
+  mapTo: any
+}> = {
+      [K in keyof T]: T[K] extends R['mapFrom'] 
+        ? R extends { mapFrom: T[K] } 
+          ? R['mapTo'] 
+          : never 
+        : T[K]
+    }
+```
+> 因為 `R` 傳入的參數有可能是 Union，因此透過 `R extends { mapFrom: T[K] }` 可以限制這行的 `R` 是哪一項，否則結果也會產生 Union。
+
 <style>
   .span-mb {
     display: block;
