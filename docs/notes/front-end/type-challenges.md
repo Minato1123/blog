@@ -1,7 +1,8 @@
 # Type Challenges Notes
+最近更新日期：2023/03/20
 
 ## Easy
-### 11 - Tuple to Object
+### 11 - Tuple to Object [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00011-easy-tuple-to-object/README.md)
 
 ```typescript
 const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
@@ -20,7 +21,7 @@ type TupleToObject<T extends readonly (string | number)[]> = {
 > 這裡的 `T[number]` 包含 `'tesla'|'model 3'|'model X'|'model Y'`。<span class="span-mb"></span>
 > `number` 指的是 index（全部的數字），有取到的值（e.g. `T[0]`：`'tesla'`）就會存在，沒有取到的值（e.g. `T[5]`：`never`）就是不存在，全部做成 Union 就是 `T[number]` 的結果。
 
-### 14 - First of Array
+### 14 - First of Array [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00014-easy-first/README.md)
 
 ```typescript
 TheType<[3, 2, 1]>
@@ -38,14 +39,14 @@ type First<T extends any[]> = T extends [infer R, ...any[]] ? R : never
 > `infer R` 必須使用在「條件類型的子句」，也就是 `extends` 後面、`?` 前面的位置。<br>
 > 用來推斷此位置的型別（存成變數用在同一行的其他地方）。
 
-### 189 - Awaited
+### 189 - Awaited [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00189-easy-awaited/README.md)
 ```typescript
 PromiseLike<any>
 ```
 > 擁有 `.then()` 方法的物件（thenable），只要有 `.then()` 函式就會將其當做一個 Promise 實例。
 
 
-### 898 - Includes
+### 898 - Includes [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00898-easy-includes/README.md)
 ```typescript
 Equal<U, R>
 ```
@@ -53,7 +54,7 @@ Equal<U, R>
 
 ## Medium
 
-### 3 - Omit
+### 3 - Omit [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00003-medium-omit/README.md)
 ```typescript
 type MyOmit<T, K extends keyof T> = {
   [P in keyof T as P extends K ? never : P]: T[P]
@@ -67,14 +68,14 @@ Exclude<T, K>
 > * Omit：從「物件」屬性內剔除一個或多個屬性
 > * Exclude：從「聯集型別」內剔除一個或多個
 
-### 8 - Readonly 2
+### 8 - Readonly 2 [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00008-medium-readonly-2/README.md)
 ```typescript
 type MyReadonly2<T, K extends keyof T = keyof T> = 
   Readonly<Pick<T, K>> & Omit<T, K>
 ```
 > `<T, K extends keyof T = keyof T>` 的 `= keyof T` 是第二參數的預設值，意即在傳入參數的時候允許只傳入第一個參數。
 
-### 9 - Deep Readonly 
+### 9 - Deep Readonly [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00009-medium-deep-readonly/README.md)
 ```typescript
 type DeepReadonly<T> = T extends Function 
   ? T 
@@ -103,7 +104,7 @@ type DeepReadonly<T> = {
 ```
 > 判斷 `T[P]` 是不是沒有 key 的型別（沒有下一層）。
 
-### 12 - Chainable Options
+### 12 - Chainable Options [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00012-medium-chainable-options/README.md)
 ```typescript
 type Chainable<T = {}> = {
   option: <K extends string, V>(
@@ -116,14 +117,14 @@ type Chainable<T = {}> = {
 > `<K extends string, V>` 是傳入參數型別的泛型，因為 `key`、`value` 有用到型別參數，所以會自行推斷型別，不需要再額外寫一次。<br>
 > `.option` 需要回傳 Chainable，才能再繼續接 `.option`。
 
-### 15 - Last of Array
+### 15 - Last of Array [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00015-medium-last/README.md)
 ```typescript
 type Last<T extends any[]> = [undefined, ...T][T['length']]
 ```
 > `[T['length']]` 會拿到 `[數量]`。<br>
 > 在原陣列的最前端加上一項任意型別，讓長度可以剛好取到最後一項。
 
-### 20 - Promise.all
+### 20 - Promise.all [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00020-medium-promise-all/README.md)
 ```typescript
 declare function PromiseAll<T extends readonly any[]>(values: [...T])
 
@@ -145,14 +146,14 @@ declare function PromiseAll<T extends any[]>(
 > 假設 `T[P]` 是 `number | Promise<number>`，則 extends 的判斷 `T[P]` 會代表 `(number | Promise<number>)`，並不會將 `|` 的兩項分開處理。<span class="span-mb"></span>
 > `T[P] extends infer A` 將 `T[P]` 先存成變數（非用中括號取值）再做 extends 的判斷，則會將 `number` 與 `Promise<number>` 分開動作。
 
-### 62 - Type Lookup
+### 62 - Type Lookup [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00062-medium-type-lookup/README.md)
 ```typescript
 type LookUp<U, T> = U['type'] extends T ? U : never
 ```
 > 這樣是無效的！<br>
 > Conditional Types 只有在具有 `T extends ...` 形式（Naked Type）時才會有分配性，而在 `extends` 後面複雜的表達式也不會觸發分配性。
 
-### 106 - Trim Left
+### 106 - Trim Left [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00106-medium-trimleft/README.md)
 ```typescript
 type Space = ' ' | '\n' | '\t'
 type TrimLeft<S extends string> = 
@@ -162,7 +163,7 @@ type TrimLeft<S extends string> =
 ```
 > 字串可以 `${Space}${infer R}` 像這樣組起來（類似陣列）。
 
-### 110 - Capitalize
+### 110 - Capitalize [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00110-medium-capitalize/README.md)
 ```typescript
 type MyCapitalize<S extends string> = 
   S extends `${infer R}${infer Rest}` 
@@ -171,7 +172,7 @@ type MyCapitalize<S extends string> =
 ```
 > `Uppercase<R>` 可以直接轉大寫。
 
-### 296 - Permutation
+### 296 - Permutation [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00296-medium-permutation/README.md)
 ```typescript
 [T] extends [never]
 ```
@@ -188,7 +189,7 @@ K extends K
 ```
 > 當 Naked Type 遇到 `extends` 就會觸發分配性，不一定要是 `extends` 自己，`any` 或其他也可以，主要是有 `extends`。
 
-### 298 - Length of String
+### 298 - Length of String [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00298-medium-length-of-string/README.md)
 ```typescript
 type LengthOfString<S extends string, T extends string[] = []> = 
   S extends `${infer R}${infer Rest}` 
@@ -197,7 +198,7 @@ type LengthOfString<S extends string, T extends string[] = []> =
 ```
 > 當 S 只有一個字（例如：`'x'`），`R` 會取到 `x`，`Rest` 會取到 `''`，所以 `S extends ${infer R}${infer Rest}` 的結果仍會是 `true`。
 
-### 527 - Append to object
+### 527 - Append to object [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00527-medium-append-to-object/README.md)
 ```typescript
 type AppendToObject<T extends Object, U extends string, V extends any> = T & {
     [K in U]: V
@@ -218,7 +219,7 @@ type AppendToObject<T, U extends string, V> =
 > `Omit<T, never>` 或利用 `extends infer A` 可以將 & 的物件型別們合併在一起。
 
 
-### 529 - Absolute
+### 529 - Absolute [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00529-medium-absolute/README.md)
 ```typescript
 type AAA = Absolute<9_999n> // "9999"
 
@@ -233,7 +234,7 @@ type Absolute<T extends number | string | bigint> = T
 > 
 > 在 TypeScript 中，透過 `${}` 將陣列轉換為字串時，編譯器會自動進行轉換，因此透過 `${T}` 可以直接取得轉換後的 `9999`。
 
-### 599 - Merge
+### 599 - Merge [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00599-medium-merge/README.md)
 ```typescript
 type Merge<F, S> = {
   [K in keyof F | keyof S]: K extends keyof S
@@ -245,7 +246,7 @@ type Merge<F, S> = {
 ```
 > `[K in keyof F | keyof S]` 無法直接取 `S[K]`，需要透過 `K extends keyof S`。
 
-### 612 - KebabCase
+### 612 - KebabCase [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00612-medium-kebabcase/README.md)
 ```typescript
 Uncapitalize<T>
 ```
@@ -259,7 +260,7 @@ Lowercase<T>
 ```
 > 將 `T` 字串中的每個字元轉換為小寫字母。
 
-### 645 - Diff
+### 645 - Diff [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00645-medium-diff/README.md)
 ```typescript
 type O = {
   name: string
@@ -294,7 +295,7 @@ type Diff<O, O1> = {
 > 這裡的 `as` 是可以進一步對迭代到的 `K` 進行操作。<br>
 > key 為 `never` 的話會直接去掉此項。
 
-### 949 - AnyOf
+### 949 - AnyOf [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00949-medium-anyof/README.md)
 ```typescript
 type AnyOf<T extends readonly any[]> = T extends [infer R, ...infer Rest] 
   ? R extends 0 | '' | false | [] | { [x: string]: never } | undefined | null
@@ -304,7 +305,7 @@ type AnyOf<T extends readonly any[]> = T extends [infer R, ...infer Rest]
 ```
 > 檢查空物件不能直接寫 `{}`，要用 `{ [x: string]: never }` 或 `Record<string, never>`。
 
-### 1097 - IsUnion
+### 1097 - IsUnion [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/01097-medium-isunion/README.md)
 ```typescript
 type IsUnion<T, K = T> = [T] extends [never] 
   ? false 
@@ -316,7 +317,7 @@ type IsUnion<T, K = T> = [T] extends [never]
 > `[K] extends [T]` 是將 `K` 和 `T` 包在 Tuple 裡，為了不要觸發分配性。
 
 
-### 1367 - Remove Index Signature
+### 1367 - Remove Index Signature [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/01367-medium-remove-index-signature/README.md)
 > 將 `[key: any]: any`（Index Signature）去除。
 
 ```typescript
@@ -336,7 +337,7 @@ type RemoveIndexSignature<T, P = PropertyKey> = {
 > `K in keyof T as P extends K` 透過前面的 `K in keyof T` 拿到迭代的 `K`，即可列成條件 `P extends K`。<span class="span-mb"></span>
 > 留下 `P extends K` 不成立 ＆ `K extends P` 成立的情況。
 
-### 2257 - MinusOne
+### 2257 - MinusOne [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/02257-medium-minusone/README.md)
 ```typescript
 type S = '12345' // '123'
 type N = S extends `${infer R extends number}` ? R : never // 123
@@ -355,13 +356,13 @@ type RemoveLastChar = S extends `${infer Rest}${NumberLiteral}` // "1234"
 ```
 > 透過此方式可以取得 `Rest`：去除最後一項字元的字串及 `Last`：最後一項字元。
 
-### 2757 - PartialByKeys
+### 2757 - PartialByKeys [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/02757-medium-partialbykeys/README.md)
 ```typescript
 Partial<T>
 ```
 > 建構一個型別，其中 `T` 的所有屬性都被設置為 optional。
 
-### 2759 - RequiredByKeys
+### 2759 - RequiredByKeys [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/02759-medium-requiredbykeys/README.md)
 ```typescript
 {
   [P in keyof T as P extends K ? P : never]-?: T[P]
@@ -369,7 +370,7 @@ Partial<T>
 ```
 > 可以透過 `-?` 將 optional 改為 required。
 
-### 2793 - Mutable
+### 2793 - Mutable [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/02793-medium-mutable/README.md)
 ```typescript
 type Mutable<T extends Record<string, any> | readonly any[]> = {
   -readonly [K in keyof T]: T[K]
@@ -377,7 +378,7 @@ type Mutable<T extends Record<string, any> | readonly any[]> = {
 ```
 > 可以透過 `-readonly` 將 readonly 屬性去除。
 
-### 2946 - ObjectEntries
+### 2946 - ObjectEntries [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/02946-medium-objectentries/README.md)
 ```typescript
 type ObjectEntries<T> = {
   [K in keyof T]-?: 
@@ -397,7 +398,7 @@ type ObjectEntries<T> = {
 > ```
 > 再透過 `[keyof T]` 取得各項 key 的值。
 
-### 3188 - Tuple to Nested Object
+### 3188 - Tuple to Nested Object [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/03188-medium-tuple-to-nested-object/README.md)
 ```typescript
 type TupleToNestedObject<T extends string[], U> = 
   T extends [infer R extends string, ...infer Rest extends string[]] 
@@ -408,7 +409,7 @@ type TupleToNestedObject<T extends string[], U> =
 > 除了用 `infer R extends string` 做限制之外，在 key 的地方寫成 `[K in R & string]` 也可以。
 
 
-### 3196 - Flip Arguments
+### 3196 - Flip Arguments [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/03196-medium-flip-arguments/README.md)
 ```typescript
 T extends (...args: infer A) => any
 ```
@@ -424,7 +425,7 @@ type FlipArguments<T extends (...args: any[]) => any> =
 > 透過 `...args` 拿到參數陣列 `args` ，而 `args` 型別推斷是 `A`。<br>
 > Function 的參數名稱 `args` 需要一直寫著（實際在寫 Function 的時候本來就會寫）。
 
-### 3243 - FlattenDepth
+### 3243 - FlattenDepth [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/03243-medium-flattendepth/README.md)
 ```typescript
 type FlattenDepth<A extends any[], N extends number = 1, R extends any[] = []> = 
   R['length'] extends N 
@@ -437,7 +438,7 @@ type FlattenDepth<A extends any[], N extends number = 1, R extends any[] = []> =
 ```
 > 利用 `R` 陣列的長度紀錄目前展開幾層，利用 `...` 展開陣列，每次展開都將 `R` 陣列多加一項。
 
-### 3326 - BEM style string
+### 3326 - BEM style string [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/03326-medium-bem-style-string/README.md)
 ```typescript
 type BEM<
   B extends string,
@@ -451,7 +452,7 @@ type BEM<
 ```
 > 可以直接在 `${}` 裡面做判斷。
 
-### 3376 - InorderTraversal
+### 3376 - InorderTraversal [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/03376-medium-inordertraversal/README.md)
 Inorder traversal (中序遍歷) 會先拜訪左子節點，再拜訪父節點，最後拜訪右子節點。
 ```typescript
 type InorderTraversal<T extends TreeNode | null> = 
@@ -472,7 +473,7 @@ NonNullable<T>
 ```
 > 從型別 `T` 中刪除 `null` 和 `undefined`。
 
-### 4179 - Flip
+### 4179 - Flip [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04179-medium-flip/README.md)
 ```typescript
 type Flip<T extends Record<string, any>> = {
   [K in keyof T as `${T[K]}`]: K
@@ -480,7 +481,7 @@ type Flip<T extends Record<string, any>> = {
 ```
 > 可以直接寫 `as` 後面作為 key 名稱。
 
-### 4182 - Fibonacci Sequence
+### 4182 - Fibonacci Sequence [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04182-medium-fibonacci-sequence/README.md)
 ```typescript
 type Fibonacci<
   T extends number,
@@ -495,7 +496,7 @@ type Fibonacci<
 > （目的是拿到總長度，所以塞什麼進陣列都不影響，因此放了 `undefined`）<span class="span-mb"></span>
 > `CurrentIndex` 陣列的總長度是負責記錄是否已達到題目要求（`T`）。
 
-### 4260 - AllCombinations
+### 4260 - AllCombinations [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04260-medium-nomiwase/README.md)
 ```typescript
 type AllCombinations<
   S extends string,
@@ -509,7 +510,7 @@ type AllCombinations<
 > [其他解答（１）](https://github.com/type-challenges/type-challenges/issues/5339)<br>
 > [其他解答（２）](https://github.com/type-challenges/type-challenges/issues/16430)
 
-### 4425 - Greater Than
+### 4425 - Greater Than [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04425-medium-greater-than/README.md)
 ```typescript
 type GreaterThan<T extends number, U extends number, R extends any[] = []> = 
   T extends R['length']
@@ -522,19 +523,19 @@ type GreaterThan<T extends number, U extends number, R extends any[] = []> =
 > 若 `T extends R['length']` 成立，則表示 `U` **不可能**大於 `T`。<br>
 > 若 `U extends R['length']` 成立，則表示 `T` **肯定**大於 `T`。
 
-### 4471 - Zip
+### 4471 - Zip [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04471-medium-zip/README.md)
 ```typescript
 [T, U] extends [[infer L, ...infer RestT], [infer R, ...infer RestU]]
 ```
 > 可以將多個判斷用 Tuple 包起來做 `extends`。
 
-### 4484 - IsTuple
+### 4484 - IsTuple [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04484-medium-istuple/README.md)
 ```typescript
 number extends T['length']
 ```
 > 因為 Tuple 的 `length` 是確切數字（不是單純的 `number`），因此若 `number extends T['length']` 成立則代表 `T` 不是 Tuple。
 
-### 4518 - Fill
+### 4518 - Fill [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04518-medium-fill/README.md)
 ```typescript
 type Fill<
   T extends unknown[],
@@ -554,7 +555,7 @@ type Fill<
 > 當 `Count['length']` 和 `Start` 相同時，`Flag` 標示為 `true`，代表接下來遞迴需要將 `R` 替換成 `N`。<br>
 > 當 `Count['length']` 和 `End` 相同時，代表替換已經結束，直接回傳剩餘的陣列即可（不需要特別將 `Flag` 換回 `false` 繼續跑遞迴）。
 
-### 5117 - Without
+### 5117 - Without [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/05117-medium-without/README.md)
 ```typescript
 R extends TupleToUnion<U>
   ? Without<Rest, U, A>
@@ -566,7 +567,7 @@ R extends TupleToUnion<U>
 > ```
 
 
-### 5317 - LastIndexOf
+### 5317 - LastIndexOf [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/05317-medium-lastindexof/README.md)
 ```typescript
 type LastIndexOf<T extends unknown[], U> = T extends [...infer Rest, infer Last]
   ? Equal<Last, U> extends true
@@ -576,7 +577,7 @@ type LastIndexOf<T extends unknown[], U> = T extends [...infer Rest, infer Last]
 ```
 > 剛好 `Rest['length']` 取到的值會比 `T['length']` 少 1，所以可以直接拿來當作 `index` 參考。
 
-### 5821 - MapTypes
+### 5821 - MapTypes [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/05821-medium-maptypes/README.md)
 ```typescript
 type MapTypes<T extends Record<string, any>, R extends {
   mapFrom: any
@@ -590,6 +591,32 @@ type MapTypes<T extends Record<string, any>, R extends {
     }
 ```
 > 因為 `R` 傳入的參數有可能是 Union，因此透過 `R extends { mapFrom: T[K] }` 可以限制這行的 `R` 是哪一項，否則結果也會產生 Union。
+
+### 10969 - Integer [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/10969-medium-integer/README.md)
+```typescript
+type Integer<T extends number> = `${T}` extends `${bigint}` ? T : never
+```
+> `bigint` 一定是 Integer。
+
+### 16259 - ToPrimitive [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/16259-medium-to-primitive/README.md)
+```typescript
+type ToPrimitive<T> = T extends object 
+  ? { [K in keyof T]: ToPrimitive<T[K]> }
+  : T extends { valueOf(): infer R } 
+    ? R
+    : never
+```
+> `T extends { valueOf(): infer R }` 是根據 `valueOf` 的值取得推斷的型別 `R`，`string`、`number` ...等等都有 `valueOf`，所以 `never` 不會跑到。
+
+### 17973 - DeepMutable [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/17973-medium-deepmutable/README.md)
+```typescript
+type AAA = DeepMutable<Test2>
+type CCC = AAA['c']
+type EEE = CCC['e']
+```
+> 若物件太深，型別無法全部顯示清楚的話，可以藉由新建 `type` 並取得原 `type` 的其屬性查看內部型別。
+
+
 
 <style>
   .span-mb {
