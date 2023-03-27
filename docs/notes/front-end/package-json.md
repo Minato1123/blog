@@ -191,7 +191,7 @@ package.json 中內建的腳本入口，是 `key-value` 鍵值對配置，`key` 
 除了運行基本的 `scripts` 命令，還可以結合 `pre` 和 `post` 完成前置和後續操作。
 ```json
 "scripts": {
- "dev": "node index.js",
+  "dev": "node index.js",
   "predev": "node beforeIndex.js",
   "postdev": "node afterIndex.js"
 }
