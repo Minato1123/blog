@@ -41,6 +41,16 @@
       </a>
     </div>
   </div>
+  <div class="content">
+    <div>
+      風向，疑？｜Wind Vane
+    </div>
+    <div >
+      <a class="project-link" href="https://github.com/Minato1123/wind-vane" target="_blank">
+        • GitHub
+      </a>
+    </div>
+  </div>
 </div>
 
 <style scoped> 
