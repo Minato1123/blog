@@ -38,12 +38,12 @@ document.querySelectorAll('...')
 ```
 
 ## DOM 節點間的查找遍歷
-* `節點.hasChildNodes()`：檢查 DOM 節點**是否有子節點**
-* `節點.childNodes`：回傳有順序性、由目前元素之 DOM **子節點組成之集合** ( 即時更新的 NodeList )
-* `節點.firstChild`：取得節點的**第一個**子節點 ( 含空白或換行字元 )
-* `節點.lastChild`：取得節點的**最後一個**子節點 ( 含空白或換行字元 )
+* `節點.hasChildNodes()`：檢查 DOM 節點<span class="span-heightlight">是否有子節點</span>
+* `節點.childNodes`：回傳有順序性、由目前元素之 DOM <span class="span-heightlight">子節點組成之集合</span> ( 即時更新的 NodeList )
+* `節點.firstChild`：取得節點的<span class="span-heightlight">第一個</span>子節點 ( 含空白或換行字元 )
+* `節點.lastChild`：取得節點的<span class="span-heightlight">最後一個</span>子節點 ( 含空白或換行字元 )
 * `節點.parentNode`：取得父元素節點
-* `節點.previousSibling`：取得同層之**前一個**節點 ( 若自己是第一個，回傳 `null` )
+* `節點.previousSibling`：取得同層之<span class="span-heightlight">前一個</span>節點 ( 若自己是第一個，回傳 `null` )
 * `節點.nextSibling`：取得同層之間下一個節點 ( 若自己是最後一個，回傳 `null` )
 
 ## DOM 節點的新增

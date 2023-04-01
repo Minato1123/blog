@@ -13,7 +13,7 @@
 ```javascript
 元素.removeEventListener(事件名稱, 事件處理器, 捕獲/冒泡機制)
 ```
-> 事件處理器需要與綁定時的處理器指向**同一個實體**
+> 事件處理器需要與綁定時的處理器指<span class="span-heightlight">同一個實體</span>
 
 ### Option
 ```javascript
