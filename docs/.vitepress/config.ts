@@ -18,7 +18,6 @@ export default defineConfig({
         text: '學習隨記',
         collapsible: true,
         items: [
-          { text: '▎Directory', link: '/daily-log/directory' },
           { text: 'Sep. 2022', link: '/daily-log/sep2022' },
           { text: 'Oct. 2022', link: '/daily-log/oct2022' },
           { text: 'Nov. 2022', link: '/daily-log/nov2022' },
