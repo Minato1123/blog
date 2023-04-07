@@ -32,6 +32,7 @@ export default defineConfig({
         text: '前端筆記',
         collapsible: true,
         items: [
+          { text: 'TagFinder', link: '/notes/front-end/tagfinder' },
           { text: 'TS Notes', link: '/notes/front-end/ts-notes' },
           { text: 'JS Promise', link: '/notes/front-end/js-promise' },
           { text: 'JS Prototype', link: '/notes/front-end/js-prototype' },
