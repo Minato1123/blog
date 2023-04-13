@@ -18,7 +18,7 @@ const _tags = [
   'vender-prefix', 'engine', 'CSS-in-JS', 'shape', 'static', 'module', 'guide', 'Turbopack',
   'runtime', 'esbuild', 'parser', 'template', 'Electron', 'on-demand', 'Angular', 'regex',
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
-  'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub'
+  'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -75,7 +75,6 @@ const data: Row[] = [
   ['Babel', 'https://babeljs.io/', ['工具', 'JS', 'compiler', 'transform-syntax', 'code']],
   ['Gulp', 'https://gulpjs.com/', ['工具', 'toolkit', 'automate', 'workflow', 'JS', 'build']],
   ['Broccoli', 'https://github.com/broccolijs/broccoli', ['工具', 'build', 'obfuscate', 'compress', 'JS']],
-  ['Turbopack', 'https://turbo.build/pack', ['bundler', 'JS', 'TS']],
   ['Vite', 'https://vitejs.dev/', ['build-tool', 'Rollup', 'ESM', 'Vite']],
   ['Vitest', 'https://vitest.dev/', ['套件', 'test', 'unit-test', '框架', 'Vite']],
   ['Jest', 'https://jestjs.io/', ['套件', 'JS', 'test', '框架']],
@@ -97,8 +96,8 @@ const data: Row[] = [
   ['Preact', 'https://preactjs.com/', ['框架', 'React', 'virtual-DOM', 'Preact']],
   ['Vitepress', 'https://vitepress.dev/', ['SSG', '框架', 'Vite', 'Vue', 'markdown']],
   ['Vuepress', 'https://vuepress.vuejs.org/', ['SSG', '框架','Vue', 'markdown', 'webpack']],
-  ['Tauri', 'https://tauri.app/', ['框架', 'build', 'multi-platform', 'cross-platform', 'GUI']],
-  ['Electron', 'https://www.electronjs.org/', ['框架', 'build', 'multi-platform', 'cross-platform', 'Electron']],
+  ['Tauri', 'https://tauri.app/', ['框架', 'build', 'multi-platform', 'cross-platform', 'GUI', 'desktop']],
+  ['Electron', 'https://www.electronjs.org/', ['框架', 'build', 'multi-platform', 'cross-platform', 'Electron', 'desktop']],
   ['Quasar', 'https://quasar.dev/', ['框架', 'multi-platform', 'cross-platform', 'Vue', 'PWA', 'SSR']],
   ['Fresh', 'https://fresh.deno.dev/', ['框架', 'Deno', 'Preact', 'full-stack', 'TS', 'JS']],
   ['Alpine', '', ['套件', '工具', 'JS', '框架', 'lightweight', 'interactive']],
@@ -147,6 +146,16 @@ const data: Row[] = [
   ['Firebase', 'https://firebase.google.com/', ['build', 'Bass', 'back-end']],
   ['Zodios', 'https://www.zodios.org/', ['REST-API', 'API', 'TS', 'JS']],
   ['Mitt', 'https://github.com/developit/mitt', ['JS', 'runtime', 'event-emitter', 'pub-sub']],
+  ['Fela', 'https://fela.js.org/', ['CSS', '工具', 'atomic', 'JS']],
+  ['Cordova', 'https://cordova.apache.org/', ['框架', 'multi-platform', 'mobile', 'cross-platform']],
+  ['Turbopack', 'https://turbo.build/pack', ['工具', 'bundler', 'JS', 'TS', 'webpack']],
+  ['PostCSS', 'https://github.com/postcss/postcss', ['工具', 'CSS', 'JS']],
+  ['Turborepo', 'https://turbo.build/repo', ['工具', 'build', 'JS', 'TS', 'code']],
+  ['ofetch', 'https://github.com/unjs/ofetch', ['套件', 'API', 'NodeJS', 'ESM', 'CJS', 'TS']],
+  ['zeabur', 'https://docs.zeabur.com/', ['deploy', 'host']],
+  ['vue-reuse-template', 'https://github.com/antfu/vue-reuse-template', ['套件', 'Vue', 'template']],
+  ['magicast', 'https://github.com/unjs/magicast', ['工具', '套件', 'JS', 'TS', 'ESM', 'CJS']],
+  ['Hexo', 'https://hexo.io/', ['框架', 'markdown', 'NodeJS', 'SSG']]
 ]
 
 const tags = _tags.map(t => {
