@@ -1,0 +1,1 @@
+import{_ as e,o,c as a,Q as s}from"./chunks/framework.84e2b86f.js";const m=JSON.parse('{"title":"ROS Notes","description":"","frontmatter":{},"headers":[],"relativePath":"notes/misc/ros-notes.md"}'),l={name:"notes/misc/ros-notes.md"},r=s("",65),t=[r];function i(n,c,p,d,u,b){return o(),a("div",null,t)}const g=e(l,[["render",i]]);export{m as __pageData,g as default};

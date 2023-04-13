@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.84e2b86f.js";const A=JSON.parse('{"title":"TS Notes","description":"","frontmatter":{},"headers":[],"relativePath":"notes/front-end/ts-notes.md"}'),p={name:"notes/front-end/ts-notes.md"},e=l("",59),o=[e];function t(r,c,i,y,C,F){return n(),a("div",null,o)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};
