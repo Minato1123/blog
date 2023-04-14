@@ -18,7 +18,8 @@ const _tags = [
   'vender-prefix', 'engine', 'CSS-in-JS', 'shape', 'static', 'module', 'guide', 'Turbopack',
   'runtime', 'esbuild', 'parser', 'template', 'Electron', 'on-demand', 'Angular', 'regex',
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
-  'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile'
+  'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
+  'file', 'watch'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -154,8 +155,10 @@ const data: Row[] = [
   ['ofetch', 'https://github.com/unjs/ofetch', ['套件', 'API', 'NodeJS', 'ESM', 'CJS', 'TS']],
   ['zeabur', 'https://docs.zeabur.com/', ['deploy', 'host']],
   ['vue-reuse-template', 'https://github.com/antfu/vue-reuse-template', ['套件', 'Vue', 'template']],
-  ['magicast', 'https://github.com/unjs/magicast', ['工具', '套件', 'JS', 'TS', 'ESM', 'CJS']],
-  ['Hexo', 'https://hexo.io/', ['框架', 'markdown', 'NodeJS', 'SSG']]
+  ['magicast', 'https://github.com/unjs/magicast', ['工具', '套件', 'JS', 'TS', 'ESM', 'CJS', 'file']],
+  ['Hexo', 'https://hexo.io/', ['框架', 'markdown', 'NodeJS', 'SSG']],
+  ['Playwright', 'https://playwright.dev/', ['test', 'browser', 'NodeJS', '工具', 'operating-system']],
+  ['chokidar', 'https://github.com/paulmillr/chokidar', ['NodeJS', '套件', 'cross-platform', '函式庫', 'file', 'watch']]
 ]
 
 const tags = _tags.map(t => {
