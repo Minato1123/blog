@@ -1,3 +1,4 @@
+import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import AutoImport from 'unplugin-auto-import/vite'
 import Icons from 'unplugin-icons/vite'
@@ -13,10 +14,10 @@ export default defineConfig({
     ['link', { rel: "shortcut icon", href: '/blog/favicon.ico' }],
   ],
   themeConfig: {
-    sidebar:[
+    sidebar: [
       {
         text: '學習隨記',
-        collapsible: true,
+        collapsed: false,
         items: [
           { text: 'Sep. 2022', link: '/daily-log/sep2022' },
           { text: 'Oct. 2022', link: '/daily-log/oct2022' },
@@ -30,7 +31,7 @@ export default defineConfig({
       },
       {
         text: '前端筆記',
-        collapsible: true,
+        collapsed: false,
         items: [
           { text: 'TagFinder', link: '/notes/front-end/tagfinder' },
           { text: 'TS Notes', link: '/notes/front-end/ts-notes' },
@@ -45,7 +46,7 @@ export default defineConfig({
       },
       {
         text: '其他筆記',
-        collapsible: true,
+        collapsed: false,
         items: [
           { text: 'Git Notes', link: '/notes/misc/git-notes.md' },
           { text: 'SQL Notes', link: '/notes/misc/sql-notes.md' },
