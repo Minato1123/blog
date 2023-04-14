@@ -1,5 +1,5 @@
 {
-  "index_name": "dev_carrieblog",
+  "index_name": "dev_CarrieBlog",
   "start_urls": ["https://minato1123.github.io/blog/"],
   "rateLimit": 8,
   "maxDepth": 10,
