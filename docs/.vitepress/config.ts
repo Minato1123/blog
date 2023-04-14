@@ -67,7 +67,7 @@ export default defineConfig({
     algolia: {
       appId: 'QSHMS5QV6I',
       apiKey: '01822a89b67d98f29fbbe5d19ec98e8c',
-      indexName: 'dev_carrieblog'
+      indexName: 'dev_CarrieBlog'
     },
   },
   markdown: {
