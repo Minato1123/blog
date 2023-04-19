@@ -19,7 +19,7 @@ const _tags = [
   'runtime', 'esbuild', 'parser', 'template', 'Electron', 'on-demand', 'Angular', 'regex',
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
-  'file', 'watch'
+  'file', 'watch', 'UnoCSS'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -116,7 +116,7 @@ const data: Row[] = [
   ['pug', 'https://pugjs.org/api/getting-started.html', ['HTML', 'NodeJS', 'engine', 'JS']],
   ['Marko', 'https://markojs.com/', ['HTML', 'JS']],
   ['Autoprefixer', 'https://github.com/postcss/autoprefixer', ['CSS', 'PostCSS', 'prefix', 'vender-prefix']],
-  ['Stylify', 'https://stylifycss.com/', ['CSS']],
+  ['Stylify', 'https://stylifycss.com/', ['CSS', 'on-demand', '函式庫']],
   ['clippy', 'https://bennettfeely.com/clippy/', ['CSS', '工具', 'shape']],
   ['cssreference', 'https://cssreference.io/', ['CSS', 'visualization', 'guide']],
   ['Animate.css', 'https://animate.style/', ['CSS', 'animation', 'AnimateCSS']],
@@ -134,7 +134,7 @@ const data: Row[] = [
   ['esbuild', 'https://esbuild.github.io/', ['bundler', 'ESM', 'esbuild']],
   ['webpack', 'https://webpack.js.org/', ['bundler', 'module', 'static', 'JS']],
   ['Parcel', 'https://parceljs.org/', ['build-tool', 'browser', 'Electron']],
-  ['UnoCSS', 'https://unocss.dev/', ['atomic', 'CSS', 'on-demand', 'customizable', 'engine']],
+  ['UnoCSS', 'https://unocss.dev/', ['atomic', 'CSS', 'on-demand', 'customizable', 'engine', 'UnoCSS']],
   ['Vitesse', 'https://github.com/antfu/vitesse', ['Vue', 'Vite', 'template']],
   ['PurgeCSS', 'https://purgecss.com/', ['工具', 'CSS']],
   ['Twind', 'https://github.com/tw-in-js/twind', ['JS', 'CSS', 'CSS-in-JS', 'TailwindCSS']],
@@ -158,7 +158,13 @@ const data: Row[] = [
   ['magicast', 'https://github.com/unjs/magicast', ['工具', '套件', 'JS', 'TS', 'ESM', 'CJS', 'file']],
   ['Hexo', 'https://hexo.io/', ['框架', 'markdown', 'NodeJS', 'SSG']],
   ['Playwright', 'https://playwright.dev/', ['test', 'browser', 'NodeJS', '工具', 'operating-system']],
-  ['chokidar', 'https://github.com/paulmillr/chokidar', ['NodeJS', '套件', 'cross-platform', '函式庫', 'file', 'watch']]
+  ['chokidar', 'https://github.com/paulmillr/chokidar', ['NodeJS', '套件', 'cross-platform', '函式庫', 'file', 'watch']],
+  ['SWC', 'https://swc.rs/', ['compiler', 'bundler', '套件', 'JS']],
+  ['onu-ui', 'https://github.com/onu-ui/onu-ui', ['CSS', 'UI', '函式庫', 'component', 'Vue', 'UnoCSS']],
+  ['UnJS', 'https://unjs.io/', ['JS', '工具']],
+  ['Stylus', 'https://stylus-lang.com/', ['CSS', 'NodeJS', '套件', '工具']],
+  ['Remda', 'https://ramdajs.com/', ['JS', 'functional-utilities', '函式庫']],
+  ['Remeda', 'https://remedajs.com/', ['TS', 'functional-utilities', '函式庫']],
 ]
 
 const tags = _tags.map(t => {
