@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,Q as l}from"./chunks/framework.84e2b86f.js";const A=JSON.parse('{"title":"SQL Notes","description":"","frontmatter":{},"headers":[],"relativePath":"notes/misc/sql-notes.md"}'),p={name:"notes/misc/sql-notes.md"},e=l("",133),o=[e];function t(r,c,C,D,y,i){return a(),n("div",null,o)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};

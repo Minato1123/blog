@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,Q as l}from"./chunks/framework.84e2b86f.js";const C=JSON.parse('{"title":"axios","description":"","frontmatter":{},"headers":[],"relativePath":"notes/front-end/axios.md"}'),p={name:"notes/front-end/axios.md"},o=l("",34),e=[o];function r(c,t,D,F,y,i){return a(),n("div",null,e)}const d=s(p,[["render",r]]);export{C as __pageData,d as default};

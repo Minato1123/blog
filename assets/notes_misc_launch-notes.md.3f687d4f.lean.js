@@ -1,1 +1,0 @@
-import{_ as t,o as a,c as e,Q as l}from"./chunks/framework.84e2b86f.js";const g=JSON.parse('{"title":"LAUNCH Docs","description":"","frontmatter":{},"headers":[],"relativePath":"notes/misc/launch-notes.md"}'),r={name:"notes/misc/launch-notes.md"},o=l("",24),n=[o];function s(d,c,i,u,p,h){return a(),e("div",null,n)}const b=t(r,[["render",s]]);export{g as __pageData,b as default};
