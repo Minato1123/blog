@@ -2,14 +2,18 @@
 import { ref, computed } from 'vue'
 import type { Tag } from './TagFinderData'
 import { tags, data } from './TagFinderData'
+import { Fzf } from "fzf"
 
 const searchInput = ref<string>('')
+const searchTagInput = ref<string>('')
 const selectedTagList = ref<Tag[]>([])
 const currentTagList = computed(() => {
-  if (searchInput.value.trim() === '')
+  if (searchTagInput.value.trim() === '')
     return tags
   
-  return tags.filter(t => t[0].includes(searchInput.value))
+  return new Fzf(tags, {
+    selector: (item) => item[0]
+  }).find(searchTagInput.value).map(e => e.item)
 })
 
 function clickTag(tag: Tag) {
@@ -39,14 +43,31 @@ const currentData = computed(() => {
     return true
   })
 })
+
+const fzfForPackages = new Fzf(currentData.value, {
+  selector: (item) => item[0],
+})
+
+const finalData = computed(() => {
+  if (searchInput.value.trim().length <= 0)
+    return currentData.value
+  
+  return fzfForPackages.find(searchInput.value).map(e => e.item)
+})
+
+const totalData = computed(() => finalData.value.length)
 </script>
 
 <template>
   <div class="container">
+    <div class="package-bar-container">
+      <div class="total">共 {{ totalData }} 項</div>
+      <input placeholder="搜尋 Packages..." v-model="searchInput" type="text">
+    </div>
     <div class="tag-container">
       <div class="input">
         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"></path></svg>
-        <input v-model="searchInput" placeholder="搜尋 Tag ..." type="text">
+        <input v-model="searchTagInput" placeholder="搜尋 Tag ..." type="text">
         <button @click="handleClearSelectedTags" title="清除所選 Tags">
           <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"></path></svg>
         </button>
@@ -60,7 +81,7 @@ const currentData = computed(() => {
       </div>
     </div>
     <div class="package-container">
-      <div class="pack" v-for="(pack, i) in currentData" :key="`pack-${i}`">
+      <div class="pack" v-for="(pack, i) in finalData" :key="`pack-${i}`">
         <div class="pack-name"><a target="_blank" :href="pack[1]">{{ pack[0] }}</a></div>
         <div class="tags">
           <div v-for="(t, j) in pack[2]" :key="`pack-tag-${j}`" class="tag">
@@ -76,6 +97,26 @@ const currentData = computed(() => {
 .container {
   width: 100%;
   padding: 1rem 0;
+
+  .package-bar-container {
+    padding: 0 1rem;
+    display: flex;
+    margin: 1rem 0;
+    gap: 1rem;
+    align-items: center;
+
+    .total {
+      width: 5rem;
+    }
+
+    input {
+      padding: 0.2rem 0.5rem;
+      line-height: 1.5rem;
+      font-size: 1.1rem;
+      border-bottom: 0.1rem solid rgba(95, 172, 128, 1);
+      flex-grow: 1;
+    }
+  }
 
   .tag-container {
     width: 100%;

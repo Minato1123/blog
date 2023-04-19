@@ -23,5 +23,8 @@
     "unplugin-vue-components": "^0.22.7",
     "vitepress": "1.0.0-alpha.72",
     "vue": "^3.2.39"
+  },
+  "dependencies": {
+    "fzf": "^0.5.1"
   }
 }
