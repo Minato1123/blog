@@ -64,11 +64,9 @@ export default defineConfig({
       { icon: 'twitter', link: 'https://twitter.com/minato23_' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/minato1123/' },
     ],
-    algolia: {
-      appId: 'QSHMS5QV6I',
-      apiKey: '01822a89b67d98f29fbbe5d19ec98e8c',
-      indexName: 'dev_CarrieBlog'
-    },
+    search: {
+      provider: 'local'
+    }
   },
   markdown: {
     lineNumbers: true,
@@ -84,7 +82,7 @@ export default defineConfig({
           /\.md$/, // .md
         ],
         dts: '../auto-imports.d.ts',
-        imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+        imports: ['vue'],
         eslintrc: {
           enabled: true, // disable no-undef
         },
