@@ -29,6 +29,10 @@ function handleClearSelectedTags() {
   selectedTagList.value = []
 }
 
+function handleClearSearchInput() {
+  searchInput.value = ''
+}
+
 const currentData = computed(() => {
   if (selectedTagList.value.length < 1)
     return data
@@ -44,15 +48,17 @@ const currentData = computed(() => {
   })
 })
 
-const fzfForPackages = new Fzf(currentData.value, {
-  selector: (item) => item[0],
+const fzfForPackages = computed(() => {
+  return new Fzf(currentData.value, {
+    selector: (item) => item[0],
+  })
 })
 
 const finalData = computed(() => {
-  if (searchInput.value.trim().length <= 0)
+  if (searchInput.value.trim().length <= 0 || fzfForPackages.value == null)
     return currentData.value
   
-  return fzfForPackages.find(searchInput.value).map(e => e.item)
+  return fzfForPackages.value.find(searchInput.value).map(e => e.item)
 })
 
 const totalData = computed(() => finalData.value.length)
@@ -63,6 +69,9 @@ const totalData = computed(() => finalData.value.length)
     <div class="package-bar-container">
       <div class="total">共 {{ totalData }} 項</div>
       <input placeholder="搜尋 Packages..." v-model="searchInput" type="text">
+      <button @click="handleClearSearchInput" title="清除輸入">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"></path></svg>
+      </button>
     </div>
     <div class="tag-container">
       <div class="input">
@@ -102,11 +111,11 @@ const totalData = computed(() => finalData.value.length)
     padding: 0 1rem;
     display: flex;
     margin: 1rem 0;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
 
     .total {
-      width: 5rem;
+      width: 5.5rem;
     }
 
     input {
@@ -115,6 +124,14 @@ const totalData = computed(() => finalData.value.length)
       font-size: 1.1rem;
       border-bottom: 0.1rem solid rgba(95, 172, 128, 1);
       flex-grow: 1;
+    }
+
+    button {
+      transition: all 0.3s ease-in-out;
+      
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 
