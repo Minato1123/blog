@@ -103,7 +103,7 @@ const data: Row[] = [
   ['Fresh', 'https://fresh.deno.dev/', ['框架', 'Deno', 'Preact', 'full-stack', 'TS', 'JS']],
   ['Alpine', '', ['套件', '工具', 'JS', '框架', 'lightweight', 'interactive']],
   ['Histoire', 'https://histoire.dev/', ['documentation', 'component', 'Vite']],
-  ['Astro', 'https://astro.build/', ['框架', 'content-focused', 'build', 'UI-agnostic', 'SSR', 'SSG']],
+  ['Astro', 'https://astro.build/', ['框架', 'content-focused', 'build', 'UI-agnostic', 'SSR', 'SSG', 'on-demand']],
   ['Next.js', 'https://nextjs.org/', ['框架', 'React', 'full-stack', 'build', 'Turbopack']],
   ['Nuxt.js', 'https://nuxtjs.org/', ['框架', 'Vue', 'build', 'full-stack', 'SSR', 'Nitro']],
   ['Nest.js', 'https://docs.nestjs.com/', ['框架', 'Angular', 'NodeJS', 'TS', 'SSR']],
