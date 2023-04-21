@@ -40,7 +40,7 @@ let isCodeFolded = ref(true)
     outline: none;
     cursor: pointer;
     padding: 0.5rem;
-    color: #ad2f09;
+    color: #edaa0c;
     transition: all 0.2s;
 
     &:hover {
@@ -56,14 +56,14 @@ let isCodeFolded = ref(true)
     .svg-icon {
       width: 1.6rem;
       height: 1.6rem;
-      color: #ad2f09;
+      color: #edaa0c;
     }
   }
 
   .line {
     height: 1px;
     width: 50%;
-    background: #ad2f09;
+    background: #edaa0c;
   }
 
   .code-fade-enter-active {

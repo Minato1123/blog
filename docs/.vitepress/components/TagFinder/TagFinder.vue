@@ -122,7 +122,7 @@ const totalData = computed(() => finalData.value.length)
       padding: 0.2rem 0.5rem;
       line-height: 1.5rem;
       font-size: 1.1rem;
-      border-bottom: 0.1rem solid rgba(95, 172, 128, 1);
+      border-bottom: 0.1rem solid;
       flex-grow: 1;
     }
 
@@ -137,7 +137,7 @@ const totalData = computed(() => finalData.value.length)
 
   .tag-container {
     width: 100%;
-    border: 0.1rem solid rgba(95, 172, 128, 1);
+    border: 0.1rem solid;
     border-radius: 1rem;
     padding: 1.5rem;
 
@@ -147,7 +147,6 @@ const totalData = computed(() => finalData.value.length)
       align-items: center;
 
       .search-icon {
-        color: rgba(95, 172, 128, 1);
         margin: 0 0.2rem;
       }
 
@@ -155,7 +154,7 @@ const totalData = computed(() => finalData.value.length)
         flex-grow: 1;
         font-size: 1rem;
         padding: 0.2rem;
-        border-bottom: 0.1rem solid rgba(95, 172, 128, 1);
+        border-bottom: 0.1rem solid;
       }
 
       button {
@@ -185,7 +184,7 @@ const totalData = computed(() => finalData.value.length)
         font-size: 1rem;
 
         .tag-num {
-          color: rgba(95, 172, 128, 1);
+          color: var(--vp-c-brand-light);
           font-size: 0.5rem;
         }
       }
@@ -200,7 +199,7 @@ const totalData = computed(() => finalData.value.length)
     .pack {
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 0.1rem solid rgba(95, 172, 128, 0.5);
+      border-bottom: 0.1rem solid var(--vp-c-brand-light);
 
       .tags {
         margin-top: 0.5rem;
