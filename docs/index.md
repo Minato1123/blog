@@ -12,7 +12,7 @@
     About Me
   </div>
   <div class="content">
-    Carrie, or Minato.<br>
+    <span class="my-name">Carrie</span>, or <span class="my-name">Minato</span>.<br>
     元智大學通訊四年級，想成為前端工程師。目前使用 Vue 的開發經驗大約一年。
   </div>
 </div>
@@ -86,6 +86,10 @@
   .content {
     text-indent : 1rem;
     margin-top: 1rem;
+  }
+
+  .my-name {
+    color: var(--vp-c-brand);
   }
 
   .project-link {

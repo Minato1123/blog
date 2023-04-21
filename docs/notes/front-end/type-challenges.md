@@ -610,9 +610,9 @@ type ToPrimitive<T> = T extends object
 
 ### 17973 - DeepMutable [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/17973-medium-deepmutable/README.md)
 ```typescript
-type AAA = DeepMutable<Test2>
-type CCC = AAA['c']
-type EEE = CCC['e']
+type A = DeepMutable<Test2>
+type C = A['c']
+type E = C['e']
 ```
 > 若物件太深，型別無法全部顯示清楚的話，可以藉由新建 `type` 並取得原 `type` 的其屬性查看內部型別。
 

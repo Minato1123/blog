@@ -165,6 +165,7 @@ const data: Row[] = [
   ['Stylus', 'https://stylus-lang.com/', ['CSS', 'NodeJS', '套件', '工具']],
   ['Remda', 'https://ramdajs.com/', ['JS', 'functional-utilities', '函式庫']],
   ['Remeda', 'https://remedajs.com/', ['TS', 'functional-utilities', '函式庫']],
+  ['Flutter', 'https://flutter.dev/', ['框架', 'multi-platform', 'build', 'mobile', 'desktop', 'deploy']]
 ]
 
 const tags = _tags.map(t => {
