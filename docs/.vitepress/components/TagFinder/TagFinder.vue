@@ -212,7 +212,8 @@ const totalData = computed(() => finalData.value.length)
           color: white;
           border-radius: 2rem;
           padding: 0.05rem 0.6rem;
-          background-color: rgba(51, 65, 81, 0.35);
+          background-color: #ada8a1;
+          opacity: 0.75;
         }
       }
     }
