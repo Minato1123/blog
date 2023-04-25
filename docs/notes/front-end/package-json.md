@@ -7,7 +7,7 @@
 ## <b>必須屬性</b>
 如果沒有此兩項屬性，就無法正常執行 `npm install` 命令。<br>
 npm 規定 package.json 文件是由名稱和版本號作爲唯一標識符的。 
-#### 1. name
+### 1. name
 專案的名稱（String）
 :::warning 注意事項
 * 名稱的長度必須小於或等於 214 個字符，不能以 “.” 和“_”開頭，不能包含大寫字母。<br>
@@ -17,7 +17,7 @@ npm 規定 package.json 文件是由名稱和版本號作爲唯一標識符的�
 :::
 > 不過平時開發的很多項目並不會發佈在 npm 上，所以這個名稱是否標準可能就不是那麼重要，它不會影響項目的正常運行。<br>
 > 如果需要發佈在 npm 上，name 字段一定要符合要求！
-#### 2. version
+### 2. version
 version 字段表示該專案的版本號（String）<br>
 在每次項目改動後，即將發佈前都要同步的去更改項目的版本號。
 :::tip 使用規範
@@ -29,11 +29,11 @@ version 字段表示該專案的版本號（String）<br>
 :::
 
 ## 描述訊息
-#### 1. description
+### 1. description
 用來描述此專案（String），可以讓其他開發者在 npm 的搜尋到我們的專案。
-#### 2. keywords
+### 2. keywords
 表示此專案的關鍵字（String[]），用來增加此專案的曝光率。
-#### 3. author
+### 3. author
 表示該專案的作者。<br>
 （String）
 ```json
@@ -47,7 +47,7 @@ author": "CUGGZ <xxxxx@xx.com> (https://juejin.cn/user/3544481220801815)"
   "url": "https://juejin.cn/user/3544481220801815"
 }
 ```
-#### 4. contributors
+### 4. contributors
 表示該專案的貢獻者們。<br>
 （String[]）
 ```json
@@ -72,9 +72,9 @@ author": "CUGGZ <xxxxx@xx.com> (https://juejin.cn/user/3544481220801815)"
  ]
 ```
 
-#### 5. homepage
+### 5. homepage
 專案的主頁網址（String）。
-#### 6. repository
+### 6. repository
 表示程式碼的存放網址。<br>
 （string）
 ```json
@@ -87,7 +87,7 @@ author": "CUGGZ <xxxxx@xx.com> (https://juejin.cn/user/3544481220801815)"
   "url": "https://github.com/facebook/react.git"
 }
 ```
-#### 7. bugs
+### 7. bugs
 表示專案提交問題的網址（Object），可以填上一個提交問題用的網址與反饋的信箱。
 ```json
 "bugs": { 
@@ -100,7 +100,7 @@ author": "CUGGZ <xxxxx@xx.com> (https://juejin.cn/user/3544481220801815)"
 ## 相依套件配置
 專案通常會依賴一個至多個外部的相依套件，而根據相依套件的不同用途可以將他們配置在這五個屬性下：`dependencies`、`devDependencies`、`peerDependencies`、`bundledDependencies`、`optionalDependencies`。
 
-#### 1. dependencies
+### 1. dependencies
 專案的生產環境中所必須的相依套件（Object）。<br>
 當使用 npm 或 yarn 等安裝 npm 包時，該 npm 包會被自動插入到此配置項中。
 ```json
@@ -122,7 +122,7 @@ author": "CUGGZ <xxxxx@xx.com> (https://juejin.cn/user/3544481220801815)"
 > 不要把測試或者過渡性的相依套件放在 `dependencies`，避免生產環境出現意外的問題。
 
 
-#### 2. devDependencies
+### 2. devDependencies
 專案在開發階段需要的相依套件，例如 Webpack、Eslint、Babel 等，用於輔助開發。<br>
 它們不同於 `dependencies`，因爲只需安裝在開發設備上，並無需在生產環境中運行程式碼。<br>
 當打包上線時並不需要這些包，所以可以把這些相依套件添加到 `devDependencies` 中，這些依賴依然會在本地指定 `npm install` 時被安裝和管理，但是不會被安裝到生產環境中。
@@ -133,7 +133,7 @@ author": "CUGGZ <xxxxx@xx.com> (https://juejin.cn/user/3544481220801815)"
 }
 ```
 
-#### 3. peerDependencies
+### 3. peerDependencies
 有些情況下，我們的專案和所相依的 module 可能會<b>同時</b>相依另一個 module，但是所相依的版本不一樣。
 > <b>例如</b><br>
 > 專案相依 A module 和 B module 的 `1.0` 版，而 A module 本身又相依 B module 的 `2.0` 版。<br>
@@ -159,20 +159,20 @@ peerDependencies 就是用來供插件指定其所需要的主工具的版本。
 從 npm `3.0` 版開始，`peerDependencies` 不再會默認安裝了。
 :::
 
-#### 4. optionalDependencies
+### 4. optionalDependencies
 如果需要在找不到套件或者安裝套件失敗時 npm 仍然能繼續運行，可以將該套件放在 `optionalDependencies` 物件中。<br>
 `optionalDependencies` 物件中的套件會覆蓋 `dependencies` 中同名的套件，所以只需在一個地方進行設置即可。
 :::warning
 由於 `optionalDependencies` 中的相依可能併爲安裝成功，所以一定要做異常處理，否則當獲取這個相依套件時，如果獲取不到就會報錯。
 :::
 
-#### 5. bundledDependencies
+### 5. bundledDependencies
 配置項是一個陣列，陣列內可以指定一些 modules，這些 modules 將在發佈時一起被打包。
 :::warning
 這個陣列中的值必須是在 `dependencies`, `devDependencies` 內宣告過的套件。
 :::
 
-#### 6. engines
+### 6. engines
 維護一些舊專案時，可能對 npm 包的版本或者 Node 版本有特殊要求。
 如果不滿足條件就可能無法將專案跑起來，爲了讓專案開箱即用，可以在 `engines` 字段中說明具體的版本號。
 ```json
@@ -186,7 +186,7 @@ peerDependencies 就是用來供插件指定其所需要的主工具的版本。
 :::
 
 ## 腳本配置
-#### 1. scripts
+### 1. scripts
 package.json 中內建的腳本入口，是 `key-value` 鍵值對配置，`key` 爲可運行的命令。<br>
 除了運行基本的 `scripts` 命令，還可以結合 `pre` 和 `post` 完成前置和後續操作。
 ```json
@@ -214,7 +214,7 @@ package.json 中內建的腳本入口，是 `key-value` 鍵值對配置，`key` 
 > 可以透過調用 `npm run XXX` 來運行，例如：`npm run dev`。<br>
 > 我們可以爲命令使用任何的名稱，腳本也可以是任何操作。
 
-#### 2. config
+### 2. config
 配置 scripts 運行時的配置參數。
 ```json
 "config": {
@@ -224,18 +224,18 @@ package.json 中內建的腳本入口，是 `key-value` 鍵值對配置，`key` 
 > 若運行 `npm run start`，則 `port` 將會映射到 `npm_package_config_port` 環境變數。
 
 ## 文件 & 目錄
-#### 1. main
+### 1. main
 （String）指定加載的 entry（入口文件），在 browser 和 Node 環境中都可以使用。<br>
 如果我們將專案發佈爲 `npm` 包，那麼當使用 `require` 導入 `npm` 包時，回傳的就是 `main` 所列出的文件的 `module.exports` 屬性。<br>
 如果不指定該字串，預設是專案根目錄下的 `index.js`（如果沒找到，將會報錯）。
 ```json
 "main": "./src/index.js"
 ```
-#### 2. browser
+### 2. browser
 （String）定義 `npm` 包在 browser 環境下的 entry。
 如果 `npm` 包只在 web 端使用，並且嚴禁在 server 端使用，使用 browser 來定義 entry。
 
-#### 3. module
+### 3. module
 定義 `npm` 包的 ESM 規範的 entry，browser 環境和 node 環境均可使用。
 如果 `npm` 包導出的是 ESM 規範的包，使用 module 來定義 entry。
 
@@ -251,7 +251,7 @@ Webpack 在進行項目構建時，有一個 `target` 選項，默認爲 Web，�
 * 如果在 Node 環境中加載 CommonJS 模塊，或者 ESM，則只有 `main` 有效。
 :::
 
-#### 4. bin
+### 4. bin
 （Object）指定各個內部命令對應的可執行文件的位置。
 ```json
 "bin": {
@@ -273,7 +273,7 @@ scripts: {
 }
 ```
 
-#### 5. files
+### 5. files
 （String[]）用來描述當把 `npm` 包作爲相依套件安裝時需要說明的文件列表。<br>
 當 `npm` 包發佈時，`files` 指定的檔案會被推送到 `npm` server 中，如果指定的是目錄，那麼該目錄下面所有的檔案都會被提交。
 ```json
@@ -295,7 +295,7 @@ build
 .DS_Store
 ```
 
-#### 6. man
+### 6. man
 （String[]）Linux 中的幫助指令，透過該指令可以查看 Linux 中的指令幫助、配置文件幫助和撰寫幫助等訊息。<br>
 如果 node.js module 是一個全局的命令行工具，在 package.json 透過 `man` 屬性可以指定 `man` 命令查找的文件網址。
 ```json
@@ -311,7 +311,7 @@ build
 * 如果 `man` 文件名稱不是以 module 名稱開頭的，安裝的時候會加上 module 名稱作為前綴。
 :::
 
-#### 7. directories
+### 7. directories
 規範專案的目錄。<br>
 node.js module 是基於 CommonJS 模塊化規範實現的，需要嚴格遵循 CommonJS 規範。<br>
 module 目錄下除了必須包含專案的描述文件 package.json 以外，還需要包含以下目錄：
@@ -333,13 +333,13 @@ module 目錄下除了必須包含專案的描述文件 package.json 以外，�
 > 這個屬性實際上沒有什麼實際的作用，當然不排除未來會有什麼比較有意義的用處。
 
 ## 發佈配置
-#### 1. private
+### 1. private
 防止使用者意外地將 private repository 發佈到 npm server。
 ```json
 "private": true
 ```
 
-#### 2. publishConfig
+### 2. publishConfig
 在 module 發佈時生效，用於設置發佈時一些配置項的集合。<br>
 如果不想 module 被默認標記爲最新或不想發佈到 public repository，可以配置 tag 或 repository 網址。<br>
 通常情況下，`publishConfig` 會配合 private 來使用。<br>
@@ -353,7 +353,7 @@ module 目錄下除了必須包含專案的描述文件 package.json 以外，�
 }
 ```
 
-#### 3. os
+### 3. os
 設置該 `npm` 包可以在什麼作業系統使用，及不能在什麼作業系統使用。
 如果希望開發的 `npm` 包只運行在 linux，爲了避免出現不必要的異常，需要建議使用 Windows 系統的使用者不要安裝它，可以使用 os 配置：
 ```json
@@ -361,14 +361,14 @@ module 目錄下除了必須包含專案的描述文件 package.json 以外，�
 "os" ["!win32"]  // 禁用的作業系統
 ```
 
-#### 4. cpu
+### 4. cpu
 CPU 可以更準確的限制用戶的安裝環境。
 ```json
 "cpu" ["x64", "AMD64"]   // 適用的 cpu
 "cpu" ["!arm", "!mips"]  // 禁用的 cpu
 ```
 
-#### 5. license
+### 5. license
 指定軟體的開源協議，開源協議表明了其他人獲得程式碼後擁有的權利，可以對程式碼進行哪部分操作，或禁止哪部分操作。<br>
 常見的協議如下：
 * MIT：只要使用者在專案副本中包含了版權聲明和許可聲明，就可以對程式碼做任何想做的事情，原主人無需承擔任何責任。
@@ -381,12 +381,12 @@ CPU 可以更準確的限制用戶的安裝環境。
 ## 第三方配置
 可以承載命令特有的配置，例如 Babel、ESLint 等，它們每個都有特有的屬性，例如 `eslintConfig`、`babel` 等。<br>
 可以在相應的命令、專案檔案中找到如何使用它們。
-#### 1. typings
+### 1. typings
 指定 TypeScript 的 entry。
 ```json
 "typings": "types/index.d.ts"
 ```
-#### 2. eslintConfig
+### 2. eslintConfig
 可以寫在單獨的配置文件. eslintrc.json 中，也可以寫在 package.json 文件的 `eslintConfig` 配置項中。
 ```json
 "eslintConfig": {
@@ -405,7 +405,7 @@ CPU 可以更準確的限制用戶的安裝環境。
 }
 ```
 
-#### 3. babel
+### 3. babel
 指定 Babel 的編譯配置。
 ```json
 "babel": {
@@ -414,13 +414,13 @@ CPU 可以更準確的限制用戶的安裝環境。
 }
 ```
 
-#### 4. unpkg
+### 4. unpkg
 讓 npm 上所有的文件都開啓 cdn 服務，該 CND 服務由 unpkg 提供。
 ```json
 "unpkg": "dist/vue.js"
 ```
 
-#### 5. lint-staged
+### 5. lint-staged
 在 Git 暫存檔案上運行 linters 的工具，配置後每次修改一個檔案即可給所有檔案執行一次 lint 檢查，通常配合 gitHooks 一起使用。
 ```json
 "lint-staged": {
@@ -432,7 +432,7 @@ CPU 可以更準確的限制用戶的安裝環境。
 ```
 > 使用 lint-staged 時，每次提交程式碼時只會檢查當前改動的檔案。
 
-#### 6. gitHooks
+### 6. gitHooks
 定義一個鉤子（hook），在提交（commit）之前執行 ESlint 檢查。<br>
 在執行 lint 命令後，會自動修復暫存區的檔案。<br>
 修復之後的檔案並不會儲存在暫存區，所以需要用 `git add` 將修復後的檔案重新加入暫存區。<br>
@@ -444,7 +444,7 @@ CPU 可以更準確的限制用戶的安裝環境。
 ```
 > 配合上面的 lint-staged 來進行程式碼的檢查。
 
-#### 7. browserslist
+### 7. browserslist
 告知支援哪些瀏覽器及版本。<br>
 Babel、Autoprefixer 和其他工具會用到它，以將所需的 polyfill 和 fallback 添加到目標瀏覽器。
 ```json
