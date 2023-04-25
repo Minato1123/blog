@@ -2,7 +2,7 @@
 
 每一個 JavaScript 物件（除了 `null`）在創建的時候就會與之關聯另一個物件，這個物件就是所謂的原型，每一個物件都會從原型「繼承」屬性。
 
-![](https://i.stack.imgur.com/4pCXC.png)
+![](../../.vitepress/images/js-prototype/JS-obj-layout.png)
 
 ## 範例介紹
 
