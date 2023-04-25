@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,V as l}from"./chunks/framework.62adf23d.js";const A=JSON.parse('{"title":"JAVA Notes","description":"","frontmatter":{},"headers":[],"relativePath":"notes/misc/java-notes.md"}'),p={name:"notes/misc/java-notes.md"},o=l("",175),e=[o];function t(r,c,i,D,y,F){return a(),n("div",null,e)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};
