@@ -19,7 +19,7 @@ const _tags = [
   'runtime', 'esbuild', 'parser', 'template', 'Electron', 'on-demand', 'Angular', 'regex',
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
-  'file', 'watch', 'UnoCSS', 'slides', 'loading'
+  'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -30,7 +30,7 @@ const data: Row[] = [
   ['unplugin-icons', 'https://github.com/antfu/unplugin-icons', ['套件', 'icons']],
   ['unplugin-vue-components', 'https://github.com/antfu/unplugin-vue-components', ['套件', 'Vue', 'auto-import']],
   ['Commander.js', 'https://github.com/tj/commander.js', ['套件', 'CLI']],
-  ['antfu/eslint-config', 'https://github.com/antfu/eslint-config', ['套件', 'ESLint', 'presets']],
+  ['antfu/eslint-config', 'https://github.com/antfu/eslint-config', ['套件', 'ESLint', 'presets', 'linter']],
   ['vue-wait', 'https://github.com/f/vue-wait', ['套件', 'Vue', 'Vuex', 'loader-management', 'loading']],
   ['CodeGPT', 'https://www.codegpt.co/', ['extension', '工具', 'code', 'VSCode', 'extension']],
   ['fast-json-stringify', 'https://github.com/fastify/fast-json-stringify', ['套件', 'JSON', 'stringify']],
@@ -170,6 +170,11 @@ const data: Row[] = [
   ['Swiper', 'https://swiperjs.com/', ['UI', 'CSS', 'slides', '套件']],
   ['ArkType', 'https://arktype.io/', ['套件', 'TS', 'schema', 'validation', 'runtime']],
   ['unlazy', 'https://unlazy.byjohann.dev/', ['套件', '函式庫', 'browser', 'loading']],
+  ['husky', 'https://typicode.github.io/husky/#/', ['git', '套件', 'monorepo']],
+  ['three.js', 'https://threejs.org/', ['JS', '套件', '3D', 'browser', '函式庫']],
+  ['stylelint', 'https://stylelint.io/', ['CSS', '套件', 'linter', 'error', 'stylelint']],
+  ['AOS', 'https://michalsnik.github.io/aos/', ['scroll', '函式庫', '套件', 'animation']],
+  ['lint-staged', 'https://github.com/okonet/lint-staged', ['git', '套件', 'linter', 'ESLint', 'stylelint', 'workflow']]
 ]
 
 const tags = _tags.map(t => {
