@@ -19,7 +19,8 @@ const _tags = [
   'runtime', 'esbuild', 'parser', 'template', 'Electron', 'on-demand', 'Angular', 'regex',
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
-  'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint'
+  'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
+  'device', 'cookie'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -174,7 +175,11 @@ const data: Row[] = [
   ['three.js', 'https://threejs.org/', ['JS', '套件', '3D', 'browser', '函式庫']],
   ['stylelint', 'https://stylelint.io/', ['CSS', '套件', 'linter', 'error', 'stylelint']],
   ['AOS', 'https://michalsnik.github.io/aos/', ['scroll', '函式庫', '套件', 'animation']],
-  ['lint-staged', 'https://github.com/okonet/lint-staged', ['git', '套件', 'linter', 'ESLint', 'stylelint', 'workflow']]
+  ['lint-staged', 'https://github.com/okonet/lint-staged', ['git', '套件', 'linter', 'ESLint', 'stylelint', 'workflow']],
+  ['device.js', 'https://github.com/borismus/device.js', ['套件', 'mobile', 'desktop', 'device']],
+  ['animated-scroll-to', 'https://muffinman.io/animated-scroll-to/', ['套件', 'animation', 'scroll', 'lightweight']],
+  ['js-cookie', 'https://github.com/js-cookie/js-cookie', ['cookie', 'browser', '套件', 'JS', 'lightweight', 'API']],
+  
 ]
 
 const tags = _tags.map(t => {
