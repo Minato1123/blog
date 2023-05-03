@@ -6,11 +6,11 @@
 
 ## 範例介紹
 
-* `Person`：建構函數。
+* `Person`：建構函式。
 * `personA`：實例物件。
-* `prototype`：函數的 prototype 屬性指向了一個物件，這個物件正是「調用該建構函數而創建的實例」的原型。
+* `prototype`：函式的 prototype 屬性指向了一個物件，這個物件正是「調用該建構函式而創建的實例」的原型。
 * `__proto__`：指向該物件的原型（物件）。
-* `constructor`：每個原型都有一個 constructor 屬性指向關聯的建構函數。
+* `constructor`：每個原型都有一個 constructor 屬性指向關聯的建構函式。
 
 
 ```javascript
@@ -21,7 +21,7 @@ function Person() {
 const personA = new Person()
 ```
 
-* 原型物件 `Person.prototype` 的 `constructor` 指向構造函數本身
+* 原型物件 `Person.prototype` 的 `constructor` 指向構造函式本身
 ```javascript
 Person.prototype.constructor === Person // true
 ```
@@ -51,7 +51,7 @@ obj.name = 'Kevin'
 
 console.log(obj.name) // Kevin
 ```
-原型物件就是透過 `Object` 建構函數所生成的，實例的 `__proto__` 指向建構函數的 `prototype`。
+原型物件就是透過 `Object` 建構函式所生成的，實例的 `__proto__` 指向建構函式的 `prototype`。
 
 ## 原型鏈
 `Object.prototype` 的原型為 `null`。
@@ -61,7 +61,7 @@ Object.prototype.__proto__ === null // true
 
 即代表 `Object.prototype` 沒有原型，所以查找屬性的時候查到 `Object.prototype` 就可以停止查找了。
 
-除了 `Object` 的原型物件 `Object.prototype` 的 `__proto__` 指向 `null`，其他內建函數物件的原型物件（例如：`Array.prototype`）和使用者定義的建構函數的原型物件的 `__proto__` 都指向 `Object.prototype`。
+除了 `Object` 的原型物件 `Object.prototype` 的 `__proto__` 指向 `null`，其他內建函式物件的原型物件（例如：`Array.prototype`）和使用者定義的建構函式的原型物件的 `__proto__` 都指向 `Object.prototype`。
 
 ```javascript
 Object.prototype.__proto__ === null

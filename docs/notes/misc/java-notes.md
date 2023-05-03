@@ -52,7 +52,7 @@ public class <Class_name> {
 | 常數 | 使用英文大寫字母和底線 `_` 符號 | MAX_SIZE、MIN_SIZE |
 | 變數 | 小駝峰 | size、screenSize、myAccountNumber |
 | 類別 (class) | 大駝峰 | LargeRoom、SmallRoom |
-| 函數 (method) | 小駝峰 | pressButton、scrollScreen |
+| 函式 (method) | 小駝峰 | pressButton、scrollScreen |
 
 ### 基本資料型態範圍及初始值
 

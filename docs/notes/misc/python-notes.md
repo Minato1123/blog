@@ -197,7 +197,7 @@ for key, value in dict.items():
 ```
 
 ### 函式 Function
-* 呼叫函數時可以使用關鍵字來指定其參數值，不需要依照宣告順序來呼
+* 呼叫函式時可以使用關鍵字來指定其參數值，不需要依照宣告順序來呼
 ```python
 def function_name(parameter):   # 定義、宣告 function (parameter 可有可無、可多可少)
     # do_somethings               注意縮排才算 function 內部
@@ -222,10 +222,10 @@ test('a', 'b', name = 'John', age = '22') 順序不能混
 args = ('a', 'b')
 kwargs = {'name': 'John', 'age': '22'}
 ```
-#### Lambda 函數
+#### Lambda 函式
 `key=lambda <元素>: <元素><[k]>` 對元素第 k 個欄位排序
 
-可創建一個短小的匿名函數，出於語法限制，只能有一個單獨表達式。
+可創建一個短小的匿名函式，出於語法限制，只能有一個單獨表達式。
 ```python
 def make_incrementor(n):
     return lambda x: x + n
@@ -234,17 +234,17 @@ f = make_incrementor(42)
 f(0)          # 回傳 42 + 0 = 42
 f(1)          # 回傳 42 + 1 = 43
 ```
-可以當作一個小函數物件 ( function object ) 傳入其他函數引數 built-in function 很常使用 lambda 來當作運算條件，填入 key 中。
+可以當作一個小函式物件 ( function object ) 傳入其他函式引數 built-in function 很常使用 lambda 來當作運算條件，填入 key 中。
 1. `sorted（list, key=lambda x:x[k]）`
 1. `list.sort（key=lambda x:x[k]）`
 1. `max（list, key=lambda x:x[k]）` ... 等用法
 
-#### 函數註解
+#### 函式註解
 * Documentation strings
     * `__doc__` 
     > 類別 (class) 的預設屬性 (attribute)。
     > 用以當作文件字串 (docstring) ，文件字串用三引號 `'''` 字串 (string) 定義，三引號字串的特性是保留原始編排的方式，並且可以跨多行。
-    > 主要用途是撰寫函數 (function) 、類別、方法 (method) 及模組 (module) 的功能與說明。
+    > 主要用途是撰寫函式 (function) 、類別、方法 (method) 及模組 (module) 的功能與說明。
 * 型別提示
     * `: argument type` 設定參數的型別
     > 範例：`def function(a: str, b: int = 10):` 
@@ -347,7 +347,7 @@ Class.f
 ```
 #### 實例化
 ##### 建立類別 Class (模板)
-定義類別、初始化函數 init ( )
+定義類別、初始化函式 init ( )
 ```python
 class Class_name: 
     def __init__(self, parameter_1, parameter_2, ...): 
@@ -423,16 +423,16 @@ class Inherit_son(Inherit_dad):      # 繼承 Inherit_dad 的內容
         # do_somethings
 ```
 :::tip
-* super ( ) 內建函數是繼承時用來呼叫 / 執行父類別的方法 ( method )
+* super ( ) 內建函式是繼承時用來呼叫 / 執行父類別的方法 ( method )
 `super(type[, object-or-type])`
 :::
 
 ### 多型 Polymorphism
 :::info
 * **overload 多載**
-相同函數名稱，不同參數類型、個數，依據傳入不同的參數，呼叫相對應的函數。
+相同函式名稱，不同參數類型、個數，依據傳入不同的參數，呼叫相對應的函式。
 * **override 覆載**
-相同函數名稱，覆寫方法內容，當子類別繼承覆類別時，可以覆寫父類別的方法內容。
+相同函式名稱，覆寫方法內容，當子類別繼承覆類別時，可以覆寫父類別的方法內容。
 :::
 
 ```python

@@ -309,7 +309,7 @@ SELECT * FROM `<table_name>` ORDER BY `<column_name>` LIMIT <number>;
 SELECT DISTINCT `<column_name>` FROM `<table_name>`;
 ```
 
-## 聚合函數 Aggregate Functions
+## 聚合函式 Aggregate Functions
 * 回傳此 table 的資料數量
 ```sql
 SELECT COUNT(*) FROM `<table_name>`;
@@ -343,9 +343,9 @@ SELECT MIN(`<column_name>`) FROM `<table_name>`;
 ```sql
 SELECT AVG(`<column_name>`) FROM `<table_name>` GROUP BY `<column_name>`; 
 ```
-* 對函數產生的值來設定條件
-如果被 `SELECT` 的只有函數欄， 那就不需要 `GROUP BY` 子句。
-因為函數產生的值不能使用 `WHERE` 
+* 對函式產生的值來設定條件
+如果被 `SELECT` 的只有函式欄， 那就不需要 `GROUP BY` 子句。
+因為函式產生的值不能使用 `WHERE` 
 ```sql
 SELECT `<column_name1>`, SUM(`<column_name2>`)
 FROM `<table_name>`
