@@ -4,3 +4,13 @@
   --vp-c-brand-light: #f7a8af;
   --vp-c-heightlight: #43a8a3; 
 }
+
+.span-mb {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.span-heightlight {
+  color: var(--vp-c-heightlight);
+  font-weight: bold;
+}
