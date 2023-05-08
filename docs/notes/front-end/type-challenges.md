@@ -1,5 +1,5 @@
 # Type Challenges Notes
-最近更新日期：2023/03/20
+最近更新日期：2023/05/08
 
 ## Easy
 ### 11 - Tuple to Object [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00011-easy-tuple-to-object/README.md)
@@ -616,7 +616,18 @@ type E = C['e']
 ```
 > 若物件太深，型別無法全部顯示清楚的話，可以藉由新建 `type` 並取得原 `type` 的其屬性查看內部型別。
 
-
+### 25270 - Transpose [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/25270-medium-transpose/README.md)
+```typescript
+type Transpose<
+    M extends number[][],
+    R = M['length'] extends 0 ? [] : M[0]
+  > = {
+  [X in keyof R]: {
+    [Y in keyof M]:X extends keyof M[Y] ? M[Y][X] : never
+  }
+}
+```
+> 物件的 key 為數字時可作為陣列。
 
 <style>
   .span-mb {
