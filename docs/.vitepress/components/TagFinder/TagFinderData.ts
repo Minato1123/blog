@@ -20,7 +20,7 @@ const _tags = [
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
-  'device', 'cookie'
+  'device', 'cookie', 'SFC'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -183,6 +183,13 @@ const data: Row[] = [
   ['Zag','https://zagjs.com/', ['UI', 'component', 'state-machine', 'Vue', 'state']],
   ['inkline','https://www.inkline.io/', ['Vue', 'UI', 'component', '函式庫', 'CSS']],
   ['Dreamsands','https://dreamsands.io/?ref=producthunt', ['code', '工具']],
+  ['vite-plugin-vue-nested-sfc', 'https://github.com/HunYan-io/vite-plugin-vue-nested-sfc', ['套件', 'Vue', 'Vite', 'SFC']],
+  ['feTS', 'https://github.com/ardatan/feTS', ['套件', 'API', 'REST-API', 'TS']],
+  ['Swagger UI', 'https://swagger.io/tools/swagger-ui/', ['API', 'UI', '工具', 'visualization']],
+  ['HD Gradients', 'https://gradient.style/', ['工具', 'CSS', 'code', 'code-snippet']],
+  ['ftld', 'https://github.com/cevr/ftld', ['函式庫', '套件', 'TS', 'functional-utilities']],
+  ['vscode-inline-html', 'https://github.com/pushqrdx/vscode-inline-html', ['VSCode', 'extension', 'HTML', 'CSS']],
+  ['Emmet', 'https://github.com/emmetio/emmet', ['HTML', 'CSS', '工具', 'code']]
 ]
 
 const tags = _tags.map(t => {

@@ -7,6 +7,7 @@
 <div class="content">
   ↗ 這是我家狗狗很可愛給你看一下。
 </div>
+
 <div class="about-me-container">
   <div class="sub-title">
     About Me
@@ -14,6 +15,7 @@
   <div class="content">
     <span class="my-name">Carrie</span>, or <span class="my-name">Minato</span>.<br>
     元智大學通訊四年級，想成為前端工程師。目前使用 Vue 的開發經驗大約一年。
+    
   </div>
 </div>
 <div class="about-blog-container">
@@ -26,13 +28,26 @@
 </div>
 <div class="about-blog-container">
   <div class="sub-title">
+    About Resume
+  </div>
+  <div class="resume-links">
+    <a class="project-link" href="https://reurl.cc/RvMAp9" target="_blank">
+      • Chinese 
+    </a>
+    <a class="project-link" href="https://reurl.cc/Ge07WA" target="_blank">
+      • English
+    </a>
+  </div>
+</div>
+<div class="about-blog-container">
+  <div class="sub-title">
     About Side-Project
   </div>
   <div class="content">
     <div>
       帕恰購物｜Pochacco Online Store
     </div>
-    <div >
+    <div>
       <a class="project-link" href="https://github.com/Minato1123/online-store" target="_blank">
         • GitHub
       </a>
@@ -95,6 +110,13 @@
   .project-link {
     display: inline-block;
     margin-top: 0.2rem;
+  }
+
+  .resume-links {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
   }
 
 
