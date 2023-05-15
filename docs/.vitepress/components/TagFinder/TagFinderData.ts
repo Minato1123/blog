@@ -20,7 +20,7 @@ const _tags = [
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
-  'device', 'cookie', 'SFC'
+  'device', 'cookie', 'SFC', 'devtools', 'font'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -189,7 +189,15 @@ const data: Row[] = [
   ['HD Gradients', 'https://gradient.style/', ['工具', 'CSS', 'code', 'code-snippet']],
   ['ftld', 'https://github.com/cevr/ftld', ['函式庫', '套件', 'TS', 'functional-utilities']],
   ['vscode-inline-html', 'https://github.com/pushqrdx/vscode-inline-html', ['VSCode', 'extension', 'HTML', 'CSS']],
-  ['Emmet', 'https://github.com/emmetio/emmet', ['HTML', 'CSS', '工具', 'code']]
+  ['Emmet', 'https://github.com/emmetio/emmet', ['HTML', 'CSS', '工具', 'code']],
+  ['Vue DevTools', 'https://github.com/webfansplz/vite-plugin-vue-devtools', ['Vite', 'Vue', 'devtools', '套件']],
+  ['AFFiNE.PRO', 'https://affine.pro/', ['markdown', '工具', 'Electron']],
+  ['vite-plugin-vue-component-preview', 'https://github.com/johnsoncodehk/vite-plugin-vue-component-preview', ['markdown', 'SFC', 'Vue', 'Vite', 'component', '套件']],
+  ['Nuxtr', 'https://github.com/nuxtrdev/nuxtr-vscode', ['VSCode', 'extension', 'Nuxt', 'devtools', 'Vue']],
+  ['PhantomJS', 'https://github.com/ariya/phantomjs', ['JS', 'test', 'automate']],
+  ['google-webfonts-helper', 'https://github.com/majodev/google-webfonts-helper', ['套件', 'font']],
+  ['TresJS', 'https://tresjs.org/', ['3D', '套件', 'Vue', 'Vite']],
+
 ]
 
 const tags = _tags.map(t => {
