@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as s,V as l}from"./chunks/framework.62adf23d.js";const m=JSON.parse('{"title":"May. 2023","description":"","frontmatter":{},"headers":[],"relativePath":"daily-log/may2023.md"}'),n={name:"daily-log/may2023.md"},o=l("",30),t=[o];function r(c,p,i,b,d,u){return a(),s("div",null,t)}const y=e(n,[["render",r]]);export{m as __pageData,y as default};
