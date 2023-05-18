@@ -20,7 +20,7 @@ const _tags = [
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
-  'device', 'cookie', 'SFC', 'devtools', 'font'
+  'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -197,7 +197,11 @@ const data: Row[] = [
   ['PhantomJS', 'https://github.com/ariya/phantomjs', ['JS', 'test', 'automate']],
   ['google-webfonts-helper', 'https://github.com/majodev/google-webfonts-helper', ['套件', 'font']],
   ['TresJS', 'https://tresjs.org/', ['3D', '套件', 'Vue', 'Vite']],
-
+  ['tailwind-merge', 'https://github.com/dcastil/tailwind-merge', ['套件', 'TailwindCSS', 'CSS']],
+  ['vue-promised', 'https://github.com/posva/vue-promised', ['套件', 'Vue', 'component', 'API']],
+  ['BootstrapVue', 'https://github.com/bootstrap-vue/bootstrap-vue', ['套件', 'component', 'Vue', 'Nuxt', 'WAI-ARIA', 'icons']],
+  ['Pulumi', 'https://www.pulumi.com/', ['JS', 'TS', '工具', 'cloud']],
+  
 ]
 
 const tags = _tags.map(t => {
