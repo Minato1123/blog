@@ -201,6 +201,8 @@ const data: Row[] = [
   ['vue-promised', 'https://github.com/posva/vue-promised', ['套件', 'Vue', 'component', 'API']],
   ['BootstrapVue', 'https://github.com/bootstrap-vue/bootstrap-vue', ['套件', 'component', 'Vue', 'Nuxt', 'WAI-ARIA', 'icons']],
   ['Pulumi', 'https://www.pulumi.com/', ['JS', 'TS', '工具', 'cloud']],
+  ['Mocha', 'https://mochajs.org/', ['工具', 'test', 'JS', 'NodeJS']],
+  ['UQuit', 'https://qunitjs.com/', ['工具', 'test', 'JS', 'NodeJS', 'unit-test']]
   
 ]
 
