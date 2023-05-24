@@ -50,32 +50,67 @@ myPromise.catch((error) => {
 ```
 
 ### 其他使用
-### # `Promise.all` (陣列)
+### `Promise.all`
+讓多個 Promise 同時執行。<br>
+每個 Promise 都完成時，resolve 才會回傳，並將值存入陣列中。<br>
+只要有其中一個 Promise 被 rejected，則整個 `Promise.all` 立刻被拒絕。
 ```javascript
 Promise.all([newPromise1, newPromise2, newPromise3, newPromise4])
   .then((data) => {
     // 一次性同時回傳成功訊息，回傳以上三個數值的陣列
-    console.log(data);
+    console.log(data)
   })
   .catch((err) => {
     // 失敗訊息 (立即)
-    console.log(err);
-  });
+    console.log(err)
+  })
 
 ```
-
-### # `Promise.race` (陣列)
+### `Promise.allSettled`
+不管結果是成功或失敗，確認每一項非同步事件都執行完畢得到結果，並回傳各自的結果。
+```js
+Promise.allSettled([
+  newPromise1,
+  newPromise2,
+  newPromise3,
+])
+  .then(value => console.log(value))
+  .catch(err => console.log(err))
+  
+//[
+//  { status: 'fulfilled', value: '...' },
+//  { status: 'rejected', reason: '...' },
+//  { status: 'fulfilled', value: '...' },
+//]  
+```
+### `Promise.race`
+任一個 Promise 轉換狀態，就會回傳一個同樣狀態的 Promise 物件，並且接收其成功值或失敗訊息。<br>
+其餘 Promise 的結果或錯誤會被忽略。
 ```javascript
 Promise.race([newPromise1, newPromise2, newPromise3])
   .then((data) => {
     // 僅會回傳一個最快完成的 resolve 或 reject
-    console.log('race', data);
+    console.log('race', data)
   })
   .catch((err) => {
     // 失敗訊息 (立即)
-    console.log(err);
-  });
+    console.log(err)
+  })
 ```
+
+### `Promise.any`
+類似 `Promise.race`，當有一個 Promise 完成，就回傳完成結果。
+而所有 Promise 都被拒絕，則會回傳一個特殊物件 AggregateError，會將所有 Promise 的失敗訊息存在 errors 屬性中。
+```js
+Promise.any([
+  newPromise1,
+  newPromise2
+])
+  .then((value) => console.log(value))
+  .catch((err) => console.log(err.constructor.name, err.errors))
+```
+
+[⋯ Reference](https://ithelp.ithome.com.tw/articles/10276827)
 
 ## Async function 及 Await
 * `async` function：用來定義一個非同步函式，讓這個函式本體是屬於非同步，但其內部以「同步的方式運行非同步」程式碼。
