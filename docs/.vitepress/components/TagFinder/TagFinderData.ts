@@ -20,7 +20,8 @@ const _tags = [
   'Nitro', 'atomic', 'animation', 'AnimateCSS', 'CJS', 'tsx', 'syntax-sugar', 'deploy',
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
-  'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud'
+  'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud', 'debug', 'remote', 'server',
+  'formatter', 'commit'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -202,7 +203,16 @@ const data: Row[] = [
   ['BootstrapVue', 'https://github.com/bootstrap-vue/bootstrap-vue', ['套件', 'component', 'Vue', 'Nuxt', 'WAI-ARIA', 'icons']],
   ['Pulumi', 'https://www.pulumi.com/', ['JS', 'TS', '工具', 'cloud']],
   ['Mocha', 'https://mochajs.org/', ['工具', 'test', 'JS', 'NodeJS']],
-  ['UQuit', 'https://qunitjs.com/', ['工具', 'test', 'JS', 'NodeJS', 'unit-test']]
+  ['UQuit', 'https://qunitjs.com/', ['工具', 'test', 'JS', 'NodeJS', 'unit-test']],
+  ['AutoAnimate', 'https://auto-animate.formkit.com/', ['套件', 'animation', 'JS', 'Vue', 'UI']],
+  ['PageSpyWeb', 'https://huolalatech.github.io/page-spy-web/', ['工具', 'debug', 'remote']],
+  ['Nitro', 'https://github.com/unjs/nitro', ['server', 'Nitro', 'Nuxt', 'auto-import', 'TS', 'engine']],
+  ['Standard.js', 'https://standardjs.com/readme-zhtw.html', ['JS', 'code', 'NodeJS', 'linter', 'formatter']],
+  ['ESLint', 'https://eslint.org/', ['工具', 'linter', 'code', 'JS', 'ESLint']],
+  ['Prettier', 'https://prettier.io/', ['工具', 'formatter', 'code', 'JS', 'TS', 'CSS', 'Vue', 'markdown', 'ESLint']],
+  ['JSLint', 'https://github.com/jslint-org/jslint', ['工具', 'JS', 'linter', 'code']],
+  ['commitlint', 'https://github.com/conventional-changelog/commitlint', ['工具', 'linter', 'git', 'commit']],
+  ['git-commit-plugin', 'https://github.com/RedJue/git-commit-plugin', ['工具', 'git', 'commit', 'VSCode', 'extension']],
   
 ]
 
