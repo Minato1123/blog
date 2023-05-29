@@ -213,7 +213,10 @@ const data: Row[] = [
   ['JSLint', 'https://github.com/jslint-org/jslint', ['工具', 'JS', 'linter', 'code']],
   ['commitlint', 'https://github.com/conventional-changelog/commitlint', ['工具', 'linter', 'git', 'commit']],
   ['git-commit-plugin', 'https://github.com/RedJue/git-commit-plugin', ['工具', 'git', 'commit', 'VSCode', 'extension']],
-  
+  ['Vue Vine', 'https://github.com/vue-vine/vue-vine', ['Vue', '套件', 'syntax', 'SFC']],
+  ['UglifyJS', 'https://github.com/mishoo/UglifyJS', ['JS', '工具', 'compress', 'parser', 'code']],
+  ['defu', 'https://github.com/unjs/defu', ['JS', '工具']]
+
 ]
 
 const tags = _tags.map(t => {
