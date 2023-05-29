@@ -36,6 +36,7 @@ export default defineConfig({
         items: [
           { text: 'TagFinder', link: '/notes/front-end/tagfinder' },
           { text: 'TS Notes', link: '/notes/front-end/ts-notes' },
+          { text: 'VueUse Note', link: '/notes/front-end/vueuse-notes' },
           { text: 'JS Promise', link: '/notes/front-end/js-promise' },
           { text: 'JS Prototype', link: '/notes/front-end/js-prototype' },
           { text: 'JS DOM API', link: '/notes/front-end/js-dom-api' },
