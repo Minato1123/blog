@@ -67,12 +67,12 @@ export default defineConfig({
     ],
     search: {
       provider: 'local'
-    }
+    },
+    outline: [1, 3]
   },
   markdown: {
     lineNumbers: true,
   },
-
   vite: {
     plugins: [
       AutoImport({
