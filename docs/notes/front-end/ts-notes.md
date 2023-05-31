@@ -9,11 +9,11 @@
 
 ## Type VS Interface
 
-### ＃Primitive Types
+### Primitive Types
 ```typescript
 type Name = string;
 ```
-### ＃Array
+### Array
 
 **Type**
 
@@ -29,7 +29,7 @@ interface Names {
 }
 ```
 
-### ＃Tuples
+### Tuples
 
 ```typescript
 type Point = [number, number]
@@ -39,7 +39,7 @@ type Point = [number, number]
 後續仍可以做 `push` 的動作，TS 不會出現警告。
 :::
 
-### ＃Function 
+### Function 
 **Type**
 
 ```typescript
@@ -53,13 +53,13 @@ interface Log {
 }
 ```
 
-### ＃Union Types
+### Union Types
 
 ```typescript
 type Status = "pending" | "working" | "complete"
 ```
 
-### ＃Objects
+### Objects
 **Type**
 
 ```typescript
@@ -77,7 +77,7 @@ interface Person {
 }
 ```
 
-### ＃Composing Objects
+### Composing Objects
 **Type**
 ```typescript
 type Name = {
