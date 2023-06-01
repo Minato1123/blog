@@ -215,7 +215,8 @@ const data: Row[] = [
   ['git-commit-plugin', 'https://github.com/RedJue/git-commit-plugin', ['工具', 'git', 'commit', 'VSCode', 'extension']],
   ['Vue Vine', 'https://github.com/vue-vine/vue-vine', ['Vue', '套件', 'syntax', 'SFC']],
   ['UglifyJS', 'https://github.com/mishoo/UglifyJS', ['JS', '工具', 'compress', 'parser', 'code']],
-  ['defu', 'https://github.com/unjs/defu', ['JS', '工具']]
+  ['defu', 'https://github.com/unjs/defu', ['JS', '工具']],
+  ['ECharts', 'https://echarts.apache.org/zh/index.html', ['chart', '函式庫', 'data', 'visualization', 'SVG', 'browser']],
 
 ]
 
