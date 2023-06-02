@@ -21,7 +21,7 @@ const _tags = [
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
   'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud', 'debug', 'remote', 'server',
-  'formatter', 'commit'
+  'formatter', 'commit', 'github', 'toc', 'video'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -217,6 +217,11 @@ const data: Row[] = [
   ['UglifyJS', 'https://github.com/mishoo/UglifyJS', ['JS', '工具', 'compress', 'parser', 'code']],
   ['defu', 'https://github.com/unjs/defu', ['JS', '工具']],
   ['ECharts', 'https://echarts.apache.org/zh/index.html', ['chart', '函式庫', 'data', 'visualization', 'SVG', 'browser']],
+  ['Nuxt Content', 'https://content.nuxtjs.org/', ['Nuxt', 'Vue', 'markdown']],
+  ['Nuxt Studio', 'https://nuxt.studio/', ['Nuxt', 'Vue']],
+  ['vue-bind-once', 'https://github.com/danielroe/vue-bind-once', ['Vue', 'SSR', 'data', '套件']],
+  ['scrolly-video', 'https://scrollyvideo.js.org/', ['套件', '函式庫', 'scroll', 'component', 'video']],
+  ['github-toc-sidebar', 'https://github.com/reorx/github-toc-sidebar', ['github', 'toc', 'extension']],
 
 ]
 
