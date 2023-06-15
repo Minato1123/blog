@@ -1,3 +1,7 @@
+<script setup>
+import FoldCode from '../../.vitepress/components/FoldCode.vue'
+</script>
+
 # VueUse
 
 ## Shared [➜](https://github.com/vueuse/vueuse/tree/main/packages/shared)
@@ -444,7 +448,13 @@ const date = '2000/11/23 15:23:38:34'.match(REGEX_PARSE)
 3. `rejectOnCancel`：設置選項 `rejectOnCancel: true` 才能 `catch` 到 Promise 被拒絕。（決定 `lastRejector()` 是執行 `resolve` 還是 `reject`）
 預設情況函數若被取消，Promise 不會被拒絕。
 4. `createFilterWrapper()` 會回傳一個回傳 Promise 的 function 。
-5. `debounceFilter()`：![](../../.vitepress/images/vueuse-notes/debounceFilter.jpeg)
+5. `debounceFilter()`：
+
+<FoldCode>
+
+![](../../.vitepress/images/vueuse-notes/debounceFilter.jpeg)
+
+</FoldCode>
 
 ---
 
@@ -556,5 +566,33 @@ const date = '2000/11/23 15:23:38:34'.match(REGEX_PARSE)
 2. 利用 `watchWithFilter` 再包一層判斷 `isActive` 為 `true` 才執行原函式的動作。
 3. `pause()` 將 `isActive` 設為 `false`，`resume()` 將 `isActive` 設為 `True`。
 
+---
+
+### [watchThrottled](https://github.com/vueuse/vueuse/tree/main/packages/shared/watchThrottled)
+1. `throttle`：在間隔期間內只允許調用一次。
+2. `trailing`：在間隔期間內觸發，若為 `true` 則會等待間隔時間結束後調用。若為 `false` 則就算間隔時間結束也不會調用。
+3. `leading`：若為 `true` 則在觸發時立刻調用，若為 `false` 則在間隔時間結束時才調用。
+4. 基本就是使用 `watchWithFilter` 在參數 `eventFilter` 傳入 `throttleFilter`。
+
+---
+### [watchTriggerable](https://github.com/vueuse/vueuse/tree/main/packages/shared/watchTriggerable)
+1. 提供在響應式物件沒有變動時也可以手動觸發 watch 的函式。
+2. `onCleanup`：會在下一次 watch 的 callback 函式執行前執行參數（也是 callback），可用來改變上一次 watch 的 callback 函式作用域內的變數。
+
+
+<FoldCode>
+
+![](../../.vitepress/images/vueuse-notes/watchTriggerable.jpg)
+
+</FoldCode>
+
+---
+
+### [watchWithFilter](https://github.com/vueuse/vueuse/tree/main/packages/shared/watchWithFilter)
+1. 回傳 watch，callback function 使用到 `createFilterWrapper()`（可以多包一層需要的執行條件）。
+
+---
+### [whenever](https://github.com/vueuse/vueuse/tree/main/packages/shared/whenever)
+1. 參數格式與 watch 相同，差別在於是監測 Boolean 的響應式物件，當物件為 `true` 時才執行 callback。
 
 ## Core
