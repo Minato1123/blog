@@ -21,7 +21,7 @@ const _tags = [
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
   'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud', 'debug', 'remote', 'server',
-  'formatter', 'commit', 'github', 'toc', 'video'
+  'formatter', 'commit', 'github', 'toc', 'video', 'native', 'map', 'AI', 'hooks'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -222,6 +222,15 @@ const data: Row[] = [
   ['vue-bind-once', 'https://github.com/danielroe/vue-bind-once', ['Vue', 'SSR', 'data', '套件']],
   ['scrolly-video', 'https://scrollyvideo.js.org/', ['套件', '函式庫', 'scroll', 'component', 'video']],
   ['github-toc-sidebar', 'https://github.com/reorx/github-toc-sidebar', ['github', 'toc', 'extension']],
+  ['Splide', 'https://splidejs.com/', ['套件', 'slides', 'lightweight', 'TS', 'loading']],
+  ['NativeScript-Vue', 'https://nativescript-vue.org/', ['套件', 'native', 'mobile', 'Vue', 'JS']],
+  ['Docusaurus', 'https://docusaurus.io/docs', ['SSG', '框架', 'markdown', 'React', 'documentation']],
+  ['Leaflet', 'https://leafletjs.com/', ['套件', '函式庫', 'JS', 'map', 'mobile']],
+  ['awesome-vue', 'https://github.com/vuejs/awesome-vue', ['Vue', '套件']],
+  ['codeium', 'https://codeium.com/', ['工具', 'AI', 'code', 'VSCode']],
+  ['VueHooks Plus', 'https://inhiblabcore.github.io/docs/hooks/', ['Vue', '函式庫', 'TS', 'hooks']],
+  ['Mermaid', 'https://mermaid.js.org/', ['工具', 'markdown', 'chart']],
+  ['million', 'https://million.dev/', ['React', 'virtual-DOM', 'lightweight', 'JS', '框架']]
 
 ]
 
