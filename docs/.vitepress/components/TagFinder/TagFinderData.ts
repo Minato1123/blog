@@ -21,7 +21,8 @@ const _tags = [
   'host', 'serverless', 'Bass', 'event-emitter', 'pub-sub', 'desktop', 'mobile', 'operating-system',
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
   'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud', 'debug', 'remote', 'server',
-  'formatter', 'commit', 'github', 'toc', 'video', 'native', 'map', 'AI', 'hooks'
+  'formatter', 'commit', 'github', 'toc', 'video', 'native', 'map', 'AI', 'hooks', 'AST', 'Babel',
+  'auth', 'passwordless', 'biometrics'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -75,7 +76,7 @@ const data: Row[] = [
   ['Sentry', 'https://sentry.io/welcome/', ['工具', 'JS', 'SDK', 'report', 'error', 'exception']],
   ['NVM', 'https://github.com/nvm-sh/nvm', ['工具', 'NodeJS', 'manager', 'version']],
   ['TypeRunner', 'https://github.com/marcj/TypeRunner', ['TS', 'compiler']],
-  ['Babel', 'https://babeljs.io/', ['工具', 'JS', 'compiler', 'transform-syntax', 'code']],
+  ['Babel', 'https://babeljs.io/', ['工具', 'JS', 'compiler', 'transform-syntax', 'code', 'Babel']],
   ['Gulp', 'https://gulpjs.com/', ['工具', 'toolkit', 'automate', 'workflow', 'JS', 'build']],
   ['Broccoli', 'https://github.com/broccolijs/broccoli', ['工具', 'build', 'obfuscate', 'compress', 'JS']],
   ['Vite', 'https://vitejs.dev/', ['build-tool', 'Rollup', 'ESM', 'Vite']],
@@ -230,7 +231,12 @@ const data: Row[] = [
   ['codeium', 'https://codeium.com/', ['工具', 'AI', 'code', 'VSCode']],
   ['VueHooks Plus', 'https://inhiblabcore.github.io/docs/hooks/', ['Vue', '函式庫', 'TS', 'hooks']],
   ['Mermaid', 'https://mermaid.js.org/', ['工具', 'markdown', 'chart']],
-  ['million', 'https://million.dev/', ['React', 'virtual-DOM', 'lightweight', 'JS', '框架']]
+  ['million', 'https://million.dev/', ['React', 'virtual-DOM', 'lightweight', 'JS', '框架']],
+  ['CSS Loader Generator', 'https://www.cssportal.com/css-loader-generator/', ['loading', 'CSS', 'customizable']],
+  ['Blitzar', 'https://blitzar.cycraft.co/?ref=madewithvuejs.com', ['Vue', 'table', 'form', '套件', 'schema', 'JSON', 'data']],
+  ['Vant', 'https://vant-ui.github.io/vant/', ['component', 'mobile', 'Vue', 'Nuxt', 'UI', 'customizable', '函式庫']],
+  ['GoGoCode', 'https://gogocode.io/', ['code', 'JS', 'TS', 'HTML', 'Vue', 'AST', 'Babel', 'transform-syntax', '工具']],
+  ['Hanko', 'https://github.com/teamhanko/hanko', ['auth', 'passwordless', 'biometrics', '工具']],
 
 ]
 
