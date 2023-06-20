@@ -66,6 +66,19 @@
       </a>
     </div>
   </div>
+  <div class="content">
+    <div>
+      Taiwan FamilyMart Map
+    </div>
+    <div>
+      <a class="project-link" href="https://github.com/Minato1123/taiwan-familymart-map" target="_blank">
+        • GitHub
+      </a>
+      <a class="project-link" href="https://minato1123.github.io/taiwan-familymart-map/" target="_blank">
+        • Demo
+      </a>
+    </div>
+  </div>
 </div>
 
 <style scoped> 
