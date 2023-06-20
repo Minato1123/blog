@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,V as l}from"./chunks/framework.fa42150b.js";const d=JSON.parse('{"title":"Python Notes","description":"","frontmatter":{},"headers":[],"relativePath":"notes/misc/python-notes.md"}'),p={name:"notes/misc/python-notes.md"},o=l("",162),e=[o];function t(r,c,i,y,F,D){return n(),a("div",null,e)}const C=s(p,[["render",t]]);export{d as __pageData,C as default};

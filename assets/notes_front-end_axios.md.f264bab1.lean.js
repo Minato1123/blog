@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,V as l}from"./chunks/framework.fa42150b.js";const C=JSON.parse('{"title":"axios","description":"","frontmatter":{},"headers":[],"relativePath":"notes/front-end/axios.md"}'),p={name:"notes/front-end/axios.md"},o=l("",35),e=[o];function r(c,t,D,y,F,i){return a(),n("div",null,e)}const d=s(p,[["render",r]]);export{C as __pageData,d as default};
