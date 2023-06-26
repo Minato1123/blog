@@ -1,1 +1,0 @@
-import{_ as e,o as l,c as a,V as t}from"./chunks/framework.fa42150b.js";const u=JSON.parse('{"title":"CSS BEM","description":"","frontmatter":{},"headers":[],"relativePath":"notes/front-end/css-bem.md"}'),s={name:"notes/front-end/css-bem.md"},i=t("",12),o=[i];function n(c,h,r,p,d,m){return l(),a("div",null,o)}const k=e(s,[["render",n]]);export{u as __pageData,k as default};
