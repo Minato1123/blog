@@ -22,7 +22,7 @@ const _tags = [
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
   'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud', 'debug', 'remote', 'server',
   'formatter', 'commit', 'github', 'toc', 'video', 'native', 'map', 'AI', 'hooks', 'AST', 'Babel',
-  'auth', 'passwordless', 'biometrics', 'refactor'
+  'auth', 'passwordless', 'biometrics', 'refactor', 'normalize', 'popover', 'floating', 'type', 'props'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -43,7 +43,7 @@ const data: Row[] = [
   ['simplebar', 'https://github.com/Grsmto/simplebar', ['套件', 'scrollbar', 'CSS']],
   ['BetterScroll', 'https://better-scroll.github.io/docs/en-US/guide/', ['套件', 'scrollbar', 'JS']],
   ['PortalVue', 'https://portal-vue.linusb.org/', ['套件', 'Vue', 'component']],
-  ['Floating Vue', 'https://floating-vue.starpad.dev/', ['套件', 'Vue', 'component', 'tooltip', 'dropdown']],
+  ['Floating Vue', 'https://floating-vue.starpad.dev/', ['套件', 'Vue', 'component', 'tooltip', 'dropdown', 'floating']],
   ['Pinia', 'https://pinia.vuejs.org/', ['套件', 'Vue', 'Pinia', 'Vuex', 'store', 'store-library', 'share-state']],
   ['pinia-plugin-persistedstate', 'https://prazdevs.github.io/pinia-plugin-persistedstate/', ['套件', 'Pinia', 'persist-stores']],
   ['Lodash', 'https://lodash.com/', ['套件', '函式庫', '工具', 'JS', 'modularity', 'functional-utilities']],
@@ -169,9 +169,9 @@ const data: Row[] = [
   ['Remda', 'https://ramdajs.com/', ['JS', 'functional-utilities', '函式庫']],
   ['Remeda', 'https://remedajs.com/', ['TS', 'functional-utilities', '函式庫']],
   ['Flutter', 'https://flutter.dev/', ['框架', 'multi-platform', 'build', 'mobile', 'desktop', 'deploy']],
-  ['ts-reset', 'https://github.com/total-typescript/ts-reset', ['套件', 'TS', 'JS']],
+  ['ts-reset', 'https://github.com/total-typescript/ts-reset', ['套件', 'TS', 'JS', 'type']],
   ['Swiper', 'https://swiperjs.com/', ['UI', 'CSS', 'slides', '套件']],
-  ['ArkType', 'https://arktype.io/', ['套件', 'TS', 'schema', 'validation', 'runtime']],
+  ['ArkType', 'https://arktype.io/', ['套件', 'TS', 'schema', 'validation', 'runtime', 'type']],
   ['unlazy', 'https://unlazy.byjohann.dev/', ['套件', '函式庫', 'browser', 'loading']],
   ['husky', 'https://typicode.github.io/husky/#/', ['git', '套件', 'monorepo']],
   ['three.js', 'https://threejs.org/', ['JS', '套件', '3D', 'browser', '函式庫']],
@@ -238,7 +238,10 @@ const data: Row[] = [
   ['GoGoCode', 'https://gogocode.io/', ['code', 'JS', 'TS', 'HTML', 'Vue', 'AST', 'Babel', 'transform-syntax', '工具']],
   ['Hanko', 'https://github.com/teamhanko/hanko', ['auth', 'passwordless', 'biometrics', '工具']],
   ['ast-grep', 'https://ast-grep.github.io/', ['AST', '工具', 'code', 'linter', 'refactor']],
-  ['fastmod', 'https://github.com/facebookincubator/fastmod', ['工具', 'refactor', 'regex']]
+  ['fastmod', 'https://github.com/facebookincubator/fastmod', ['工具', 'refactor', 'regex']],
+  ['modern-normalize', 'https://github.com/sindresorhus/modern-normalize', ['CSS', 'normalize']],
+  ['Floating UI', 'https://floating-ui.com/', ['套件', 'floating', 'tooltip', '函式庫', 'dropdown', 'popover']],
+  ['VueTypes', 'https://dwightjack.github.io/vue-types/', ['type', 'Vue', 'props', '套件']],
 
 ]
 
