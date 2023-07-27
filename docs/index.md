@@ -14,7 +14,7 @@
   </div>
   <div class="content">
     <span class="my-name">Carrie</span>, or <span class="my-name">Minato</span>.<br>
-    元智大學通訊四年級，想成為前端工程師。目前使用 Vue 的開發經驗大約一年。
+    我是寫 Vue 的 Junior 前端工程師了！！！
     
   </div>
 </div>

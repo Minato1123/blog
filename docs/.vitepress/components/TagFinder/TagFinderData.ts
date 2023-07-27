@@ -22,7 +22,8 @@ const _tags = [
   'file', 'watch', 'UnoCSS', 'slides', 'loading', 'git', 'linter', '3D', 'scroll', 'stylelint',
   'device', 'cookie', 'SFC', 'devtools', 'font', 'WAI-ARIA', 'cloud', 'debug', 'remote', 'server',
   'formatter', 'commit', 'github', 'toc', 'video', 'native', 'map', 'AI', 'hooks', 'AST', 'Babel',
-  'auth', 'passwordless', 'biometrics', 'refactor', 'normalize', 'popover', 'floating', 'type', 'props'
+  'auth', 'passwordless', 'biometrics', 'refactor', 'normalize', 'popover', 'floating', 'type', 'props',
+  'drag', 'Class', 'packeage-manager', 'toast'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -242,6 +243,24 @@ const data: Row[] = [
   ['modern-normalize', 'https://github.com/sindresorhus/modern-normalize', ['CSS', 'normalize']],
   ['Floating UI', 'https://floating-ui.com/', ['套件', 'floating', 'tooltip', '函式庫', 'dropdown', 'popover']],
   ['VueTypes', 'https://dwightjack.github.io/vue-types/', ['type', 'Vue', 'props', '套件']],
+  ['UploadThing', 'https://docs.uploadthing.com/', ['file', '套件', 'React', 'TS']],
+  ['Taze', 'https://github.com/antfu/taze', ['CLI', '工具', 'monorepo']],
+  ['whyframe', 'https://whyframe.dev/', ['UI', '套件', 'HTML', 'component']],
+  ['Vue.Draggable', 'https://sortablejs.github.io/vue.draggable.next/#/simple', ['套件', 'Vue', 'drag', 'code']],
+  ['Vue Class Component', 'https://class-component.vuejs.org/', ['Vue', 'Class', '套件', '函式庫']],
+  ['vue-functional-ref', 'https://github.com/sxzz/vue-functional-ref', ['Vue', 'function', '套件']],
+  ['ni', 'https://github.com/antfu/ni', ['CLI', 'manager', '套件', 'packeage-manager']],
+  ['fnm', 'https://github.com/Schniz/fnm', ['NodeJS', 'JS', '工具']],
+  ['result', 'https://github.com/badrap/result', ['套件', 'TS', 'type', 'API']],
+  ['iconoir', 'https://github.com/iconoir-icons/iconoir', ['icons', 'React']],
+  ['sucrase', 'https://github.com/alangpierce/sucrase', ['JS', 'TS', 'compiler', '套件']],
+  ['tsup', 'https://github.com/sxzz/tsup', ['NodeJS', 'TS', 'bundler', '套件']],
+  ['alova', 'https://github.com/alovajs/alova', ['API', 'http-request', 'Vue', 'React']],
+  ['idux', 'https://github.com/IDuxFE/idux', ['UI', 'Vue', 'TS', 'component']],
+  ['arethetypeswrong', 'https://arethetypeswrong.github.io/', ['TS', 'type', '套件']],
+  ['vite-plugin-dts', 'https://github.com/qmhc/vite-plugin-dts', ['TS', 'Vite', 'Vue', '套件']],
+  ['notivue', 'https://github.com/smastrom/notivue', ['Vue', 'Nuxt', 'toast', 'notification', '套件']],
+  ['ArrowJS', 'https://github.com/justin-schroeder/arrow-js', ['reactive', 'JS', '套件']],
 
 ]
 
