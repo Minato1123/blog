@@ -1,1 +1,0 @@
-import{_ as a,o as d,c as t,V as e}from"./chunks/framework.fa42150b.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md"}'),i={name:"index.md"},s=e("",7),n=[s];function v(o,c,l,b,r,_){return d(),t("div",null,n)}const u=a(i,[["render",v],["__scopeId","data-v-e0d787bd"]]);export{m as __pageData,u as default};
