@@ -7,11 +7,11 @@ document.getElementById('...')
 ```
 - 針對給定的 tag 名稱，回傳所有符合條件的集合
 ```javascript
-document.getElementByTagName('...')
+document.getElementsByTagName('...')
 ```
 - 針對給定的 class 名稱，回傳所有符合條件的集合
 ```javascript
-document.getElementByClassName('...')
+document.getElementsByClassName('...')
 ```
 - 針對給定的 Selector 條件，回傳第一個或所有符合條件的 NodeList
 ```javascript
