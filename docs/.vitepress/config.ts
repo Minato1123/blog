@@ -17,19 +17,31 @@ export default defineConfig({
     sidebar: [
       {
         text: '學習隨記',
-        collapsed: false,
         items: [
-          { text: 'Sep. 2022', link: '/daily-log/sep2022' },
-          { text: 'Oct. 2022', link: '/daily-log/oct2022' },
-          { text: 'Nov. 2022', link: '/daily-log/nov2022' },
-          { text: 'Dec. 2022', link: '/daily-log/dec2022' },
-          { text: 'Jan. 2023', link: '/daily-log/jan2023' },
-          { text: 'Feb. 2023', link: '/daily-log/feb2023' },
-          { text: 'Mar. 2023', link: '/daily-log/mar2023' },
-          { text: 'Apr. 2023', link: '/daily-log/apr2023' },
-          { text: 'May. 2023', link: '/daily-log/may2023' },
-          { text: 'Jun. 2023', link: '/daily-log/jun2023' },
-          { text: 'Jul. 2023', link: '/daily-log/jul2023' },
+          { 
+            text: '2022', 
+            items: [
+              { text: 'September', link: '/daily-log/sep2022' },
+              { text: 'October', link: '/daily-log/oct2022' },
+              { text: 'November', link: '/daily-log/nov2022' },
+              { text: 'December', link: '/daily-log/dec2022' },
+            ],
+            collapsed: true,
+          },
+          {
+            text: '2023',
+            items: [
+              { text: 'January', link: '/daily-log/jan2023' },
+              { text: 'February', link: '/daily-log/feb2023' },
+              { text: 'March', link: '/daily-log/mar2023' },
+              { text: 'April', link: '/daily-log/apr2023' },
+              { text: 'May', link: '/daily-log/may2023' },
+              { text: 'June', link: '/daily-log/jun2023' },
+              { text: 'July', link: '/daily-log/jul2023' },
+              { text: 'August', link: '/daily-log/aug2023' },
+            ],
+            collapsed: false,
+          }
         ]
       },
       {
