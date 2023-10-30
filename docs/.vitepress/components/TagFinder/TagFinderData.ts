@@ -24,7 +24,8 @@ const _tags = [
   'formatter', 'commit', 'github', 'toc', 'video', 'native', 'map', 'AI', 'hooks', 'AST', 'Babel',
   'auth', 'passwordless', 'biometrics', 'refactor', 'normalize', 'popover', 'floating', 'type', 'props',
   'drag', 'Class', 'packeage-manager', 'toast', 'composable', 'vueuse', 'edge-hosted', 'SQL', 'micro-frontend',
-  'WebComponent', 'iframe', 'ORM', 'canvas', 'zh', 'chinese', 'natural-language', 'npm', 'size', 'highlighter'
+  'WebComponent', 'iframe', 'ORM', 'canvas', 'zh', 'chinese', 'natural-language', 'npm', 'size', 'highlighter',
+  'input-mask', 'compatibility', 'export', 'yaml', 'internationalization'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -297,6 +298,29 @@ const data: Row[] = [
   ['Shikiji 式辞', 'https://github.com/antfu/shikiji', ['syntax', 'highlighter', 'package']],
   ['TASUKU', 'https://github.com/privatenumber/tasuku', ['CLI', 'NodeJS', 'Visualizer', 'tool']],
   ['Radix Vue', 'https://www.radix-vue.com/', ['UI', 'component', 'library', 'Vue', 'Nuxt']],
+  ['panda', 'https://github.com/chakra-ui/panda', ['CSS', 'CSS-in-JS', 'package']],
+  ['starry-night', 'https://github.com/wooorm/starry-night', ['syntax', 'highlighter']],
+  ['maska', 'https://github.com/beholdr/maska', ['JS', 'Vue', 'input-mask', 'package']],
+  ['tiny-invariant', 'https://github.com/alexreardon/tiny-invariant', ['package', 'function', 'error']],
+  ['Docus', 'https://github.com/nuxt-themes/docus', ['Vue', 'Nuxt', 'documentation', 'markdown', 'tool']],
+  ['publint', 'https://publint.dev/', ['tool', 'linter', 'Vite', 'npm', 'compatibility']],
+  ['std-env', 'https://github.com/unjs/std-env', ['package', 'NodeJS']],
+  ['Valibot', 'https://valibot.dev/', ['validation', 'type', 'schema', 'TS']],
+  ['Obsidian', 'https://obsidian.md/', ['markdown', 'documentation']],
+  ['tsx', 'https://github.com/esbuild-kit/tsx', ['TS', 'runtime', 'esbuild', 'NodeJS', 'ESM']],
+  ['pkg-exports', 'https://github.com/antfu/pkg-exports', ['export', 'package', 'npm']],
+  ['RunKit', 'https://runkit.com/home', ['npm', 'NodeJS', 'code', 'JS', 'visualization']],
+  ['Wiki.js', 'https://js.wiki/', ['documentation', 'tool']],
+  ['gts', 'https://github.com/google/gts', ['linter', 'TS', 'formatter', 'code']],
+  ['TypeStat', 'https://github.com/JoshuaKGoldberg/TypeStat', ['TS', 'type', 'JS', 'CLI', 'tool']],
+  ['gray-matter', 'https://github.com/jonschlinkert/gray-matter', ['yaml', 'NodeJS', 'parser', 'package']],
+  ['EMP', 'https://github.com/efoxTeam/emp', ['micro-frontend', 'TS', 'webpack', 'framework', 'ESM']],
+  ['fluent-vue', 'https://fluent-vue.demivan.me/', ['package', 'Vue', 'internationalization']],
+  ['Milkdown', 'https://milkdown', ['markdown', 'framework']],
+  ['Grid.js', 'https://gridjs.io/', ['table', 'Vue', 'package']],
+  ['tsup', 'https://github.com/egoist/tsup', ['TS', 'bundler', 'esbuild', 'package']],
+  ['unbuild', 'https://github.com/unjs/unbuild', ['TS', 'Rollup', 'JS', 'build', 'bundler', 'package']],
+
 ]
 
 const tags = _tags.map(t => {
