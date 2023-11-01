@@ -348,6 +348,8 @@ const data: Row[] = [
   ['Redwood', 'https://github.com/redwoodjs/redwood', ['full-stack', 'framework', 'JS', 'TS', 'React']],
   ['Grammarly', 'https://developer.grammarly.com/', ['code', 'SDK', 'tool']],
   ['Vue Collapsed', 'https://github.com/smastrom/vue-collapsed', ['Vue', 'CSS', 'component', 'package']],
+  ['NueJS', 'https://nuejs.org/', ['JS', 'library', 'web-framework']],
+  ['Hookable', 'https://github.com/unjs/hookable', ['hooks', 'JS', 'NodeJS', 'package']],
 
 ]
 

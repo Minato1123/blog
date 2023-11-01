@@ -41,6 +41,7 @@ export default defineConfig({
               { text: 'August', link: '/daily-log/year2023/aug2023' },
               { text: 'September', link: '/daily-log/year2023/sep2023' },
               { text: 'October', link: '/daily-log/year2023/oct2023' },
+              { text: 'November', link: '/daily-log/year2023/nov2023' }
             ],
             collapsed: false,
           }
