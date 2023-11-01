@@ -25,7 +25,8 @@ const _tags = [
   'auth', 'passwordless', 'biometrics', 'refactor', 'normalize', 'popover', 'floating', 'type', 'props',
   'drag', 'Class', 'packeage-manager', 'toast', 'composable', 'vueuse', 'edge-hosted', 'SQL', 'micro-frontend',
   'WebComponent', 'iframe', 'ORM', 'canvas', 'zh', 'chinese', 'natural-language', 'npm', 'size', 'highlighter',
-  'input-mask', 'compatibility', 'export', 'yaml', 'internationalization'
+  'input-mask', 'compatibility', 'export', 'yaml', 'internationalization', 'CICD', 'terminal', 'ANSI', 'color',
+  'zod', 'jsdoc', 'jwt', 'converter', 'url'
 ] as const
 
 type Tag = (typeof _tags)[number]
@@ -132,7 +133,7 @@ const data: Row[] = [
   ['Acorn', 'https://github.com/acornjs/acorn', ['JS', 'parser']],
   ['Esprima', 'https://esprima.org/', ['JS', 'parser']],
   ['regex101', 'https://regex101.com/', ['regex']],
-  ['Zod', 'https://zod.dev/', ['TS', 'schema', 'validation']],
+  ['Zod', 'https://zod.dev/', ['TS', 'schema', 'validation', 'zod']],
   ['esno', 'https://github.com/esbuild-kit/esno', ['NodeJS', 'runtime', 'esbuild', 'TS', 'ESM', 'CJS', 'tsx']],
   ['v-lazy-show', 'https://github.com/antfu/v-lazy-show', ['package', 'Vue']],
   ['Hasura', 'https://hasura.io/', ['tool', 'GraphQL', 'API']],
@@ -320,6 +321,33 @@ const data: Row[] = [
   ['Grid.js', 'https://gridjs.io/', ['table', 'Vue', 'package']],
   ['tsup', 'https://github.com/egoist/tsup', ['TS', 'bundler', 'esbuild', 'package']],
   ['unbuild', 'https://github.com/unjs/unbuild', ['TS', 'Rollup', 'JS', 'build', 'bundler', 'package']],
+  ['Pinia ORM', 'https://github.com/CodeDredd/pinia-orm', ['Pinia', 'ORM', 'package']],
+  ['markdown-it-mdc', 'https://github.com/antfu/markdown-it-mdc', ['markdown', 'component', 'package']],
+  ['Vue Play', 'https://www.vueplay.com/', ['drag', 'component', 'tool', 'Vue', 'package']],
+  ['Jenkins', 'https://www.jenkins.io/', ['tool', 'CICD']],
+  ['mdit-vue', 'https://github.com/mdit-vue/mdit-vue', ['Vue', 'markdown', 'package']],
+  ['node-fetch', 'https://github.com/node-fetch/node-fetch', ['NodeJS', 'API', 'HTTP', 'package']],
+  ['clack', 'https://github.com/natemoo-re/clack', ['CLI', 'NodeJS', 'terminal', 'tool']],
+  ['picocolors', 'https://github.com/alexeyraspopov/picocolors', ['terminal', 'ANSI', 'color', 'package']],
+  ['zod-i18n', 'https://github.com/aiji42/zod-i18n', ['zod', 'internationalization', 'error', 'package']],
+  ['eslint-plugin-jsdoc', 'https://github.com/gajus/eslint-plugin-jsdoc', ['linter', 'JS', 'ESLint', 'jsdoc', 'package']],
+  ['vite-plugin-pwa', 'https://github.com/vite-pwa/vite-plugin-pwa', ['Vite', 'PWA', 'package']],
+  ['jsonwebtoken', 'https://github.com/auth0/node-jsonwebtoken', ['JSON', 'NodeJS', 'jwt', 'package']],
+  ['Naive UI', 'https://www.naiveui.com/en-US/os-theme', ['Vue', 'component', 'library', 'UI', 'TS']],
+  ['Vue TermUI', 'https://vue-termui.dev/', ['terminal', 'UI', 'Vue', 'tool', 'framework']],
+  ['vue-surf', 'https://github.com/f820602h/vue-surf', ['component', 'UI', 'Vue', 'animation', 'SVG', 'package']],
+  ['electron-vite', 'https://github.com/alex8088/electron-vite', ['Electron', 'Vite','build-tool', 'tool']],
+  ['transform', 'https://transform.tools/', ['tool', 'converter', 'code']],
+  ['ufo', 'https://github.com/unjs/ufo', ['functional-utilities', 'package', 'url']],
+  ['unctx', 'https://github.com/unjs/unctx', ['composable', 'JS', 'package', 'composition-utilities']],
+  ['Pretty TypeScript Errors', 'https://github.com/yoavbls/pretty-ts-errors', ['extension', 'VSCode', 'error', 'TS']],
+  ['NextAuth.js', 'https://next-auth.js.org/', ['auth', 'React', 'package', 'jwt']],
+  ['MJML', 'https://github.com/mjmlio/mjml', ['email', 'package', 'framework']],
+  ['Marked', 'https://github.com/markedjs/marked', ['markdown', 'parser', 'compiler']],
+  ['Import Cost', 'https://github.com/wix/import-cost', ['webpack', 'extension', 'VSCode', 'visualization']],
+  ['Redwood', 'https://github.com/redwoodjs/redwood', ['full-stack', 'framework', 'JS', 'TS', 'React']],
+  ['Grammarly', 'https://developer.grammarly.com/', ['code', 'SDK', 'tool']],
+  ['Vue Collapsed', 'https://github.com/smastrom/vue-collapsed', ['Vue', 'CSS', 'component', 'package']],
 
 ]
 
