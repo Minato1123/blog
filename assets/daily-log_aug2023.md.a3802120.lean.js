@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as l,V as o}from"./chunks/framework.fa42150b.js";const m=JSON.parse('{"title":"Aug. 2023","description":"","frontmatter":{"outline":2},"headers":[],"relativePath":"daily-log/aug2023.md"}'),s={name:"daily-log/aug2023.md"},t=o("",73),n=[t];function r(c,p,i,d,h,u){return a(),l("div",null,n)}const y=e(s,[["render",r]]);export{m as __pageData,y as default};
