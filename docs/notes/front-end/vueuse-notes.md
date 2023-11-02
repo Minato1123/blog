@@ -1,5 +1,5 @@
 <script setup>
-import FoldCode from '../../.vitepress/components/FoldCode.vue'
+import FoldCode from '/.vitepress/components/FoldCode.vue'
 </script>
 
 # VueUse
@@ -452,7 +452,7 @@ const date = '2000/11/23 15:23:38:34'.match(REGEX_PARSE)
 
 <FoldCode>
 
-![](../../.vitepress/images/vueuse-notes/debounceFilter.jpeg)
+![](/.vitepress/images/vueuse-notes/debounceFilter.jpeg)
 
 </FoldCode>
 
@@ -582,7 +582,7 @@ const date = '2000/11/23 15:23:38:34'.match(REGEX_PARSE)
 
 <FoldCode>
 
-![](../../.vitepress/images/vueuse-notes/watchTriggerable.jpg)
+![](/.vitepress/images/vueuse-notes/watchTriggerable.jpg)
 
 </FoldCode>
 

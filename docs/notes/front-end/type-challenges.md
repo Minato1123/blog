@@ -505,7 +505,7 @@ type AllCombinations<
   ? `${F}${AllCombinations<`${P}${Rest}`>}` | AllCombinations<Rest, `${P}${F}`>
   : ''
 ```
-> ![](../../.vitepress/images/ts-challenges/AllCombinations.jpeg)
+> ![](/.vitepress/images/ts-challenges/AllCombinations.jpeg)
 > 以 `'ABC'` 作為範例的遞迴。<span class="span-mb"></span>
 > [其他解答（１）](https://github.com/type-challenges/type-challenges/issues/5339)<br>
 > [其他解答（２）](https://github.com/type-challenges/type-challenges/issues/16430)

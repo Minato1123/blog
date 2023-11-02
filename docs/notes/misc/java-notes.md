@@ -575,7 +575,7 @@ public class TreeExample {
 }  
 ```
 範例輸出：
-![](../../.vitepress/images/java-notes/JTree.png)
+![](/.vitepress/images/java-notes/JTree.png)
 
 #### JList 多選選單
 ```java
@@ -636,7 +636,7 @@ JTable(Vector rowData, Vector columnNames) //可變資料
 
 ### Layout
 #### BorderLayout
-![](../../.vitepress/images/java-notes/BorderLayout.png)
+![](/.vitepress/images/java-notes/BorderLayout.png)
 * JFrame、JWindow、JDialog、JInternalFrame 和 JApplet 的內容窗格的默認佈局管理器。
 * 元件可放置在容器的四個邊界中或中心。
 * 不需要指定容器的所有區域。 
@@ -654,7 +654,7 @@ jframe.add(元件, "North");
 ```
 
 #### FlowLayout
-![](../../.vitepress/images/java-notes/FlowLayout.png)
+![](/.vitepress/images/java-notes/FlowLayout.png)
 
 * 配置方式是從左到右，從上到下排列。
 * 如果視窗寬度足夠，會將所有的元件放在同一行，否則自動換行。
@@ -668,7 +668,7 @@ jframe.setLayout(layout);
 ```
 
 #### GridLayout
-![](../../.vitepress/images/java-notes/GridLayout.png)
+![](/.vitepress/images/java-notes/GridLayout.png)
 * GridLayout 所切割出來的版面就如同表格版整齊。
 * 加入的元件會按照順序從左到右從上到下擺放，所以無法直接指定要擺放的區域。
 * 元件放入後會變成方形，所以不適合加入 JButton 這類元件。

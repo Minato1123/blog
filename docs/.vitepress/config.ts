@@ -92,6 +92,14 @@ export default defineConfig({
     lineNumbers: true,
   },
   vite: {
+    resolve: {
+      alias: [
+        {
+          find: '@notes',
+          replacement: './notes',
+        }
+      ],
+    },
     plugins: [
       AutoImport({
         include: [
