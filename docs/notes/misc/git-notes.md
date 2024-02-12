@@ -91,7 +91,7 @@
 
 ### 互動模式
 - `git rebase -i <commit hash value>`：`-i` 參數是指要進入 Rebase 指令的「互動模式」，而後面的 `<commit hash value>` 是指這次的 Rebase 指令的應用範圍會「從現在到 `<commit hash value>` 這個 Commit」，這個指令會跳出一個 Vim 編輯器。
-:::success
+:::warning
 請注意 Commit 的順序！
 :::
 ```
