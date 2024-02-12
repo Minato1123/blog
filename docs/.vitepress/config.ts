@@ -41,7 +41,16 @@ export default defineConfig({
               { text: 'August', link: '/daily-log/year2023/aug2023' },
               { text: 'September', link: '/daily-log/year2023/sep2023' },
               { text: 'October', link: '/daily-log/year2023/oct2023' },
-              { text: 'November', link: '/daily-log/year2023/nov2023' }
+              { text: 'November', link: '/daily-log/year2023/nov2023' },
+              { text: 'December', link: '/daily-log/year2023/dec2023' }
+            ],
+            collapsed: true,
+          },
+          {
+            text: '2024',
+            items: [
+              { text: 'January', link: '/daily-log/year2024/jan2024' },
+              { text: 'February', link: '/daily-log/year2024/feb2024' },
             ],
             collapsed: false,
           }
