@@ -51,6 +51,10 @@ export default defineConfig({
             items: [
               { text: 'January', link: '/daily-log/year2024/jan2024' },
               { text: 'February', link: '/daily-log/year2024/feb2024' },
+              { text: 'March', link: '/daily-log/year2024/mar2024' },
+              { text: 'April', link: '/daily-log/year2024/apr2024' },
+              { text: 'May', link: '/daily-log/year2024/may2024' },
+              { text: 'June', link: '/daily-log/year2024/jun2024' },
             ],
             collapsed: false,
           }
