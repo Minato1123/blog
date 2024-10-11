@@ -144,7 +144,7 @@ interface ButtonProps {
 
 ### implements
 
-Class 會用 `implements` 指定要實作的 `Interface` ，一旦指定了就得把 `Interface` 內所有的 `Method` 和 `Property` 給實作。<br>
+Class 會用 `implements` 指定要實作的 `Interface` ，一旦指定了就得把 `Interface` 內所有的 `Method` 和 `Property` 給實作。  
 而 Class 還是可以寫下 `Interface` 內沒有描述到的 `Method` 和 `Property`，因為 `Interface` 只是約束了最低需要哪些行為而已。
 
 ```typescript
@@ -183,7 +183,7 @@ class Car implements TheCarA, TheCarB {
 * `in`：用於 object（檢查 object 是否有此屬性）
 * `propertyName in objectVariable;`：回傳 `true` 或 `false`
 * `extends`：限制泛型可被代入的型別（generic constraints）或是作為型別的條件判斷（conditional types）
-  > 假設現在我們希望限制這個 T 只能是數值（number）的話，可以搭配 `extends` 寫成 `<T extends number>`，意思就是限制使用者帶入的泛型。<br>
+  > 假設現在我們希望限制這個 T 只能是數值（number）的話，可以搭配 `extends` 寫成 `<T extends number>`，意思就是限制使用者帶入的泛型。  
   > T 需要是 number 的子集合
   > ```typescript
   > function getFirstElement<T>(arr: T[]): T {
@@ -221,9 +221,9 @@ type Item<T> = T extends (infer U)[] ? U : never;
 | `as const` | 警告 | 不可執行 | 從外到內每層都限制 |
 
 ## Function Overloads 
-（函式超載）<br>
-擴充一個函式可以被執行的形式。<br>
-針對同一個 function 提供多個不同的 type definition。<br>
+（函式超載）  
+擴充一個函式可以被執行的形式。  
+針對同一個 function 提供多個不同的 type definition。  
 可以使用相同的 function 名稱，定義不同的參數數量或型別創建多種方法。
 
 #### 包含兩個部分：

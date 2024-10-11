@@ -36,7 +36,7 @@ type First<T extends any[]> = T['length'] extends 0 ? never : T[0]
 ```typescript
 type First<T extends any[]> = T extends [infer R, ...any[]] ? R : never
 ```
-> `infer R` 必須使用在「條件類型的子句」，也就是 `extends` 後面、`?` 前面的位置。<br>
+> `infer R` 必須使用在「條件類型的子句」，也就是 `extends` 後面、`?` 前面的位置。  
 > 用來推斷此位置的型別（存成變數用在同一行的其他地方）。
 
 ### 189 - Awaited [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00189-easy-awaited/README.md)
@@ -83,7 +83,7 @@ type DeepReadonly<T> = T extends Function
     ? { readonly [K in keyof T]: DeepReadonly<T[K]> } 
     : T
 ```
-> `Function` 跟 `(...args: any[]) => any` 不一樣。<br>
+> `Function` 跟 `(...args: any[]) => any` 不一樣。  
 > `Function` 可能包含其他不清楚的東西（少用比較好）。
 > 
 ```typescript
@@ -114,14 +114,14 @@ type Chainable<T = {}> = {
   get: () => T
 }
 ```
-> `<K extends string, V>` 是傳入參數型別的泛型，因為 `key`、`value` 有用到型別參數，所以會自行推斷型別，不需要再額外寫一次。<br>
+> `<K extends string, V>` 是傳入參數型別的泛型，因為 `key`、`value` 有用到型別參數，所以會自行推斷型別，不需要再額外寫一次。  
 > `.option` 需要回傳 Chainable，才能再繼續接 `.option`。
 
 ### 15 - Last of Array [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00015-medium-last/README.md)
 ```typescript
 type Last<T extends any[]> = [undefined, ...T][T['length']]
 ```
-> `[T['length']]` 會拿到 `[數量]`。<br>
+> `[T['length']]` 會拿到 `[數量]`。  
 > 在原陣列的最前端加上一項任意型別，讓長度可以剛好取到最後一項。
 
 ### 20 - Promise.all [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00020-medium-promise-all/README.md)
@@ -130,7 +130,7 @@ declare function PromiseAll<T extends readonly any[]>(values: [...T])
 
 declare function PromiseAll<T extends any[]>(values: readonly [...T])
 ```
-> 寫在泛型裡的 `readonly` 是用來限制傳入的參數。<br>
+> 寫在泛型裡的 `readonly` 是用來限制傳入的參數。  
 > 寫在 `( )` 裡的 `readonly` 是用來標明實際 function 內部不會動到傳入的值。<span class="span-mb"></span>
 > 若泛型限制 `readonly` -> 可以傳入一般參數或 `readonly` 的參數（因為在 function 內皆不會被改動），反過來若無限制則不可傳入 `readonly` 的參數。
 
@@ -150,7 +150,7 @@ declare function PromiseAll<T extends any[]>(
 ```typescript
 type LookUp<U, T> = U['type'] extends T ? U : never
 ```
-> 這樣是無效的！<br>
+> 這樣是無效的！  
 > Conditional Types 只有在具有 `T extends ...` 形式（Naked Type）時才會有分配性，而在 `extends` 後面複雜的表達式也不會觸發分配性。
 
 ### 106 - Trim Left [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00106-medium-trimleft/README.md)
@@ -180,7 +180,7 @@ type MyCapitalize<S extends string> =
 ```typescript
 T[] extends [never]
 ```
-> * Array<br>
+> * Array  
 >
 > 要判斷是不是 `never` 無法直接判斷，需要以這種方式。
 
@@ -292,7 +292,7 @@ type Diff<O, O1> = {
   [K in keyof (O & O1) as K extends keyof (O | O1) ? never : K]: (O & O1)[K]
 }
 ```
-> 這裡的 `as` 是可以進一步對迭代到的 `K` 進行操作。<br>
+> 這裡的 `as` 是可以進一步對迭代到的 `K` 進行操作。  
 > key 為 `never` 的話會直接去掉此項。
 
 ### 949 - AnyOf [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/00949-medium-anyof/README.md)
@@ -414,7 +414,7 @@ type TupleToNestedObject<T extends string[], U> =
 T extends (...args: infer A) => any
 ```
 > Function 型別可以透過此方式拿到參數型別（將未知數量的參數展開後的型別參考訂為 `A`）。<span class="span-mb"></span>
-> 假設傳入的參數型別是 `(arg0: string, arg1: number, arg2: boolean) => void`。<br>
+> 假設傳入的參數型別是 `(arg0: string, arg1: number, arg2: boolean) => void`。  
 > 則推斷完 `A` 的型別為 `[arg0: string, arg1: number, arg2: boolean]
 `
 
@@ -422,7 +422,7 @@ T extends (...args: infer A) => any
 type FlipArguments<T extends (...args: any[]) => any> = 
   T extends (...args: infer A) => infer R ? (...args: Reverse<A>) => R : never
 ```
-> 透過 `...args` 拿到參數陣列 `args` ，而 `args` 型別推斷是 `A`。<br>
+> 透過 `...args` 拿到參數陣列 `args` ，而 `args` 型別推斷是 `A`。  
 > Function 的參數名稱 `args` 需要一直寫著（實際在寫 Function 的時候本來就會寫）。
 
 ### 3243 - FlattenDepth [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/03243-medium-flattendepth/README.md)
@@ -465,7 +465,7 @@ type InorderTraversal<T extends TreeNode | null> =
     ? []
     : [...InorderTraversal<T['left']>, T['val'], ...InorderTraversal<T['right']>]
 ```
-> `T extends TreeNode` 或是 `T extends null` 會讓 `T` 產生分配性。<br>
+> `T extends TreeNode` 或是 `T extends null` 會讓 `T` 產生分配性。  
 > 需要判斷的話可以用 Tuple 包起來，例如： `[T] extends [TreeNode]`。
 
 ```typescript
@@ -492,7 +492,7 @@ type Fibonacci<
   ? Current['length']
   : Fibonacci<T, [...CurrentIndex, undefined], Current, [...Prev, ...Current]>
 ```
-> 利用陣列 `Current` 的總長度計算 Fibonacci 數列的數字。<br>
+> 利用陣列 `Current` 的總長度計算 Fibonacci 數列的數字。  
 > （目的是拿到總長度，所以塞什麼進陣列都不影響，因此放了 `undefined`）<span class="span-mb"></span>
 > `CurrentIndex` 陣列的總長度是負責記錄是否已達到題目要求（`T`）。
 
@@ -507,7 +507,7 @@ type AllCombinations<
 ```
 > ![](/.vitepress/images/ts-challenges/AllCombinations.jpeg)
 > 以 `'ABC'` 作為範例的遞迴。<span class="span-mb"></span>
-> [其他解答（１）](https://github.com/type-challenges/type-challenges/issues/5339)<br>
+> [其他解答（１）](https://github.com/type-challenges/type-challenges/issues/5339)  
 > [其他解答（２）](https://github.com/type-challenges/type-challenges/issues/16430)
 
 ### 4425 - Greater Than [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04425-medium-greater-than/README.md)
@@ -519,8 +519,8 @@ type GreaterThan<T extends number, U extends number, R extends any[] = []> =
       ? true
       : GreaterThan<T, U, [...R, 1]>
 ```
-> 讓 `R['length']` 從 `0` 開始往上加。<br>
-> 若 `T extends R['length']` 成立，則表示 `U` **不可能**大於 `T`。<br>
+> 讓 `R['length']` 從 `0` 開始往上加。  
+> 若 `T extends R['length']` 成立，則表示 `U` **不可能**大於 `T`。  
 > 若 `U extends R['length']` 成立，則表示 `T` **肯定**大於 `T`。
 
 ### 4471 - Zip [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/04471-medium-zip/README.md)
@@ -552,7 +552,7 @@ type Fill<
       : [N, ...Fill<Rest, N, Start, End, [...Count, 0], true>]
     : T
 ```
-> 當 `Count['length']` 和 `Start` 相同時，`Flag` 標示為 `true`，代表接下來遞迴需要將 `R` 替換成 `N`。<br>
+> 當 `Count['length']` 和 `Start` 相同時，`Flag` 標示為 `true`，代表接下來遞迴需要將 `R` 替換成 `N`。  
 > 當 `Count['length']` 和 `End` 相同時，代表替換已經結束，直接回傳剩餘的陣列即可（不需要特別將 `Flag` 換回 `false` 繼續跑遞迴）。
 
 ### 5117 - Without [➜](https://github.com/type-challenges/type-challenges/blob/main/questions/05117-medium-without/README.md)

@@ -16,7 +16,7 @@
 
 ### Topic ( Talker and Listener )
 * `roscore`：開啟 master
-  > 如果沒有開啟的話，node 彼此無法溝通。<br>
+  > 如果沒有開啟的話，node 彼此無法溝通。  
   > roscore 在一個網域中只能同時有一個！
 
 ![](https://i.imgur.com/gXDo79C.png)
@@ -135,18 +135,18 @@ Service 停下來等待回應
 ## Useful ROS Tool
 ### rostopic
 1. **Latching mode**
-    > Rostopic will publish a message to `/topic_name` and keep it latched -- any new subscribers that come online after you start rostopic will hear this message. You can stop this at any time by pressing `ctrl-C`.<br>
-    > Rostopic 將向 `/topic_name` 發布訊息並保持鎖定 —— 任何啟動 rostopic 後上線的新 subscribers 都會聽到收到這則訊息。<br>
+    > Rostopic will publish a message to `/topic_name` and keep it latched -- any new subscribers that come online after you start rostopic will hear this message. You can stop this at any time by pressing `ctrl-C`.  
+    > Rostopic 將向 `/topic_name` 發布訊息並保持鎖定 —— 任何啟動 rostopic 後上線的新 subscribers 都會聽到收到這則訊息。  
     > `rostopic pub -l /chatter std_msgs/String "data: 'test'"`
 1. **Once mode**
-    > If you don't want to have to stop rostopic with `ctrl-C`, you can publish in once mode. <br>
-    > rostopic will keep the message latched.<br>
-    > 如果不想用中斷 rostopic，可選擇 Once mode 下發布。<br>
-    > rostopic 將鎖定訊息 3 秒後退出。<br>
+    > If you don't want to have to stop rostopic with `ctrl-C`, you can publish in once mode.   
+    > rostopic will keep the message latched.  
+    > 如果不想用中斷 rostopic，可選擇 Once mode 下發布。  
+    > rostopic 將鎖定訊息 3 秒後退出。  
     > `rostopic pub -1 /chatter std_msgs/String "data: 'test'"`
 1. **Rate mode**
-    > In rate mode, rostopic will publish your message at a specific rate. For example, -r 10 will publish at 10hz. For file and piped input, this defaults to 10hz.<br>
-    > 在 Rate mode 下，rostopic 將以特定速率發布訊息。<br>
+    > In rate mode, rostopic will publish your message at a specific rate. For example, -r 10 will publish at 10hz. For file and piped input, this defaults to 10hz.  
+    > 在 Rate mode 下，rostopic 將以特定速率發布訊息。  
     > `rostopic pub -r 10 /chatter std_msgs/String "data: 'test'"`
 
 ### rosbag
@@ -182,7 +182,7 @@ Service 停下來等待回應
 ### Overlay
 * `cd ~/<workspace_name>`：移動到 workspace
 * `rospack list | grep rospy_tutorials`：列出 rospy_tutorials 的 package
-* `echo $ROS_PACKAGE_PATH`：顯示 ROS system's packages 路徑<br>
+* `echo $ROS_PACKAGE_PATH`：顯示 ROS system's packages 路徑  
 
 Setup the package environment by overlay
 > `source devel/setup.bash` 覆蓋

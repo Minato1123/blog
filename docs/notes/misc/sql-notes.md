@@ -355,7 +355,7 @@ HAVING (<function condition>);
 
 ## 萬用字元 Wildcards
 :::tip
-`%`：代表多個字元。<br>
+`%`：代表多個字元。  
 `_`：代表 1 個字元。
 :::
 

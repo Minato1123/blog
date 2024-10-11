@@ -21,9 +21,9 @@ public class <Class_name> {
 數值是可以變更的。
 1. **基本資料型態**
     > byte、int、short、long、float、double、char、boolean
-1. **宣告變數**<br>
-    > `int number;`<br>
-    > `long number = 數字L;`：若沒有加 `L` / `l` 則會認成 int 型態<br>
+1. **宣告變數**  
+    > `int number;`  
+    > `long number = 數字L;`：若沒有加 `L` / `l` 則會認成 int 型態  
     > `float number = 數字f;`：若沒有加 `F` / `f` 則會認成 double 型態
 1. **變數的命名規則**
     * 識別字必須以英文字母開頭，大小寫均可。
@@ -116,9 +116,9 @@ public class <Class_name> {
     ```java
     int[] array = new int[3];
     ```
-1. **三者皆相同** <br>
-    > `int array[]`<br>
-    > `int[] array`<br>
+1. **三者皆相同**   
+    > `int array[]`  
+    > `int[] array`  
     > `int []array` 
 1. **取得陣列的長度**
     ```java
@@ -607,8 +607,8 @@ combo.addActionListener(new ActionListener() {
 * 只負責呈現資料，本身並不包含任何資料。
 * 使用 JTable 必須餵給它資料來源，且必須提供此表格含有幾欄幾列等資訊，也要提供存取資料的方法。
 * JTable 用到的資料模型有三種
-    > **TableModel ( 表格模型 )** : 負責處理整個表格，主要是針對列<br>
-    > **TableColumnModel ( 表格欄模型 )** : 負責處理欄<br>
+    > **TableModel ( 表格模型 )** : 負責處理整個表格，主要是針對列  
+    > **TableColumnModel ( 表格欄模型 )** : 負責處理欄  
     > **SelectionModel ( 選取模型 )** : 負責處理資料選取
 * 建構子 Constructor
 ```java
@@ -626,10 +626,10 @@ JTable(Vector rowData, Vector columnNames) //可變資料
 * **JFrame**：它是螢幕上視窗的對象，能夠最大化、最小化、關閉。
 * **JPanel**：面板容器，包含在 javax.swing 包中，可以进行嵌套，功能是對視窗中具有相同邏輯功能的組件進行組合，可以加入到 JFrame 視窗中。
 * **JLabel**：可以顯示文字、圖像或同時顯示，在顯示區預設為垂直置中。透過設置垂直和水平對齊方式，指定標籤內容對齊方向：文字標籤是靠左對齊、圖片標籤是水平置中。
-* **JTextField**：可編輯單行文字<br>
-    > `JTextField()`：構造一個新的 TextField<br>
-    > `JTextField(int columns)`：構造一個具有指定列數的新的空 TextField<br>
-    > `JTextField(String text)`：構造一個用指定文字初始化的新 TextField<br>
+* **JTextField**：可編輯單行文字  
+    > `JTextField()`：構造一個新的 TextField  
+    > `JTextField(int columns)`：構造一個具有指定列數的新的空 TextField  
+    > `JTextField(String text)`：構造一個用指定文字初始化的新 TextField  
     > `JTextField(String text, int columns)`：構造一個用指定文字和列初始化的新 TextField
 * **JPasswordField**：允許編輯單行文字，但會用隱藏星號 ( * )  或點點顯示 ( 密碼形式 )。
 * **JButton**：創建按鈕。

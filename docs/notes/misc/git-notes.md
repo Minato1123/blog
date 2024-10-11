@@ -136,16 +136,16 @@ Commands:
 ## [Git Flow](https://github.com/nvie/gitflow)
 ### 長期分支
 * `master`
-  > 主要用來放穩定、隨時可上線的版本。<br>
-  > 這個分支的來源只能從別的分支合併過來，開發者不會直接 Commit 到這個分支。<br>
+  > 主要用來放穩定、隨時可上線的版本。  
+  > 這個分支的來源只能從別的分支合併過來，開發者不會直接 Commit 到這個分支。  
   > 因為是穩定版本，所以通常會在這個分支上的 Commit 上打上版本號標籤。
 * `develop`
-  > 主要是所有開發的基礎分支。<br>
-  > 要新增功能時，所有的 `feature` 分支都是從這個分支切出去的。<br>
+  > 主要是所有開發的基礎分支。  
+  > 要新增功能時，所有的 `feature` 分支都是從這個分支切出去的。  
   > 而 `feature` 分支的功能完成後，也都會合併回來這個分支。
 ### 短期分支
 * `hotfix`
-  > 當線上產品發生緊急問題的時候，會從 `master` 分支開一個 `hotfix` 分支出來進行修復。<br>
+  > 當線上產品發生緊急問題的時候，會從 `master` 分支開一個 `hotfix` 分支出來進行修復。  
   > `hotfix` 分支修復完成之後，會合併回 `master` 分支，也同時會合併一份到 `develop` 分支。
 
 :::warning 為什麼要合併回 `develop` 分支？
@@ -156,11 +156,11 @@ Commands:
 :::
 
 * `release`
-  > 當認為 `develop` 分支足夠成熟了，就可以把 `develop` 分支合併到 `release` 分支，在這邊進行算是上線前的最後測試。<br>
-  > 測試完成後，`release` 分支將會同時合併到 `master` 以及 `develop` 這兩個分支上。<br>
+  > 當認為 `develop` 分支足夠成熟了，就可以把 `develop` 分支合併到 `release` 分支，在這邊進行算是上線前的最後測試。  
+  > 測試完成後，`release` 分支將會同時合併到 `master` 以及 `develop` 這兩個分支上。  
   > `master` 分支是上線版本，而合併回 `develop` 分支的目的是因為可能在 `release` 分支上還會測到並修正一些問題，所以需要跟 `develop` 分支同步，免得之後的版本又再度出現同樣的問題。
 * `feature`
-  > 需要新增功能時就是使用 `feature` 分支。<br>
+  > 需要新增功能時就是使用 `feature` 分支。  
   > `feature` 分支都是從 `develop` 分支來的，完成之後會再併回 `develop` 分支。
 
 ## Commit 提交描述

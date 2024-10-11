@@ -51,8 +51,8 @@ myPromise.catch((error) => {
 
 ### 其他使用
 ### `Promise.all`
-讓多個 Promise 同時執行。<br>
-每個 Promise 都完成時，resolve 才會回傳，並將值存入陣列中。<br>
+讓多個 Promise 同時執行。  
+每個 Promise 都完成時，resolve 才會回傳，並將值存入陣列中。  
 只要有其中一個 Promise 被 rejected，則整個 `Promise.all` 立刻被拒絕。
 ```javascript
 Promise.all([newPromise1, newPromise2, newPromise3, newPromise4])
@@ -84,7 +84,7 @@ Promise.allSettled([
 //]  
 ```
 ### `Promise.race`
-任一個 Promise 轉換狀態，就會回傳一個同樣狀態的 Promise 物件，並且接收其成功值或失敗訊息。<br>
+任一個 Promise 轉換狀態，就會回傳一個同樣狀態的 Promise 物件，並且接收其成功值或失敗訊息。  
 其餘 Promise 的結果或錯誤會被忽略。
 ```javascript
 Promise.race([newPromise1, newPromise2, newPromise3])

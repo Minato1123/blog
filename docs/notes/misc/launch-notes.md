@@ -39,7 +39,7 @@
     > | doc | 參數的註解，發生錯誤時提供之訊息 | 選項 |
     > 
     > * 引用方法
-    > 在 launch 文件中直接以 `$(arg name)` 方式引用即可。<br>
+    > 在 launch 文件中直接以 `$(arg name)` 方式引用即可。  
     > 範例：`<group ns="$(arg ns_1)"> .... </group>`
 9. #### launch 文件解析 - `<group>` tag
     > 範例：`<group ns="turtlesim1">....</group>`
@@ -83,7 +83,7 @@
     > | to | 映射的主題名稱 | 必要 |
     > 
     > * from 與 to 的詳細解釋
-    > 相對路徑與絕對路徑的寫法需要特別注意。<br>
+    > 相對路徑與絕對路徑的寫法需要特別注意。  
     > `/` 在最前方，表示絕對路徑；若未加上 `/` 則表示相對路徑。
 12. 儲存 launch 文件
 
@@ -91,11 +91,11 @@
 ## launch 文件的應用
 ### 使用 launch 文件一次操控兩個 Turtlesim
 1. `sudo gedit ~/.bashrc` 執行 launch 文件
-    > 開始編輯 Terminal 的環境設定檔<br>
-    > 確認主節點的位址設定為本地機器<br>
+    > 開始編輯 Terminal 的環境設定檔  
+    > 確認主節點的位址設定為本地機器  
     > 在 `script set_ros_master.sh` 後方**不**加上 `<hostname>`表示將主節點設定為本地機器
 2. `roslaunch <package_name> teleop_turtlesim.launch`：兩個 Turtlesim 視窗開啟
-    > launch 文件會自動在本地機器中搜尋是否有主節點的存在，若是沒有則會自動啟動主節點<br>
+    > launch 文件會自動在本地機器中搜尋是否有主節點的存在，若是沒有則會自動啟動主節點  
     > 在 Terminal 視窗中按下鍵盤的方向鍵即可讓兩個 Turtlesim 視窗中的小烏龜同時移動
 3. 取消執行 launch 文件
     > 按下按鍵 `「ctrl」+「c」` 取消正在執行中的程式
@@ -103,14 +103,14 @@
 
 ## ROS parameter 介紹
 * #### Parameter Server 由 Master node ( 主節點 ) 管理，供節點使用與儲存
-    > **動態 的 Parameter Server**<br>
-    > Parameter Server 在 Master Node 執行時，便會一起執行。<br>
-    > 而在 Master Node 關閉的時候也會一起被關閉。<br>
-    > 節點在運行時，可以即時抓取存在於 Parameter Server 的參數使用，這將讓我們能夠動態調整機器人的參數，並即時得到機器人的回饋。<br>
+    > **動態 的 Parameter Server**  
+    > Parameter Server 在 Master Node 執行時，便會一起執行。  
+    > 而在 Master Node 關閉的時候也會一起被關閉。  
+    > 節點在運行時，可以即時抓取存在於 Parameter Server 的參數使用，這將讓我們能夠動態調整機器人的參數，並即時得到機器人的回饋。  
     > 例如透過 PID 參數的調整，我們能夠即時看出 PID 參數對於機器人的影響。
 
 * #### Master node 停止運行，Parameter Server 也停止運行
-    > **Parameter Server 並不會永久存在**<br>
+    > **Parameter Server 並不會永久存在**  
     > 這樣的情況將會讓我們設定好的 Parameter 也一起消失，使得下次再執行 ROS 系統時需要再重新調整參數。
 
 ### Parameter 與 yaml 檔案
@@ -123,9 +123,9 @@
 ### 使用 launch 文件 改變 Turtlesim 的背景顏色
 ![](https://i.imgur.com/TYhBMDB.png)
 
-* **private parameter**<br>
-在參數前面加上`~` 代表這個參數是 private parameter。<br>
-表示是由該節點發起並執行的參數。<br>
+* **private parameter**  
+在參數前面加上`~` 代表這個參數是 private parameter。  
+表示是由該節點發起並執行的參數。  
 這樣就不需要每次都寫出完整的絕對路徑。
 
 1. 開啟 Ubuntu 系統

@@ -60,25 +60,25 @@ import FoldCode from '/.vitepress/components/FoldCode.vue'
 1. 可以對 `ref` 進行擴展，添加額外的 function 或屬性。
 2. 直接在 `ref.value` 上添加 function，可能會污染 `ref` 的原型，進而影響到其他地方的使用，因此，使用 `extendRef` 來對 `ref` 進行擴展更加地優雅和安全。
 3. `unwrap`：若值為 `true`，則 `extendRef` 函數將會將 `Ref` 物件轉換為其值，並將其設置為屬性的值；`false` 的話屬性的值將是 `Ref` 物件本身。
-4. `if (key === 'value') continue` ：<br>跳過 `extend` 物件中 `key` 為 `'value'` 的屬性。
+4. `if (key === 'value') continue` ：  跳過 `extend` 物件中 `key` 為 `'value'` 的屬性。
 因為 `Ref` 物件中的值是透過 `.value` 存取的，如果直接將 `extend` 物件中的 `value` 屬性設置為 `Ref` 物件的屬性會造成名稱衝突，因此需要跳過 `value`
  屬性。
-5. `Object.defineProperty(ref, key, { get, set, enumerable })` ：<br>
+5. `Object.defineProperty(ref, key, { get, set, enumerable })` ：  
 會定義 `ref` 物件的 `key` 屬性的 getter 和 setter 方法，透過這些方法來操作 `Ref` 物件的 `value` 屬性（不需要 `.value` 就能直接取到值）。
-6. `Object.defineProperty(ref, key, { value, enumerable })`：<br>
+6. `Object.defineProperty(ref, key, { value, enumerable })`：  
 如果 `unwrap` 被設定為 `false`，則直接將 `Ref` 物件賦值給 `ref` 物件的 `key` 屬性，訪問 `ref.key` 回傳的是 `Ref` 物件本身（需要 `.value` 才能取到值）。
 
 ---
 
 ### [get](https://github.com/vueuse/vueuse/tree/main/packages/shared/get)
 1. `unref()`：將參數轉換為普通的物件。
-2. `MaybeRef<T>`：接受 `Ref` 或普通值的參數。<br>
+2. `MaybeRef<T>`：接受 `Ref` 或普通值的參數。  
 使用 `MaybeRef<T>` 作為類型註解的好處是，在接收參數時可以直接傳入普通值或 `Ref`。
 
 ---
 
 ### [isDefined](https://github.com/vueuse/vueuse/tree/main/packages/shared/isDefined)
-1. 用於檢查變數是否已定義（defined）。<br>
+1. 用於檢查變數是否已定義（defined）。  
 如果變數為 `null` 或 `undefined`，該函數將回傳 `false`，否則回傳 `true`。
 
 ---
@@ -95,14 +95,14 @@ import FoldCode from '/.vitepress/components/FoldCode.vue'
 ---
 
 ### [reactify](https://github.com/vueuse/vueuse/tree/main/packages/shared/reactify)
-1. 將普通的函数轉換為具有響應式特性的函數。<br>
+1. 將普通的函数轉換為具有響應式特性的函數。  
 這些轉換後的函數可以接受 refs 作為參數，並回傳一個 ComputedRef 物件，可以訪問和監聽該物件的值的變化。
 2. `unref`：將 Ref 物件轉換為普通物件，如果傳入的參數不是 Ref 物件，則直接回傳該值。
 3. `toValue`：傳入的參數是 function（getter）的話會執行，不是的話會做 `unref`。
 4. `args.map(i => unrefFn(i))`：將所有參數 `map` 成普通值。
-5. `fn.apply(thisArg, [argsArray])`：<br>
+5. `fn.apply(thisArg, [argsArray])`：  
 `fn` 是要調用的函數，`thisArg` 是函數執行時的 `this` 上下文，而 `argsArray` 則是傳遞給函數的參數陣列。
-6. `computed(() => fn.apply(this, args.map(i => unrefFn(i))))`：<br>
+6. `computed(() => fn.apply(this, args.map(i => unrefFn(i))))`：  
 將參數做轉為普通物件才能讓原本的 `fn` 取到值並正常執行，而因為 computed 內部還是有用到 `unrefFn(i)`，對 computed 來說 `i` 仍然會被搜集到響應性的依賴，所以當 `i` 發生變化時，將會促使 computed 下次被取值時需要重新計算。
 
 ---
@@ -115,7 +115,7 @@ import FoldCode from '/.vitepress/components/FoldCode.vue'
 ---
 
 ### [reactiveComputed](https://github.com/vueuse/vueuse/tree/main/packages/shared/reactiveComputed)
-1. Computed reactive 物件。<br>
+1. Computed reactive 物件。  
 回傳的是一個 `reactive` 物件，而不是像 `computed` 回傳的 `ref` 物件。
 （不需要 `.value` 取值）
 
@@ -296,7 +296,7 @@ set(obj, key, x) // object
 
 ### [tryOnBeforeMount](https://github.com/vueuse/vueuse/tree/main/packages/shared/tryOnBeforeMount)
 1. 如果在 component 的生命週期內，呼叫 `onBeforeMount`；不是則單純執行參數 function。
-2. `onBeforeMount`：負責處理在 component 初次渲染之前需要完成的操作。<br>
+2. `onBeforeMount`：負責處理在 component 初次渲染之前需要完成的操作。  
 調用的時機點為 component 已經完成設置其響應性狀態，但還沒有創建任何 DOM 節點，即將第一次地執行其 DOM 渲染效果。
 
 ---
@@ -311,7 +311,7 @@ set(obj, key, x) // object
 1. 如果在 component 的生命週期內，呼叫 `onMounted`；不是則單純執行參數 function。
 2. `onMounted`：調用時機為 component 被掛載後。
     
-<b>掛載的條件為</b><br>
+<b>掛載的條件為</b>  
 * 所有同步子元件都已經被掛載（不包括異步元件或在 `<Suspense>` 樹中的元件）。
 * 自身的 DOM 樹已經被創建並插入到父容器中。（如果應用程式的根容器也在 document 中，則只保證元件的 DOM 樹在 document 中。）
 
@@ -389,7 +389,7 @@ Array<T>.every(
 
 ### [useArrayReduce](https://github.com/vueuse/vueuse/tree/main/packages/shared/useArrayReduce)
 1. 響應式的 `Array.reduce`。
-2. `MaybeRefOrGetter<MaybeRefOrGetter<T>[]>` 代表 `MaybeRefOrGetter` 的陣列裡每一項都是 `MaybeRefOrGetter`。<br>
+2. `MaybeRefOrGetter<MaybeRefOrGetter<T>[]>` 代表 `MaybeRefOrGetter` 的陣列裡每一項都是 `MaybeRefOrGetter`。  
 `type MaybeRefOrGetter<T> = MaybeReadonlyRef<T> | MaybeRef<T>`
 3. Type `UseArrayReducer` 是 `Array.reduce` 第一個參數的型別：
     
@@ -424,7 +424,7 @@ Array<T>.every(
 
 ### [useDateFormat](https://github.com/vueuse/vueuse/tree/main/packages/shared/useDateFormat)
 1. 根據傳遞的令牌字符串（e.g. `YYYY-MM-DD`）獲取格式化的日期。
-2. `[]` 包起來的字串不會被解析成日期（因為：`\[([^\]]+)]`）<br>
+2. `[]` 包起來的字串不會被解析成日期（因為：`\[([^\]]+)]`）  
 可以拆成這樣看： <span style="color: #e8cb25; font-weight: bold;">\\[</span> <span style="color: #e86325; font-weight: bold;">(</span> <span style="color: #03823a; font-weight: bold;">[^</span> <span style="color: #e8cb25; font-weight: bold;">\\]</span> <span style="color: #03823a; font-weight: bold;">]</span> <span style="">+</span> <span style="color: #e86325; font-weight: bold;">)</span> <span style="color: #e8cb25; font-weight: bold;">]</span>
 3. 利用正則匹配和 replace 將字串轉換成日期。
 4. `!/Z$/i.test(date)` 的用意是排除不需要做時區轉換的字串。（最後面如果是 `Z`
