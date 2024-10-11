@@ -13,7 +13,7 @@
     About Me
   </div>
   <div class="content">
-    <span class="my-name">Carrie</span>, or <span class="my-name">Minato</span>.<br>
+    <span class="my-name">Carrie</span>, or <span class="my-name">Minato</span>.  
     我是寫 Vue 的 Junior 前端工程師了！！！
     
   </div>
@@ -23,7 +23,7 @@
     About Blog
   </div>
   <div class="content">
-    從以前就養成做筆記的習慣，喜歡把學到的東西做成筆記寫下來，幫助記憶的同時也方便以後複習，所以決定將這些有關前端或其他程式的學習過程也整理成筆記，放進這個小小的部落格。<br>由於是自學拼湊的理解，有部分可能理解不全，有注意到的話會及時改正。
+    從以前就養成做筆記的習慣，喜歡把學到的東西做成筆記寫下來，幫助記憶的同時也方便以後複習，所以決定將這些有關前端或其他程式的學習過程也整理成筆記，放進這個小小的部落格。  由於是自學拼湊的理解，有部分可能理解不全，有注意到的話會及時改正。
   </div>
 </div>
 <div class="about-blog-container">
@@ -68,13 +68,13 @@
   </div>
   <div class="content">
     <div>
-      Taiwan FamilyMart Map
+      Taiwan CVS Map
     </div>
     <div>
-      <a class="project-link" href="https://github.com/Minato1123/taiwan-familymart-map" target="_blank">
+      <a class="project-link" href="https://github.com/Minato1123/taiwan-cvs-map" target="_blank">
         • GitHub
       </a>
-      <a class="project-link" href="https://minato1123.github.io/taiwan-familymart-map/" target="_blank">
+      <a class="project-link" href="https://minato1123.github.io/taiwan-cvs-map" target="_blank">
         • Demo
       </a>
     </div>
