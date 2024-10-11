@@ -27,6 +27,7 @@ function clickTag(tag: Tag) {
 
 function handleClearSelectedTags() {
   selectedTagList.value = []
+  searchTagInput.value = ''
 }
 
 function handleClearSearchInput() {
